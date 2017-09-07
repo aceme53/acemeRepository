@@ -7,6 +7,11 @@ Vue.use(Router);
 export default new Router({
   routes: [
     {
+      path: '/',
+      name: 'index',
+      component: index,
+    },
+    {
       path: '/Hello',
       name: 'Hello',
       component: Hello,
