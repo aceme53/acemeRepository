@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>calendar</title>
+</head>
+<body>
+<div>
+    <table border="1" id="calendar">
+    </table>
+</div>
+</body>
+<script type="text/javascript" src="./jquery-1.10.2.min.js"></script>
+<script>
+    var makeCalendar = function (date) {
+        var dateParam = typeof date == "string" ? new Date(date) : date;
+        if (dateParam == "Invalid Date") return date;
+        var thisYear = dateParam.getFullYear();
+        var thisMonth = dateParam.getMonth() + 1;
+        var thisDaysCnt = new Date(new Date(thisYear + '/' + (thisMonth + 1) + '/1').setDate(0)).getDate();
+        var thisFirstDay = new Date(thisYear + '/' + thisMonth + '/1').getDay();
+        var tds = [], trs = [];
+        var daysCnt = 0, i;
+        for (i = 1; i <= 42; i++) {
+            if (i < thisFirstDay) {
+                tds.push('');
+            } else if (daysCnt > thisDaysCnt) {
+                tds.push('');
+            } else {
+                daysCnt++;
+                tds.push(daysCnt);
+            }
+            if (i % 7 == 0) {
+                trs.push(tds);
+                tds = [];
+            }
+        }
+        var table = document.getElementById('calendar'), tHead = table.createTHead(), tHeadTr = tHead.insertRow()
+                , tBody = table.createTBody(), tBodyTr, j;
+        var td, weekDays = ['一', '二', '三', '四', '五', '六', '日'];
+        for (i = 0; i < 7; i++) {
+            td = tHeadTr.insertCell();
+            td.innerHTML = weekDays[i];
+            td.setAttribute('style','height:20px;width:20px;text-align:center;');
+        }
+        for (i = 0; i < trs.length; i++) {
+            tBodyTr = tBody.insertRow();
+            for (j = 0; j < trs[i].length; j++) {
+                td = tBodyTr.insertCell();
+                td.innerHTML = trs[i][j];
+                td.setAttribute('style','height:20px;width:20px;text-align:center;');
+            }
+        }
+    };
+    makeCalendar('2017/06/23')
+</script>
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>个人网站</title>
+</head>
+<link rel="stylesheet" href="CSS/com.css">
+<body>
+<!--**********************左边个人名片**********************-->
+<div class="headerCard no-select">
+	<div id="logo"></div>
+	<div>
+		<ul>
+			<li>
+				<a href="#aboutMe">
+					关于我
+				</a>
+			</li>
+			<li>
+				<a href="#basicSkill">
+					基本信息/专业技能
+				</a>
+			</li>
+			<li>
+				<a href="#work">
+					工作经历
+				</a>
+			</li>
+			<li>
+				<a href="#interest">
+					兴趣爱好
+				</a>
+			</li>
+		</ul>
+	</div>
+	<div class="clear"></div>
+</div>
+<div class="leftCard">
+	<div class="photoPic"></div>
+	<div class="shortIntroduction">
+		<div class="cName">粟洣</div>
+		<div class="eName">Roy</div>
+		<div class="context">
+			<div class="subImg">
+				<a href="tencent://message/?uin='284420440'">
+					<img src="image/qq.png"/>
+				</a>
+				&nbsp;
+				<a href="mailto:284420440@qq.com'">
+					<img src="image/mail.png"/>
+				</a>
+			</div>
+		</div>
+	</div>
+	<div class="downloadResume">
+		<a href="MyResume.doc">
+			<button class="downloadBtn"></button>
+		</a>
+	</div>
+</div>
+<div class="centerCard">
+	<div class="row row1">
+		<h1 id="aboutMe">关于我</h1>
+		<div class="instruction">
+			熟悉Javascript，熟悉前端开发，熟练使用HTML，Ajax，jQuery，CSS等，熟悉基本数据库操作(Oracle)，本人积极进取，有较高的思想觉悟，与时俱进，有突破旧束缚的创新理念，有较宽的IT知识面，为人诚恳，工作认真负责，
+			学习能力强，动手能力强，具有良好的沟通协调能力及团队合作精神
+		</div>
+	</div>
+	<hr size="1">
+	<div class="row row2">
+		<div class="basicInfo" id="basicSkill">
+			<h2>基本信息</h2>
+			<ul>
+				<li>
+					<div class="infoTitle">姓名</div>
+					<div class="infoContent">粟洣</div>
+				</li>
+				<li>
+					<div class="infoTitle">性别</div>
+					<div class="infoContent">男</div>
+				</li>
+				<li>
+					<div class="infoTitle">出生日期</div>
+					<div class="infoContent">1991/05/12</div>
+				</li>
+				<li>
+					<div class="infoTitle">毕业日期</div>
+					<div class="infoContent">2014/06/20</div>
+				</li>
+				<li>
+					<div class="infoTitle">籍贯</div>
+					<div class="infoContent">湖南湘潭</div>
+				</li>
+				<li>
+					<div class="infoTitle">现居地</div>
+					<div class="infoContent">深圳龙岗</div>
+				</li>
+
+			</ul>
+		</div>
+		<div class="Ability">
+			<h2>专业技能</h2>
+			<div>HTML</div>
+			<div>CSS</div>
+			<div>JS</div>
+			<canvas id="HTMLCanvas" class="process" width="100px" height="100px">81%</canvas>
+			<canvas id="CSSCanvas" class="process" width="100px" height="100px">76%</canvas>
+			<canvas id="JSCanvas" class="process" width="100px" height="100px">60%</canvas>
+		</div>
+	</div>
+	<hr size="1">
+	<div class="row row3">
+		<h2 id="work">工作经历</h2>
+		<div class="work">
+			<div id="main"></div>
+			<label>
+				<input type="text" id="legendData" value="时间跨度" hidden>
+				<input type="text" id="xAxisData"
+					   value="亿达（2014.08）@@联基动力（2016.8）@@誉托科技（2017.3）" hidden>
+				<input type="text" id="yAxisData"
+					   value="2@@0.6@@0.25" hidden>
+				<input type="text" id="axisName"
+					   value="公司@@时长" hidden>
+			</label>
+		</div>
+	</div>
+	<hr size="1">
+	<div class="row row4">
+		<h2 id="interest">兴趣爱好</h2>
+		<div class="interest">
+			<!--手风琴-->
+			<ul>
+				<li class='pic1'>
+					<div class='txt'>
+						<p class='p1'>综艺</p>
+						<p class='p2'>在业余时间放松自己的最好方式<br>，<br>就是笑^0^</p>
+					</div>
+				</li>
+				<li class='pic2'>
+					<div class='txt'>
+						<p class='p1'>编程</p>
+						<p class='p2'>没有什么比攻克一个难点更让人激动的事了</p>
+					</div>
+				</li>
+				<li class='pic3'>
+					<div class='txt'>
+						<p class='p1'>音乐</p>
+						<p class='p2'>一首嗨歌就能激发出千行代码</p>
+					</div>
+				</li>
+				<li class='pic4'>
+					<div class='txt'>
+						<p class='p1'>游戏<br/>
+						<p class='p2'>男生练手速，反应速度的第二利器</p>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div class="clear"></div>
+<div class="returnTopCard">
+	<button class="returnTopBtn" onclick="_F.returnTop()">回到<br>顶部</button>
+</div>
+</body>
+<script src="./JS/JQuery.js" type="text/javascript"></script>
+<script src="./JS/com.js" type="text/javascript"></script>
+<script src="./JS/echarts.min.js" type="text/javascript"></script>
+<script src="./JS/require.js" type="text/javascript"></script>
+</html>

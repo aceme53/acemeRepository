@@ -1,0 +1,2080 @@
+常见算法是js实现汇总
+菜鸟教程 -- 学的不仅是技术，更是梦想！
+
+搜索……
+首页 ANDROID 鸡汤 逗乐
+JavaScript 开发的45个经典技巧
+分类 编程技术
+JavaScript是一个绝冠全球的编程语言，可用于Web开发、移动应用开发（PhoneGap、Appcelerator）、服务器端开发（Node.js和Wakanda）等等。JavaScript还是很多新手踏入编程世界的第一个语言。既可以用来显示浏览器中的简单提示框，也可以通过nodebot或nodruino来控制机器人。能够编写结构清晰、性能高效的JavaScript代码的开发人员，现如今已成了招聘市场最受追捧的人。
+在这篇文章里，我将分享一些JavaScript的技巧、秘诀和最佳实践，除了少数几个外，不管是浏览器的JavaScript引擎，还是服务器端JavaScript解释器，均适用。
+本文中的示例代码，通过了在Google Chrome 30最新版（V8 3.20.17.15）上的测试。
+
+
+页面拥有ID的元素会创建全局变量
+在一张HTML页面中，所有设置了ID属性的元素会在JavaScript的执行环境中创建对应的全局变量，这意味着document.getElementById像人的阑尾一样显得多余了。但实际项目中最好老老实实该怎么写就怎么写，毕竟常规代码出乱子的机会要小得多。
+
+<div id="sample"></div>
+<script type="text/javascript">
+        console.log(sample);
+</script>
+
+
+1、首次为变量赋值时务必使用var关键字
+变量没有声明而直接赋值得话，默认会作为一个新的全局变量，要尽量避免使用全局变量。
+2、使用===取代==
+==和!=操作符会在需要的情况下自动转换数据类型。但===和!==不会，它们会同时比较值和数据类型，这也使得它们要比==和!=快。
+[10] === 10    // is false
+[10]  == 10    // is true
+'10' == 10     // is true
+'10' === 10    // is false
+ []   == 0     // is true
+ [] ===  0     // is false
+ '' == false   // is true but true == "a" is false
+ '' === false  // is false
+
+3、underfined、null、0、false、NaN、空字符串的逻辑结果均为false
+4、行尾使用分号
+实践中最好还是使用分号，忘了写也没事，大部分情况下JavaScript解释器都会自动添加。对于为何要使用分号，可参考文章JavaScript中关于分号的真相。
+5、使用对象构造器
+function Person(firstName, lastName){
+    this.firstName =  firstName;
+    this.lastName = lastName;
+}
+var Saad = new Person("Saad", "Mousliki");
+6、小心使用typeof、instanceof和contructor
+typeof：JavaScript一元操作符，用于以字符串的形式返回变量的原始类型，注意，typeof null也会返回object，大多数的对象类型（数组Array、时间Date等）也会返回object
+contructor：内部原型属性，可以通过代码重写
+instanceof：JavaScript操作符，会在原型链中的构造器中搜索，找到则返回true，否则返回false
+var arr = ["a", "b", "c"];
+typeof arr;   // 返回 "object"
+arr instanceof Array // true
+arr.constructor();  //[]
+7、使用自调用函数
+函数在创建之后直接自动执行，通常称之为自调用匿名函数（Self-Invoked Anonymous Function）或直接调用函数表达式（Immediately Invoked Function Expression ）。格式如下：
+(function(){
+    // 置于此处的代码将自动执行
+})();
+(function(a,b){
+    var result = a+b;
+    return result;
+})(10,20)
+8、从数组中随机获取成员
+var items = [12, 548 , 'a' , 2 , 5478 , 'foo' , 8852, , 'Doe' , 2145 , 119];
+var  randomItem = items[Math.floor(Math.random() * items.length)];
+9、获取指定范围内的随机数
+这个功能在生成测试用的假数据时特别有数，比如介与指定范围内的工资数。
+var x = Math.floor(Math.random() * (max - min + 1)) + min;
+10、生成从0到指定值的数字数组
+var numbersArray = [] , max = 100;
+for( var i=1; numbersArray.push(i++) < max;);  // numbers = [1,2,3 ... 100]
+11、生成随机的字母数字字符串
+function generateRandomAlphaNum(len) {
+    var rdmString = "";
+    for( ; rdmString.length < len; rdmString  += Math.random().toString(36).substr(2));
+    return  rdmString.substr(0, len);
+}
+12、打乱数字数组的顺序
+var numbers = [5, 458 , 120 , -215 , 228 , 400 , 122205, -85411];
+numbers = numbers.sort(function(){ return Math.random() - 0.5});
+/* numbers 数组将类似于 [120, 5, 228, -215, 400, 458, -85411, 122205]  */
+这里使用了JavaScript内置的数组排序函数，更好的办法是用专门的代码来实现（如Fisher-Yates算法），可以参见StackOverFlow上的这个讨论。
+13、字符串去空格
+Java、C#和PHP等语言都实现了专门的字符串去空格函数，但JavaScript中是没有的，可以通过下面的代码来为String对象函数一个trim函数：
+String.prototype.trim = function(){return this.replace(/^\s+|\s+$/g, "");};
+新的JavaScript引擎已经有了trim()的原生实现。
+14、数组之间追加
+var array1 = [12 , "foo" , {name "Joe"} , -2458];
+var array2 = ["Doe" , 555 , 100];
+Array.prototype.push.apply(array1, array2);
+/* array1 值为  [12 , "foo" , {name "Joe"} , -2458 , "Doe" , 555 , 100] */
+15、对象转换为数组
+var argArray = Array.prototype.slice.call(arguments);
+16、验证是否是数字
+function isNumber(n){
+    return !isNaN(parseFloat(n)) && isFinite(n);
+}
+17、验证是否是数组
+function isArray(obj){
+    return Object.prototype.toString.call(obj) === '[object Array]' ;
+}
+但如果toString()方法被重写过得话，就行不通了。也可以使用下面的方法：
+Array.isArray(obj); // its a new Array method
+如果在浏览器中没有使用frame，还可以用instanceof，但如果上下文太复杂，也有可能出错。
+var myFrame = document.createElement('iframe');
+document.body.appendChild(myFrame);
+var myArray = window.frames[window.frames.length-1].Array;
+var arr = new myArray(a,b,10); // [a,b,10]
+// myArray 的构造器已经丢失，instanceof 的结果将不正常
+// 构造器是不能跨 frame 共享的
+arr instanceof Array; // false
+18、获取数组中的最大值和最小值
+var  numbers = [5, 458 , 120 , -215 , 228 , 400 , 122205, -85411];
+var maxInNumbers = Math.max.apply(Math, numbers);
+var minInNumbers = Math.min.apply(Math, numbers);
+19、清空数组
+var myArray = [12 , 222 , 1000 ];
+myArray.length = 0; // myArray will be equal to [].
+20、不要直接从数组中delete或remove元素
+如果对数组元素直接使用delete，其实并没有删除，只是将元素置为了undefined。数组元素删除应使用splice。
+切忌：
+var items = [12, 548 ,'a' , 2 , 5478 , 'foo' , 8852, , 'Doe' ,2154 , 119 ];
+items.length; // return 11
+delete items[3]; // return true
+items.length; // return 11
+/* items 结果为 [12, 548, "a", undefined × 1, 5478, "foo", 8852, undefined × 1, "Doe", 2154, 119] */
+而应：
+var items = [12, 548 ,'a' , 2 , 5478 , 'foo' , 8852, , 'Doe' ,2154 , 119 ];
+items.length; // return 11
+items.splice(3,1) ;
+items.length; // return 10
+/* items 结果为 [12, 548, "a", 5478, "foo", 8852, undefined × 1, "Doe", 2154, 119]
+删除对象的属性时可以使用delete。
+21、使用length属性截断数组
+前面的例子中用length属性清空数组，同样还可用它来截断数组：
+var myArray = [12 , 222 , 1000 , 124 , 98 , 10 ];
+myArray.length = 4; // myArray will be equal to [12 , 222 , 1000 , 124].
+与此同时，如果把length属性变大，数组的长度值变会增加，会使用undefined来作为新的元素填充。length是一个可写的属性。
+myArray.length = 10; // the new array length is 10
+myArray[myArray.length - 1] ; // undefined
+22、在条件中使用逻辑与或
+var foo = 10;
+foo == 10 && doSomething(); // is the same thing as if (foo == 10) doSomething();
+foo == 5 || doSomething(); // is the same thing as if (foo != 5) doSomething();
+逻辑或还可用来设置默认值，比如函数参数的默认值。
+function doSomething(arg1){
+    arg1 = arg1 || 10; // arg1 will have 10 as a default value if it’s not already set
+}
+23、使得map()函数方法对数据循环
+var squares = [1,2,3,4].map(function (val) {
+    return val * val;
+});
+// squares will be equal to [1, 4, 9, 16]
+24、保留指定小数位数
+var num =2.443242342;
+num = num.toFixed(4);  // num will be equal to 2.4432
+注意，toFixec()返回的是字符串，不是数字。
+25、浮点计算的问题
+0.1 + 0.2 === 0.3 // is false
+9007199254740992 + 1 // is equal to 9007199254740992
+9007199254740992 + 2 // is equal to 9007199254740994
+为什么呢？因为0.1+0.2等于0.30000000000000004。JavaScript的数字都遵循IEEE 754标准构建，在内部都是64位浮点小数表示，具体可以参见JavaScript中的数字是如何编码的.
+可以通过使用toFixed()和toPrecision()来解决这个问题。
+26、通过for-in循环检查对象的属性
+下面这样的用法，可以防止迭代的时候进入到对象的原型属性中。
+for (var name in object) {
+    if (object.hasOwnProperty(name)) {
+        // do something with name
+    }
+}
+27、逗号操作符
+var a = 0;
+var b = ( a++, 99 );
+console.log(a);  // a will be equal to 1
+console.log(b);  // b is equal to 99
+28、临时存储用于计算和查询的变量
+在jQuery选择器中，可以临时存储整个DOM元素。
+var navright = document.querySelector('#right');
+var navleft = document.querySelector('#left');
+var navup = document.querySelector('#up');
+var navdown = document.querySelector('#down');
+29、提前检查传入isFinite()的参数
+isFinite(0/0) ; // false
+isFinite("foo"); // false
+isFinite("10"); // true
+isFinite(10);   // true
+isFinite(undefined);  // false
+isFinite();   // false
+isFinite(null);  // true，这点当特别注意
+30、避免在数组中使用负数做索引
+var numbersArray = [1,2,3,4,5];
+var from = numbersArray.indexOf("foo") ; // from is equal to -1
+numbersArray.splice(from,2); // will return [5]
+注意传给splice的索引参数不要是负数，当是负数时，会从数组结尾处删除元素。
+31、用JSON来序列化与反序列化
+var person = {name :'Saad', age : 26, department : {ID : 15, name : "R&D"} };
+var stringFromPerson = JSON.stringify(person);
+/* stringFromPerson 结果为 "{"name":"Saad","age":26,"department":{"ID":15,"name":"R&D"}}"   */
+var personFromString = JSON.parse(stringFromPerson);
+/* personFromString 的值与 person 对象相同  */
+32、不要使用eval()或者函数构造器
+eval()和函数构造器（Function consturctor）的开销较大，每次调用，JavaScript引擎都要将源代码转换为可执行的代码。
+var func1 = new Function(functionCode);
+var func2 = eval(functionCode);
+33、避免使用with()
+使用with()可以把变量加入到全局作用域中，因此，如果有其它的同名变量，一来容易混淆，二来值也会被覆盖。
+34、不要对数组使用for-in
+避免：
+var sum = 0;
+for (var i in arrayNumbers) {
+    sum += arrayNumbers[i];
+}
+而是：
+var sum = 0;
+for (var i = 0, len = arrayNumbers.length; i < len; i++) {
+    sum += arrayNumbers[i];
+}
+另外一个好处是，i和len两个变量是在for循环的第一个声明中，二者只会初始化一次，这要比下面这种写法快：
+for (var i = 0; i < arrayNumbers.length; i++)
+35、传给setInterval()和setTimeout()时使用函数而不是字符串
+如果传给setTimeout()和setInterval()一个字符串，他们将会用类似于eval方式进行转换，这肯定会要慢些，因此不要使用：
+setInterval('doSomethingPeriodically()', 1000);
+setTimeout('doSomethingAfterFiveSeconds()', 5000);
+而是用：
+setInterval(doSomethingPeriodically, 1000);
+setTimeout(doSomethingAfterFiveSeconds, 5000);
+36、使用switch/case代替一大叠的if/else
+当判断有超过两个分支的时候使用switch/case要更快一些，而且也更优雅，更利于代码的组织，当然，如果有超过10个分支，就不要使用switch/case了。
+37、在switch/case中使用数字区间
+其实，switch/case中的case条件，还可以这样写：
+function getCategory(age) {
+    var category = "";
+    switch (true) {
+        case isNaN(age):
+            category = "not an age";
+            break;
+        case (age >= 50):
+            category = "Old";
+            break;
+        case (age <= 20):
+            category = "Baby";
+            break;
+        default:
+            category = "Young";
+            break;
+    };
+    return category;
+}
+getCategory(5);  // 将返回 "Baby"
+38、使用对象作为对象的原型
+下面这样，便可以给定对象作为参数，来创建以此为原型的新对象：
+function clone(object) {
+    function OneShotConstructor(){};
+    OneShotConstructor.prototype = object;
+    return new OneShotConstructor();
+}
+clone(Array).prototype ;  // []
+39、HTML字段转换函数
+function escapeHTML(text) {
+    var replacements= {"<": "<", ">": ">","&": "&", "\"": """};
+    return text.replace(/[<>&"]/g, function(character) {
+        return replacements[character];
+    });
+}
+40、不要在循环内部使用try-catch-finally
+try-catch-finally中catch部分在执行时会将异常赋给一个变量，这个变量会被构建成一个运行时作用域内的新的变量。
+切忌：
+var object = ['foo', 'bar'], i;
+for (i = 0, len = object.length; i <len; i++) {
+    try {
+        // do something that throws an exception
+    }
+    catch (e) {
+        // handle exception
+    }
+}
+而应该：
+var object = ['foo', 'bar'], i;
+try {
+    for (i = 0, len = object.length; i <len; i++) {
+        // do something that throws an exception
+    }
+}
+catch (e) {
+    // handle exception
+}
+41、使用XMLHttpRequests时注意设置超时
+XMLHttpRequests在执行时，当长时间没有响应（如出现网络问题等）时，应该中止掉连接，可以通过setTimeout()来完成这个工作：
+var xhr = new XMLHttpRequest ();
+xhr.onreadystatechange = function () {
+    if (this.readyState == 4) {
+        clearTimeout(timeout);
+        // do something with response data
+    }
+}
+var timeout = setTimeout( function () {
+    xhr.abort(); // call error callback
+}, 60*1000 /* timeout after a minute */ );
+xhr.open('GET', url, true);
+xhr.send();
+同时需要注意的是，不要同时发起多个XMLHttpRequests请求。
+42、处理WebSocket的超时
+通常情况下，WebSocket连接创建后，如果30秒内没有任何活动，服务器端会对连接进行超时处理，防火墙也可以对单位周期没有活动的连接进行超时处理。
+为了防止这种情况的发生，可以每隔一定时间，往服务器发送一条空的消息。可以通过下面这两个函数来实现这个需求，一个用于使连接保持活动状态，另一个专门用于结束这个状态。
+var timerID = 0;
+function keepAlive() {
+    var timeout = 15000;
+    if (webSocket.readyState == webSocket.OPEN) {
+        webSocket.send('');
+    }
+    timerId = setTimeout(keepAlive, timeout);
+}
+function cancelKeepAlive() {
+    if (timerId) {
+        cancelTimeout(timerId);
+    }
+}
+keepAlive()函数可以放在WebSocket连接的onOpen()方法的最后面，cancelKeepAlive()放在onClose()方法的最末尾。
+43、时间注意原始操作符比函数调用快，使用VanillaJS
+比如，一般不要这样：
+var min = Math.min(a,b);
+A.push(v);
+可以这样来代替：
+var min = a < b ? a : b;
+A[A.length] = v;
+44、开发时注意代码结构，上线前检查并压缩JavaScript代码
+别忘了在写代码时使用一个代码美化工具。使用JSLint(一个语法检查工具)并且在上线前压缩代码（比如使用JSMin）。注：现在代码压缩一般推荐 UglifyJS (https://github.com/mishoo/UglifyJS2)
+45、JavaScript博大精深，这里有些不错的学习资源
+Code Academy资源：http://www.codecademy.com/tracks/javascript
+Marjin Haverbekex编写的Eloquent JavaScript：http://eloquentjavascript.net/
+John Resig编写的Advanced JavaScript：http://ejohn.org/apps/learn/
+来源：http://www.codeceo.com/article/javascript-45-tips.html
+← 15个最受开发者亲睐的Andr​​oid代码编辑器 16个最佳响应式HTML5框架分享 →
+
+
+Copyright © 2013-2017 菜鸟教程  runoob.com All Rights Reserved. 备案号：闽ICP备15012807号-1
+
+
+
+
+/*去重*/
+
+██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████
+██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████.
+口口口口口口口口口口口口口口口口口口口口口口口口口口口口口口口口口口
+<script>
+
+function delRepeat(arr){
+
+  var newArray=new Array();
+
+  var len=arr.length;
+
+  for(var i=0;i<len;i++){
+
+     for(var j=i+1;j<len;j++)
+
+     {
+
+       if(arr[i]==arr[j])
+
+       {
+
+         ++i;
+
+       }
+
+     }
+
+    newArray.push(arr[i]);
+
+  }
+
+ return newArray;
+
+}
+
+var arr=new Array("red","red","1","5","2");
+
+alert(delRepeat(arr));
+
+</script>
+
+分类: 计算机基础
+/*二分法*/
+
+又称为折半查找算法，但是有缺陷就是要求数字是预先排序好的
+
+function binary(items,value){
+
+ var startIndex=0,
+
+     stopIndex=items.length-1,
+
+     midlleIndex=(startIndex+stopIndex)>>>1;
+
+     while(items[middleIndex]!=value && startIndex<stopIndex){
+
+       if(items[middleIndex]>value){
+
+          stopIndex=middleIndex-1;
+
+       }else{
+
+          startIndex=middleIndex+1;
+
+       }
+
+       middleIndex=(startIndex+stopIndex)>>>1;
+
+     }
+
+     return items[middleIndex]!=value ? false:true;
+
+}
+
+
+
+/*十六进制颜色值的随机生成*/
+
+function randomColor(){
+
+ var arrHex=["0","2","3","4","5","6","7","8","9","a","b","c","d"],
+
+     strHex="#",
+
+     index;
+
+     for(var i=0;i<6;i++){
+
+      index=Math.round(Math.random()*15);
+
+      strHex+=arrHex[index];
+
+     }
+
+ return strHex;
+
+}
+
+
+
+/*一个求字符串长度的方法*/
+
+function GetBytes(str){
+
+ var len=str.length,
+
+     bytes=len;
+
+ for(var i=0;i<len;i++){
+
+   if(str.CharCodeAt>255){
+
+     bytes++;
+
+   }
+
+ }
+
+ return bytes;
+
+}
+
+
+
+/*插入排序*/
+
+所谓的插入排序，就是将序列中的第一个元素看成一个有序的子序列，然后不段向后比较交换比较交换。
+---------------------------------华丽丽的分割线-------------------------------------
+function insertSort(arr){
+
+  var key;
+
+  for(var j = 1; j < arr.length ; j++){
+
+      //排好序的
+
+      var i = j - 1;
+
+      key = arr[j];
+
+      while(i >= 0 && arr[i] > key){
+
+          arr[i + 1] = arr[i];
+
+          i --;
+
+     }
+
+     arr[i + 1] = key;
+
+  }
+
+ return arr;
+
+}
+
+
+
+
+
+
+
+
+
+/*希尔排序*/
+
+希尔排序，也称递减增量排序算法具体描述：http://zh.wikipedia.org/zh/%E5%B8%8C%E5%B0%94%E6%8E%92%E5%BA%8F
+其实说到底也是插入排序的变种
+function shellSort(array){
+
+       var stepArr = [1750, 701, 301, 132, 57, 23, 10, 4, 1]; // reverse()在维基上看到这个最优的步长较小数组
+
+        var i = 0;
+
+        var stepArrLength = stepArr.length;
+
+        var len = array.length;
+
+        var len2 =  parseInt(len/2);
+
+        for(;i < stepArrLength; i++){
+
+            if(stepArr[i] > len2){
+
+                continue;
+
+            }
+
+            stepSort(stepArr[i]);
+
+        }
+
+        // 排序一个步长
+
+        function stepSort(step){
+
+            //console.log(step) 使用的步长统计
+
+            var i = 0, j = 0, f, tem, key;
+
+            var stepLen = len%step > 0 ?  parseInt(len/step) + 1 : len/step;
+
+            for(;i < step; i++){// 依次循环列
+
+                for(j=1;/*j < stepLen && */step * j + i < len; j++){//依次循环每列的每行
+
+                    tem = f = step * j + i;
+
+                    key = array[f];
+
+
+
+                    while((tem-=step) >= 0){// 依次向上查找
+
+                        if(array[tem] > key){
+
+                            array[tem+step] = array[tem];
+
+                        }else{
+
+                            break;
+
+                        }
+
+                    }
+
+                    array[tem + step ] = key;
+
+                }
+
+            }
+
+        }
+
+        return array;
+
+}
+
+
+
+/*快速排序*/
+
+其实说到底快速排序算法就系对冒泡排序的一种改进，采用的就是算法理论中的分治递归的思想，说得明白点，它的做法就是：通过一趟排序将待排序的纪录分割成两部分，其中一部分的纪录值比另外一部分的纪录值要小，就可以继续分别对这两部分纪录进行排序；不段的递归实施上面两个操作，从而实现纪录值的排序。
+
+这么说可能不是很清晰，直接上代码：
+
+<script>
+
+function sort(arr){
+
+   return quickSort(arr,0,arr.length-1);
+
+   function quickSort(arr,l,r){
+
+       if(l<r){
+
+          var mid=arr[parseInt((l+r)/2)],i=l-1,j=r+1;
+
+          while(true){
+
+          //大的放到右边，小的放到左边, i与j均为游标
+
+            while(arr[++i]<mid);
+
+            while(arr[--j]>mid);
+
+            if(i>=j)break;//判断条件
+
+            var temp = arr[i];
+
+            arr[i]=arr[j];
+
+            arr[j]=temp;
+
+          }
+
+          quickSort(arr,l,i-1);
+
+          quickSort(arr,j+1,r);
+
+       }
+
+      return arr;
+
+   }
+
+}
+
+function main(){
+
+  var list=new Array(49,38,65,97,76,13,27);
+
+  document.write(sort(list).valueOf());
+
+}
+
+main();
+
+</script>
+
+原理图：
+
+
+
+
+
+/*冒泡法*/
+
+function bullSort(array){
+
+ var temp;
+
+ for(var i=0;i<array.length;i++){
+
+   for(var j=array.length-1;j>i;j--){
+
+     if(array[j]<array[j-1]){
+
+       temp = array[j];
+
+       array[j]=array[j-1];
+
+       array[j-1]=temp;
+
+     }
+
+   }
+
+ }
+
+ return array;
+
+}
+
+
+
+/*js递归实现方案*/
+
+递归函数是在一个函数通过调用自身的情况下去解决的：
+
+方式如下：
+
+function factorial(num){
+
+    if(num<=1){
+
+    return 1;
+
+   }else{
+
+    return num*factorial(num-1);
+
+   }
+
+}
+
+但是这在js里面可能会出现错误：
+
+var anotherFactorial = factorial;
+
+factorial=null;
+
+alert(anoterFactorial(4));
+
+因为在调用anoterFactorial时内部的factorial已经不存在了。
+
+解决方法是通过arguments.callee来解决。
+
+如下：
+
+function factorial(num){
+
+  if(num<=1){
+
+   return 1;
+
+  }else{
+
+  return num*arguments.callee(num-1);
+
+}
+
+var anotherFactorial = factorial;
+
+factorial = null;
+
+alert(anotherFactorial(4));
+
+成功！！！！
+
+}
+
+
+
+/**js模拟多线程**/
+
+<html><head><title>emu -- 用command模式模拟多线程</title></head><body>
+
+<SCRIPT LANGUAGE="JavaScript">
+
+<!--
+
+if (Array.prototype.shift==null)
+
+Array.prototype.shift = function (){
+
+    var rs = this[0];
+
+    for (var i=1;i<this.length;i++) this[i-1]=this[i]
+
+    this.length=this.length-1
+
+    return rs;
+
+}
+
+if (Array.prototype.push==null)
+
+Array.prototype.push = function (){
+
+    for (var i=0;i<arguments.length;i++) this[this.length]=arguments[i];
+
+    return this.length;
+
+}
+
+
+
+var commandList = [];
+
+var nAction = 0;//控制每次运行多少个动作
+
+var functionConstructor = function(){}.constructor;
+
+function executeCommands(){
+
+    for (var i=0;i<nAction;i++)
+
+        if (commandList.length>0){
+
+            var command = commandList.shift();
+
+            if (command.constructor == functionConstructor)
+
+                if (command.scheduleTime == null || new Date()-command.scheduleTime>0)
+
+                    command();
+
+                else
+
+                    commandList.push(command);
+
+        }
+
+}
+
+
+
+function startNewTask(){
+
+    var resultTemp = document.getElementById("sampleResult").cloneNode(true);
+
+    with (resultTemp){
+
+    id="";style.display="block";style.color=(Math.floor(Math.random()* (1<<23)).toString(16)+"00000").substring(0,6);
+
+    }
+
+    document.body.insertBefore(resultTemp,document.body.lastChild);
+
+    commandList.push(function(){simThread(resultTemp,1);});
+
+    nAction++;
+
+}
+
+
+
+function  simThread(temp,n){
+
+    if (temp.stop) n--;
+
+    else temp.innerHTML = temp.innerHTML - (-n);
+
+    if (n<1000)
+
+        commandList.push(function(){simThread(temp,++n)});
+
+    else{
+
+        var command = function(){document.body.removeChild(temp);;nAction--;};
+
+        command.scheduleTime = new Date()-(-2000);
+
+        commandList.push(command);
+
+    }
+
+}
+
+
+
+window.onload = function(){setInterval("executeCommands()",1);}
+
+//-->
+
+</SCRIPT>
+
+<button onClick="startNewTask()">开始新线程</button>
+
+
+
+<BR><BR>
+
+<div id=sampleResult onMouseOver="this.stop=true" onMouseOut="this.stop=false" >0</div>
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+/*选择法排序*/
+
+选择法主要有三种：
+
+《1》简单的选择排序：简单的前后交互。
+
+/*简单选择法排序*/
+
+其实基本的思想就是从待排序的数组中选择最小或者最大的，放在起始位置，然后从剩下的数组中选择最小或者最大的排在这公司数的后面。
+
+http://zh.wikipedia.org/wiki/%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F
+
+function selectionSort(data)
+
+{
+
+        var i, j, min, temp , count=data.length;
+
+        for(i = 0; i < count - 1; i++) {
+
+                /* find the minimum */
+
+                min = i;
+
+                for (j = i+1; j < count; j++)
+
+                {    if (data[j] < data[min])
+
+                     { min = j;}
+
+                 }
+
+                /* swap data[i] and data[min] */
+
+                temp = data[i];
+
+                data[i] = data[min];
+
+                data[min] = temp;
+
+        }
+
+   return data;
+
+}
+
+
+
+《2》树型排序：又称锦标赛排序，首先对n个元素进行两两比较，然后在其中[n/2]个较小者再进行两两比较如此重复直至选出最小的关键字的纪录为止。（可用完全二差树表示）。缺点：辅助空间需求过大，和“最大值”进行多余比较
+
+《3》堆排序：（不适用于纪录数较少的文件）
+
+ 堆排序算法的过程如下:
+
+1)得到当前序列的最小(大)的元素
+
+2)把这个元素和最后一个元素进行交换,这样当前的最小(大)的元素就放在了序列的最后,而原先的最后一个元素放到了序列的最前面
+
+3)的交换可能会破坏堆序列的性质(注意此时的序列是除去已经放在最后面的元素),因此需要对序列进行调整,使之满足于上面堆的性质.
+
+重复上面的过程,直到序列调整完毕为止.
+
+js实现：
+
+<script>
+
+/**
+
+* 堆排序
+
+* @param items 数组
+
+* @return 排序后的数组
+
+*/
+
+   function heapSort(items)
+
+   {
+
+   items = array2heap(items); //将数组转化为堆
+
+   for(var i = items.length - 1; i >= 0; i--)
+
+   {
+
+      items = swap(items, 0, i); //将根和位置i的数据交换(用于将最大值放在最后面)
+
+      items = moveDown(items, 0, i - 1); //数据交换后恢复堆的属性
+
+   }
+
+   return items;
+
+   }
+
+   /**
+
+* 将数组转换为堆
+
+* @param items 数组
+
+* @return 堆
+
+*/
+
+   function array2heap(items)
+
+   {
+
+   for(var i = Math.ceil(items.length / 2) - 1; i >= 0; i--)
+
+   {
+
+      items = moveDown(items, i, items.length - 1); //转换为堆属性
+
+   }
+
+   return items;
+
+   }
+
+   /**
+
+* 转换为堆
+
+* @param items 数组
+
+* @param first 第一个元素
+
+* @param last 最后一个元素
+
+* @return 堆
+
+*/
+
+   function moveDown(items, first, last)
+
+   {
+
+   var largest = 2 * first + 1;
+
+   while(largest <= last)
+
+   {
+
+      if(largest < last && items[largest] < items[largest + 1])
+
+      {
+
+             largest++;
+
+      }
+
+      if(items[first] < items[largest])
+
+      {
+
+             items = swap(items, first, largest); // 交换数据
+
+             first = largest;   //往下移
+
+             largest = 2 * first + 1;
+
+      }
+
+      else
+
+      {
+
+             largest = last + 1; //跳出循环
+
+      }
+
+   }
+
+   return items;
+
+   }
+
+   /**
+
+* 交换数据
+
+* @param items 数组
+
+* @param index1 索引1
+
+* @param index2 索引2
+
+* @return 数据交换后的数组
+
+*/
+
+   function swap(items, index1, index2)
+
+   {
+
+   var tmp = items[index1];
+
+   items[index1] = items[index2];
+
+   items[index2] = tmp;
+
+   return items;
+
+   }
+
+   var a = [345,44,6,454,10,154,3,12,11,4,78,9,0,47,88,9453,4,65,1,5];
+
+   document.write(heapSort(a));
+
+</script>
+
+
+
+
+
+
+
+所谓归并就是将两个或者两个以上的有序表合成一个新的有序表。
+
+递归形式的算法在形式上较为简洁但实用性较差，与快速排序和堆排序相比，归并排序的最大特点是，它是一种稳定的排序方法。
+
+js实现归并：
+
+<script>
+
+function MemeryArray(Arr,n, Brr, m)
+
+{      var i, j, k;
+
+       var Crr=new Array();
+
+       i = j = k = 0;
+
+       while (i < n && j < m)
+
+       {
+
+              if (Arr[i] < Brr[j])
+
+                     Crr[k++] = Arr[i++];
+
+              else
+
+                     Crr[k++] = Brr[j++];
+
+       }
+
+       while (i < n)
+
+             Crr[k++] = Arr[i++];
+
+       while (j < m)
+
+             Crr[k++] = Brr[j++];
+
+return Crr;
+
+}
+
+var Arr=new Array(45,36,89,75,65);
+
+var Brr=new Array(48,76,59,49,25);
+
+alert(MemeryArray(Arr , Arr.length , Brr , Brr.length));
+
+</script>
+
+归并排序待续，先睡了：
+
+----------------------------------------------华丽丽的分割线-------------------------------------------------------------------------
+
+归并排序：
+
+<script>
+
+//将有二个有序数列a[first...mid]和a[mid...last]合并。
+
+function mergearray(Arr,first,mid,last,tempArr)
+
+{
+
+       var i = first, j = mid + 1;
+
+       var m = mid,   n = last;
+
+       var k = 0;
+
+       while (i <= m && j <= n)
+
+       {
+
+              if (Arr[i] < Arr[j])
+
+                     tempArr[k++] = Arr[i++];
+
+              else
+
+                     tempArr[k++] = Arr[j++];
+
+       }
+
+       while (i <= m)
+
+              tempArr[k++] = Arr[i++];
+
+       while (j <= n)
+
+              tempArr[k++] = Arr[j++];
+
+       for (i = 0; i < k; i++)
+
+              Arr[first + i] = tempArr[i];
+
+}
+
+function mergesort(Arr,first,last)
+
+{
+
+       var tempArr=new Array();
+
+       if (first < last)
+
+       {
+
+         var mid = (first + last)>>>1;
+
+         mergesort(Arr, first, mid, tempArr);    //左边有序
+
+         mergesort(Arr, mid + 1, last, tempArr);  //右边有序
+
+         mergearray(Arr, first, mid, last, tempArr);  //再将二个有序数列合并
+
+       }
+
+  return  Arr;
+
+}
+
+var Arr=new Array(1,65,45,98,56,78);
+
+alert(mergesort(Arr,0,Arr.length-1));
+
+</script>
+
+
+
+
+
+/*比较两个字符串的相似性－Levenshtein算法简介*/
+
+问题与描述：
+
+近似字符串匹配问题
+
+说明：设给定样本，对于任意文本串，样本P在文本T中的K-近似匹配（K-approximate match）是指P在T中包含最多K个差异的匹配，这里的差别指：
+
+（1）修改：P与T中对应的字符不同
+（2）删除：T中含有一个未出现在P中的字符
+（3）插入：T中不包含出现在P中的一个字符
+
+（也就是编辑距离问题）
+
+例如：
+T: a p r o x i o m a l l y　　
+P: a p p r o x i m a t l y
+经过 1：插入　 2：删除 3：修改
+那么 就是一个3-近似问题
+
+事实上，两个字符串可能有不得出不同的差别数量，所以K-近似匹配要求：
+（1）差别数最多为K个
+（2）差别数为所有匹配方式下最少的称为编辑距离
+（字符串T到P最少的差别数称为T和P的编辑距离）
+
+试验要求：
+（1）利用动态规划方法给出两个字符串编辑距离的算法
+（2）分析复杂度
+（3）考虑其它方法
+
+Levenshtein Distance 来文史特距离
+
+goodzzp
+
+　LD也叫edit distance，它用来表示2个字符串的相似度，不同于Hamming Distance，它可以用来比较2个长度不同的字符串。LD定义为需要最少多少步基本操作才能让2个字符串相等，基本操作包含3个：
+　1，插入；
+　2，删除；
+　3，替换；
+　比如，kiteen和sitting之间的距离可以这么计算：
+　1，kitten – > sitten, 替换k为s；
+　2，sitten – > sittin, 替换e为i;
+　3，sittin – > sitting, 增加g；
+　所以，其LD为3；
+　计算LD的算法表示为：
+　int LevenshteinDistance(char str1[1..lenStr1], char str2[1..lenStr2])
+　// d is a table with lenStr1+1 rows and lenStr2+1 columns
+　declare int d[0..lenStr1, 0..lenStr2]
+　// i and j are used to iterate over str1 and str2
+　declare int i, j, cost
+
+　for i from 0 to lenStr1
+　　d[i, 0] := i
+　for j from 0 to lenStr2
+　　d[0, j] := j
+
+　for i from 1 to lenStr1
+　　for j from 1 to lenStr2
+　　　if str1[i] = str2[j] then cost := 0
+　　　　　　　　　else cost := 1
+　　　d[i, j] := minimum(
+　　　　　　　　　d[i-1, j ] + 1,　 // deletion
+　　　　　　　　　d[i , j-1] + 1,　 // insertion
+　　　　　　　　　d[i-1, j-1] + cost　// substitution
+　　　　　　　　)
+
+　return d[lenStr1, lenStr2]；
+　这个算法其实就是一个矩阵的计算：
+　　 k i t t e n
+　 0 1 2 3 4 5 6
+　s 1 1 2 3 4 5 6
+　i 2 2 1 2 3 4 5
+　t 3 3 2 1 2 3 4
+　t 4 4 3 2 1 2 3
+　i 5 5 4 3 2 2 3
+　n 6 6 5 4 3 3 2
+　g 7 7 6 5 4 4 3
+　首先给定第一行和第一列，然后，每个值d[i,j]这样计算：d[i,j] = min(d[i-1,j]+ 1,d[i,j-1] +1,d[i-1,j-1]+(str1[i] == str2[j]?0:1));
+　最后一行，最后一列的那个值就是LD的结果。
+　LD(str1,str2) <= max(str1.len,str2.len)；
+
+　　有人提出了Levenshtein automaton（Levenshtein自动机）来计算和某个字符串距离小于某个值的集合。这样能够加快近似字符串的计算过程。见文献：Klaus U. Schulz, Stoyan Mihov, Fast String Correction with Levenshtein-Automata. International Journal of Document Analysis and Recognition, 5(1):67--85, 2002.
+
+A Guided Tour to Approximate String Matching GONZALO　NAVARRO
+　这篇文章里面对这个方面（字符串相似）进行了很多描述。其中，包含了动态规划法计算Edit distance的方法。
+
+-------------------------------------------华丽丽的分割线-------------------------------------------------------------------------
+
+js实现：
+
+<script>
+
+//求两个字符串的相似度,返回差别字符数,Levenshtein Distance算法实现
+
+function Levenshtein_Distance(s,t){
+
+　var n=s.length;// length of s
+
+　var m=t.length;// length of t
+
+　var d=[];// matrix
+
+　var i;// iterates through s
+
+　var j;// iterates through t
+
+　var s_i;// ith character of s
+
+　var t_j;// jth character of t
+
+　var cost;// cost
+
+　// Step 1
+
+　if (n == 0) return m;
+
+　if (m == 0) return n;
+
+　// Step 2
+
+　for (i = 0; i <= n; i++) {
+
+　　d[i]=[];
+
+　　d[i][0] = i;
+
+　}
+
+　for (j = 0; j <= m; j++) {
+
+　　d[0][j] = j;
+
+　}
+
+　// Step 3
+
+　for (i = 1; i <= n; i++) {
+
+　　s_i = s.charAt (i - 1);
+
+　　// Step 4
+
+　　for (j = 1; j <= m; j++) {
+
+　　　t_j = t.charAt (j - 1);
+
+　　　// Step 5
+
+　　　if (s_i == t_j) {
+
+　　　　cost = 0;
+
+　　　}else{
+
+　　　　cost = 1;
+
+　　　}
+
+　　　// Step 6
+
+　　　d[i][j] = Minimum (d[i-1][j]+1, d[i][j-1]+1, d[i-1][j-1] + cost);
+
+　　}
+
+　}
+
+　// Step 7
+
+　return d[n][m];
+
+}
+
+//求两个字符串的相似度,返回相似度百分比
+
+function Levenshtein_Distance_Percent(s,t){
+
+　var l=s.length>t.length?s.length:t.length;
+
+　var d=Levenshtein_Distance(s,t);
+
+　return (1-d/l).toFixed(4);
+
+}
+
+//求三个数字中的最小值
+
+function Minimum(a,b,c){
+
+　return a<b?(a<c?a:c):(b<c?b:c);
+
+}
+
+var str1="ddsddf",str2="xdsfsx";
+
+alert(Levenshtein_Distance_Percent(str1,str2));
+
+</script>
+
+
+一、jquery源码中常见的知识点
+　　1.string，number类型转换的快捷方法
+
+
+// @param s为字符串，n为数字
+function fn(obj){
+    //转换为String类型
+    var s = obj +"";
+    //转换为number类型
+    var n = +obj;
+}
+　　分享一个面试例子：
+//加会将其后面自动转换成字符串
+"64"+4="644"
+//减会将其自动转换成数字
+"64"-4=60
+　　2.bool类型转换
+　　!!obj，将其强制转换为bool类型
+
+
+alert(!!0)  //结果为false
+alert(!!"33dd")  //结果为true
+　　!obj，取相反的bool类型
+
+
+alert(!0)  //结果为true
+alert(!"222333")  //结果为false
+　　3.=== 与 ==区别
+　　=== 是严格相等，不会进行类型转换，而 == 是不严格相等，会进行类型转换。有些js的书中，建议开发人员永远不要用 == 或者 != 。
+　　但是jquery源码中，有用到“==”或者“!=”的情况 —— 判断 undefined 和 null 的时候。
+
+
+//这里的判断，将obj是null，obj是undefined都排除在外了
+if(obj != null){
+}
+　　4.检测obj是否为window对象
+
+
+//null == window.null为true
+function isWindow(obj){
+    return obj != null && obj == window.obj;
+}
+　　5.|| 与 && 用法技巧
+
+
+//例 var aa=5; name = aa || {} ; alert(name) 则name为55
+this.name = name || {} //如果name值存在，则值为name，反之为{}
+//例 var aa=5; name = aa && {} ; alert(name) 则name为{}，因为aa为5，不为0则为真
+this.name = bool && [] //如果bool为true，则值为[],反之则为bool
+　　经典实例:
+
+
+( window.foo || ( window.foo = "bar" ) );
+                alert(window.foo);  //弹出  bar
+//  为什么最后的结果是bar呢，其实可以看成是   undefined || bar  出来的结果肯定是bar
+　　6.setTimeout(fn,0)与setTimeout(fn)区别
+　　setTimeout(fn,0)与setTimeout(fn)都是延迟执行，但是setTimeout(fn)比setTimeout(fn,0)延迟时间还要长，例
+
+
+        function fn(){
+            var data = new Date();
+            for(var i=0;i<=1000;i++){
+                if(i==1000){
+                    console.log("fn="+data.getTime());
+                }
+            }
+        }
+        function fn1(){
+            var data = new Date();
+            for(var i=0;i<=1000;i++){
+                if(i==1000){
+                    console.log("fn1="+data.getTime());
+                }
+            }
+        }
+        setTimeout(fn,0),
+        setTimeout(fn1);
+　　结果：
+
+　　7.判断是否为数值
+
+
+function isNumeric(obj){
+return !isNaN(parseFloat(obj)) && isFinite(obj);
+}
+　　8.判断是否为空对象
+
+
+function isEmptyObject(){
+    var name;
+    //遍历不是空对象返回
+    for (name in obj) {
+        return false;
+    }
+    return true;
+}
+　　9.检测对象类型
+　　检测obj对象类型，返回类型,通过Object.prototype.toString()来判断类型，但是ie低版本兼容性有问题，因此采用{}.toString来监测，返回为[object Array],[object Object],[object Function]
+
+
+// 类型判断
+function isType(type){
+    return function(o){
+        return Object.prototype.toString.call(o) === '[object ' + type + ']';
+    }
+}
+var isString = isType(“String”);
+var isObject = isType("Object");
+var isArray = isType("Array");
+isString("I'm Barret Lee.");
+isArray([1,2,3])；
+isObject({});
+　　10.jquery里的去除空格trim妙用
+
+
+//相当于if (String.prototype.trim && “\uFEFF\xA0″.trim() !== “”)高级的浏览器已经支持原生的String的trim方法，但是pFan还为了避免它没法解析全角空白，所以加多了一个判断：”\uFEFF\xA0″.trim() !== “”
+vart core_version = "1.0",core_trim = core_version.trim;
+function trim(){
+    core_trim && !core_trim.call("\uFEFF\xA0") ?
+                    function (text) {
+                        return text == null ?
+                            "" :
+                            core_trim.call(text); //这里按我的理解应该为" ".trim.call(text),有点不明白转换为"1.1.0".trim.call(text)
+                    } :
+
+                    // 高级的浏览器已经支持原生的String的trim方法，如果浏览器不支持则采用
+                    function (text) {
+                        var  whitespace = "[\\x20\\t\\r\\n\\f]",
+                         rtrim = new RegExp("^" + whitespace + "+|((?:^|[^\\\\])(?:\\\\.)*)" + whitespace + "+$", "g");
+                        return text == null ?
+                            "" :
+                            (text + "").replace(rtrim, "");
+                    },
+                //nodeName函数是获取dom节点的节点名字或者判断其名字跟传入参数是否匹配
+                nodeName: function(elem,name){
+                     //IE下，DOM节点的nodeName是大写的，例如DIV
+                     return elem.nodeName && elem.nodeName.toLowerCase() === name.toLowerCase();
+                }
+}
+　　11.jquery中检测数组或者类数组中是否含存在传入的值
+
+
+/**
+    检查数组中是否存在传入的值，如果存在就返回值所在的位置，如果不存在就返回-1。
+    *elem 规定需检索的值。
+    *arr 数组
+    *i 可选的整数参数。规定在数组中开始检索的位置。它的合法取值是 0 到 arr.length - 1。如省略该参数，则将从数组首元素开始检索。
+    */
+function inArray(elem, arr, i){
+    var len;
+    if (arr) {
+        //如果浏览器支持Array拥有indexOf方法
+        if ([].indexOf) {
+            return [].indexOf.call(arr, elem, i);
+        }
+        len = arr.length;
+         //当i为负数的时候，从数组后边len+i的位置开始索引
+         //理解这个分成两个部分i = i ? (i < 0 ? Math.max(0, len + i) : i) : 0;，i=i为true，执行(i < 0 ? Math.max(0, len + i) : i)，反正执行i=0
+        i = i ? i < 0 ? Math.max(0, len + i) : i : 0;
+        for (; i < len; i++) {
+            // 双重检测防止类似这样的数组 ar = [];ar[1]=1;ar[0] = undefined; 0 in ar =false;a[0]===undefined;
+            // 0 in arr  => arr[0]是否存在  'nme' in arr => arr['nme']是否存在
+            if (i in arr && arr[i] === elem) {
+                return i;
+            }
+        }
+    }
+    return -1;
+}
+二、javascript中原型链常见的知识点
+　　1.hasOwnProperty()方法
+　　 使用hasOwnProperty()方法可以检测一个属性是存在与实例，还是存在于原型中。这个方法从Object继承，只在给定属性存在于对象实例中时，才会返回true。
+
+
+    function Person(){
+            this.age=25;
+            this.job="web";
+    }
+    Person.prototype={
+        name:'pingfan',
+        sayName:function(){
+                        alert(this.name);
+                }
+    }
+    var person1=new Person();
+    //来自构造函数，检测属性，也返回true
+    alert(person1.hasOwnProperty("age"));
+    //来自原型属性，返回false
+    alert(person1.hasOwnProperty("name"));
+    person1.name='ping';
+    //来自实例属性，返回true
+    alert(person1.hasOwnProperty("name"));
+　　2.通过instanceOf保证只实例一次
+
+
+ function shiCha(opt){
+    //只实例一次
+    if( !(this instanceof shiCha)){
+        return new shiCha(opt);
+    }
+}
+var shicha = shiCha();
+　　3.javascript中Array.prototype.slice.call(arguments)　　
+　　我们通常看到Array.prototype.slice.call(arguments,1)或者Array.prototype.slice.call(arguments)，都有点摸不着头脑，其实我们就是借助Array.prototype中slice()将arguments变成一个数组，并且使用该数组工作更方便，第二个参数是从索引值，开始将其变成数组，例Array.prototype.call("22223",2)和Array.prototype.call([1,2,3,4],2)，从字符串第二个开始。
+
+
+function sliArray(array){
+                        //输出为从索引1到索引3
+            return Array.prototype.slice.call(array,1,3);
+}
+alert(sliArray([1,2,3,4,5,6]))    //结果为2,3
+　　4. 利用空对象F，实现对象继承，效率最高
+
+
+//利用空对象做媒介，进行继承效果最佳
+function inhert(C,P){
+        var F=function(){};
+        F.protototype = P.prototype;
+        C.prototype = new F();
+        C.prototype.constructor = C;
+}
+三、javascript中常用方法集
+　　1. 常见的数组操作方法
+　　数组去重：
+
+
+//数组去重原型
+Array.prototype.unqie = function(){
+  var arr = this, len=this.length, obj={}, newArr=[];
+          while(len--){
+                   if(obj[ arr[len] ] !== arr[len]){
+                        obj[arr[len]] = arr[len];   newArr.push( arr[len]);
+                  }
+          }
+return newArr.reverse();
+}
+　　取数组中最大值：
+
+
+Array.prototype.arrMax=function(){
+                var arr=this, len=this.length,max=arr[0];
+                for(var i=1;i<len;i++){
+                        if(max<arr[i]){
+                                max=arr[i];
+                        }
+                }
+        return max;
+}
+//数组中通过sort取最大值
+　　Array.prototype.arrMax=function(){
+　　　　var arr=this;
+　　　　arr.sort(function(a,b){
+　　　　　　return a-b;
+　　　　})
+　　　　return arr[arr.length-1];
+　　}
+//利用Math.max取数组最大值
+Array.prototype.arrMax =function(){
+    var array = this;
+    return Math.max.apply(null, array);
+}
+alert([1,2,3,4,5,6,9,8,7,9].arrMax());
+　　取数组中最小值：
+
+
+//数组中最的小值
+Array.prototype.arrMin=function(){
+                var arr=this, len=this.length,min=arr[0];
+                for(var i=1;i<len;i++){
+                        if(min>arr[i]){
+                                min=arr[i];
+                        }
+                }
+        return min;
+}
+//数组中通过sort取最的小值
+Array.prototype.arrSortMin=function(){
+　　　　var arr=this;
+　　　　arr.sort(function(a,b){
+　　　　　　return a-b;
+　　　　})
+　　　　return arr[0];
+}
+//利用Math.max取数组最大值
+Array.prototype.arrSortMin =function(){
+    var array = this;
+    return Math.min.apply(null, array);
+}
+alert([1,2,3,4,5,6,9,8,7,9].arrSortMin());
+　　复制数组：
+
+
+Array.prototype.copy =
+  function() {
+    return [].concat(this);
+};
+　　去除数组中只指定元素，只能去除一个，如果想多个，之前先用unique处理：
+
+
+Array.prototype.remove = function(value){
+    for(var i=0,len=this.length;i<len;i++)
+    {
+        if(this[i]==value){
+            this.splice(i, 1);
+            break;
+        }
+    }
+
+    return this;
+}
+　　2.操作document.loaction的方法集（这里借用了园友总结的相关方法）
+
+
+pFan.url = { //#URL
+    //参数：变量名，url为空则表从当前页面的url中取
+    getQuery: function (name, url) {
+        var u = arguments[1] || window.location.search
+            , reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)")
+            , r = u.substr(u.indexOf("?") + 1).match(reg)
+        ;
+        return r != null ? r[2] : "";
+    }
+    , getHash: function (name, url) { //# 获取 hash值
+        var u = arguments[1] || location.hash;
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+        var r = u.substr(u.indexOf("#") + 1).match(reg);
+        if (r != null) {
+            return r[2];
+        }
+        return "";
+    }
+    , parse: function (url) { //# 解析URL
+        var a = document.createElement('a');
+        url = url || document.location.href;
+        a.href = url;
+        return {
+            source: url
+            , protocol: a.protocol.replace(':', '')
+            , host: a.hostname
+            , port: a.port
+            , query: a.search
+            , file: (a.pathname.match(/([^\/?#]+)$/i) || [, ''])[1]
+            , hash: a.hash.replace('#', '')
+            , path: a.pathname.replace(/^([^\/])/, '/$1')
+            , relative: (a.href.match(/tps?:\/\/[^\/]+(.+)/) || [, ''])[1]
+            , segments: a.pathname.replace(/^\//, '').split('/')
+        };
+    }
+};
+　　3.常用的正则表达式
+
+
+pFan.regExp = {  //# 字符串匹配
+    //是否为 数字！整数，浮点数
+    isNum: function (num) { //# 是否为数组
+        return !isNaN(num);
+    }
+    , isEmail: function (mail) {//# 是否为 邮箱
+        return /^([a-z0-9]+[_\-\.]?)*[a-z0-9]+@([a-z0-9]+[_\-\.]?)*[a-z0-9]+\.[a-z]{2,5}$/i.test(mail);
+    }
+    , isIdCard: function (card) { //# 是否为 身份证
+        return /^(\d{14}|\d{17})(\d|[xX])$/.test(card);
+    }
+    , isMobile: function (mobile) { //# 是否为 手机
+        return /^0*1\d{10}$/.test(mobile);
+    }
+    , isQQ: function (qq) { //# 是否为 QQ
+        return /^[1-9]\d{4,10}$/.test(qq);
+    }
+    , isTel: function (tel) { //# 是否为 电话
+        return /^\d{3,4}-\d{7,8}(-\d{1,6})?$/.text(tel);
+    }
+    , isUrl: function (url) { //# 是否为 URL
+        return /https?:\/\/[a-z0-9\.\-]{1,255}\.[0-9a-z\-]{1,255}/i.test(url);
+    }
+    , isColor: function (color) { //# 是否为 16进制颜色
+        return /#([\da-f]{3}){1,2}$/i.test(color);
+    }
+    //@id ： 身份证 ，
+    // @now : 当前时间 如：new Date('2013/12/12') , '2013/12/12'
+    // @age ： 允许的年龄
+    , isAdult: function (id, allowAge, now) { //# 是否年龄是否成年
+        var age = 0 // 用户 年月日
+            , nowDate = 0  //当前年月日
+        ;
+        allowAge = parseFloat(allowAge) || 18;
+        now = typeof now == 'string' ? new Date(now) : (now || new Date());
+        if (!this.isIdCard(id)) {
+            return false;
+        }
+        //15位身份证
+        if (15 == id.length) {
+            age = '19' + id.slice(6, 6);
+        } else {
+            age = id.slice(6, 14);
+        }
+        // 类型转换 整型
+        age = ~~age;
+        nowDate = ~~(Tydic.date.format('YYYYMMDD', now));
+        //比较年龄
+        if (nowDate - age < allowAge * 1e4) {
+            return false;
+        }
+        return true;
+    }
+    //浮点数
+    , isFloat: function (num) { //# 是否为 浮点数
+        return /^(([1-9]\d*)|(\d+\.\d+)|0)$/.test(num);
+    }
+    //正整数
+    , isInt: function (num) { //# 是否为 正整数
+        return /^[1-9]\d*$/.test(num);
+    }
+    //是否全为汉字
+    , isChinese: function (str) { //# 是否全为 汉字
+        return /^([\u4E00-\u9FA5]|[\uFE30-\uFFA0])+$/gi.test(str);
+    }
+};
+　　4.操作className的方法集
+
+
+PFan.conClass = {
+    hasClass:function(){
+        return ele.className.match(new RegExp('(\\s|^)'+cls+'(\\s|$)'));
+    },
+    addClass:function(){
+        if (!hasClass(ele,cls)) ele.className += " "+cls;
+    },
+    removeClass:function(){
+        if (hasClass(ele,cls)) {
+            var reg = new RegExp('(\\s|^)'+cls+'(\\s|$)');
+            ele.className=ele.className.replace(reg,' ');
+        }
+    }
+}
+　　5.操作字符串方法
+
+
+pFan.string = { //# 字符串
+    codeHtml: function (content) { //# 转义 HTML 字符
+        return this.replace(content, {
+            '&': "&"
+            , '"': """
+            , "'": '''
+            , '<': "<"
+            , '>': ">"
+            , ' ': " "
+            , '\t': "	"
+            , '(': "("
+            , ')': ")"
+            , '*': "*"
+            , '+': "+"
+            , ',': ","
+            , '-': "-"
+            , '.': "."
+            , '/': "/"
+            , '?': "?"
+            , '\\': "\"
+            , '\n': "<br>"
+        });
+    }
+    //重复字符串
+    , repeat: function (word, length, end) { //# 重复字符串
+        end = end || ''; //加在末位
+        length = ~~length;
+        return new Array(length * 1 + 1).join(word) + '' + end;
+    }
+    //增加前缀
+    , addPre: function (pre, word, size) { //# 补齐。如给数字前 加 0
+        pre = pre || '0';
+        size = parseInt(size) || 0;
+        word = String(word || '');
+        var length = Math.max(0, size - word.length);
+        return this.repeat(pre, length, word);
+    }
+    //去除两边空格
+    , trim: function (text) { //# 去除两边空格
+        return (text || '').replace(/^\s+|\s$/, '');
+    }
+     //去除左边空格
+    ,ltrim:function(){
+        return s.replace( /^(\s*|　*)/, "");
+    }
+    //去除右边空格
+    ,rtrim:function(){
+        return s.replace( /(\s*|　*)$/, "");
+    }
+    //返回脚本内容
+    ,evalscript:function(s) {
+        if(s.indexOf('<script') == -1) return s;
+        var p = /<script[^\>]*?>([^\x00]*?)<\/script>/ig;
+        var arr = [];
+        while(arr = p.exec(s)) {
+            var p1 = /<script[^\>]*?src=\"([^\>]*?)\"[^\>]*?(reload=\"1\")?(?:charset=\"([\w\-]+?)\")?><\/script>/i;
+            var arr1 = [];
+            arr1 = p1.exec(arr[0]);
+            if(arr1) {
+                appendscript(arr1[1], '', arr1[2], arr1[3]);
+            } else {
+                p1 = /<script(.*?)>([^\x00]+?)<\/script>/i;
+                arr1 = p1.exec(arr[0]);
+                appendscript('', arr1[2], arr1[1].indexOf('reload=') != -1);
+            }
+        }
+        return s;
+    }
+    //清除脚本内容
+    ,stripscript:function(){
+        return s.replace(/<script.*?>.*?<\/script>/ig, '');
+    }
+    //字符串替换
+    , replace: function (str, re) { //# 字符串替换
+        str = str || '';
+        for (var key in re) {
+            replace(key, re[key]);
+        };
+        function replace(a, b) {
+            var arr = str.split(a);
+            str = arr.join(b);
+        };
+        return str;
+    }
+    , xss: function (str, type) { //# XSS 转义
+        //空过滤
+        if (!str) {
+            return str === 0 ? "0" : "";
+        }
+        switch (type) {
+            case "html": //过滤html字符串中的XSS
+                return str.replace(/[&'"<>\/\\\-\x00-\x09\x0b-\x0c\x1f\x80-\xff]/g, function (r) {
+                    return "&#" + r.charCodeAt(0) + ";"
+                }).replace(/ /g, " ").replace(/\r\n/g, "<br />").replace(/\n/g, "<br />").replace(/\r/g, "<br />");
+                break;
+            case "htmlEp": //过滤DOM节点属性中的XSS
+                return str.replace(/[&'"<>\/\\\-\x00-\x1f\x80-\xff]/g, function (r) {
+                    return "&#" + r.charCodeAt(0) + ";"
+                });
+                break;
+            case "url": //过滤url
+                return escape(str).replace(/\+/g, "%2B");
+                break;
+            case "miniUrl":
+                return str.replace(/%/g, "%25");
+                break;
+            case "script":
+                return str.replace(/[\\"']/g, function (r) {
+                    return "\\" + r;
+                }).replace(/%/g, "\\x25").replace(/\n/g, "\\n").replace(/\r/g, "\\r").replace(/\x01/g, "\\x01");
+                break;
+            case "reg":
+                return str.replace(/[\\\^\$\*\+\?\{\}\.\(\)\[\]]/g, function (a) {
+                    return "\\" + a;
+                });
+                break;
+            default:
+                return escape(str).replace(/[&'"<>\/\\\-\x00-\x09\x0b-\x0c\x1f\x80-\xff]/g, function (r) {
+                    return "&#" + r.charCodeAt(0) + ";"
+                }).replace(/ /g, " ").replace(/\r\n/g, "<br />").replace(/\n/g, "<br />").replace(/\r/g, "<br />");
+                break;
+        }
+    }
+    // badword , 过滤敏感词
+    //@text : 要过滤的文本 , 类型 ：字符串
+    //@words : 敏感词 ，类型，数组, 如 ： ['你妹', '我丢' ,'我靠']
+    // 如果 用 正则匹配， text 长度 100万，words 100万，需要 4秒！
+    , badWord: function (text, words) { //# 敏感词过滤
+        text = String(text || '');
+        words = words || [];
+        var reg = new RegExp(words.join('|'), 'g')
+            , _self = this;
+        return text.replace(reg, function ($0) {
+            var length = String($0 || '').length;
+            return _self.repeat('*', length);
+        });
+    }
+};
+　　6.加密方法集
+
+
+pFan.encrypt = { //# 加密
+    md5: function (words) {  //# md5 哈希算法
+        /*
+         * Crypto-JS 3.1.2
+         * http://code.google.com/p/crypto-js
+         */
+        var CryptoJS = function (s, p) {
+            var m = {}, l = m.lib = {}, n = function () { }, r = l.Base = { extend: function (b) { n.prototype = this; var h = new n; b && h.mixIn(b); h.hasOwnProperty("init") || (h.init = function () { h.$super.init.apply(this, arguments) }); h.init.prototype = h; h.$super = this; return h }, create: function () { var b = this.extend(); b.init.apply(b, arguments); return b }, init: function () { }, mixIn: function (b) { for (var h in b) b.hasOwnProperty(h) && (this[h] = b[h]); b.hasOwnProperty("toString") && (this.toString = b.toString) }, clone: function () { return this.init.prototype.extend(this) } }, q = l.WordArray = r.extend({ init: function (b, h) { b = this.words = b || []; this.sigBytes = h != p ? h : 4 * b.length }, toString: function (b) { return (b || t).stringify(this) }, concat: function (b) { var h = this.words, a = b.words, j = this.sigBytes; b = b.sigBytes; this.clamp(); if (j % 4) for (var g = 0; g < b; g++) h[j + g >>> 2] |= (a[g >>> 2] >>> 24 - 8 * (g % 4) & 255) << 24 - 8 * ((j + g) % 4); else if (65535 < a.length) for (g = 0; g < b; g += 4) h[j + g >>> 2] = a[g >>> 2]; else h.push.apply(h, a); this.sigBytes += b; return this }, clamp: function () { var b = this.words, h = this.sigBytes; b[h >>> 2] &= 4294967295 << 32 - 8 * (h % 4); b.length = s.ceil(h / 4) }, clone: function () { var b = r.clone.call(this); b.words = this.words.slice(0); return b }, random: function (b) { for (var h = [], a = 0; a < b; a += 4) h.push(4294967296 * s.random() | 0); return new q.init(h, b) } }), v = m.enc = {}, t = v.Hex = { stringify: function (b) { var a = b.words; b = b.sigBytes; for (var g = [], j = 0; j < b; j++) { var k = a[j >>> 2] >>> 24 - 8 * (j % 4) & 255; g.push((k >>> 4).toString(16)); g.push((k & 15).toString(16)) } return g.join("") }, parse: function (b) { for (var a = b.length, g = [], j = 0; j < a; j += 2) g[j >>> 3] |= parseInt(b.substr(j, 2), 16) << 24 - 4 * (j % 8); return new q.init(g, a / 2) } }, a = v.Latin1 = { stringify: function (b) { var a = b.words; b = b.sigBytes; for (var g = [], j = 0; j < b; j++) g.push(String.fromCharCode(a[j >>> 2] >>> 24 - 8 * (j % 4) & 255)); return g.join("") }, parse: function (b) { for (var a = b.length, g = [], j = 0; j < a; j++) g[j >>> 2] |= (b.charCodeAt(j) & 255) << 24 - 8 * (j % 4); return new q.init(g, a) } }, u = v.Utf8 = { stringify: function (b) { try { return decodeURIComponent(escape(a.stringify(b))) } catch (g) { throw Error("Malformed UTF-8 data"); } }, parse: function (b) { return a.parse(unescape(encodeURIComponent(b))) } },
+                g = l.BufferedBlockAlgorithm = r.extend({ reset: function () { this._data = new q.init; this._nDataBytes = 0 }, _append: function (b) { "string" == typeof b && (b = u.parse(b)); this._data.concat(b); this._nDataBytes += b.sigBytes }, _process: function (b) { var a = this._data, g = a.words, j = a.sigBytes, k = this.blockSize, m = j / (4 * k), m = b ? s.ceil(m) : s.max((m | 0) - this._minBufferSize, 0); b = m * k; j = s.min(4 * b, j); if (b) { for (var l = 0; l < b; l += k) this._doProcessBlock(g, l); l = g.splice(0, b); a.sigBytes -= j } return new q.init(l, j) }, clone: function () { var b = r.clone.call(this); b._data = this._data.clone(); return b }, _minBufferSize: 0 }); l.Hasher = g.extend({ cfg: r.extend(), init: function (b) { this.cfg = this.cfg.extend(b); this.reset() }, reset: function () { g.reset.call(this); this._doReset() }, update: function (b) { this._append(b); this._process(); return this }, finalize: function (b) { b && this._append(b); return this._doFinalize() }, blockSize: 16, _createHelper: function (b) { return function (a, g) { return (new b.init(g)).finalize(a) } }, _createHmacHelper: function (b) { return function (a, g) { return (new k.HMAC.init(b, g)).finalize(a) } } }); var k = m.algo = {}; return m
+        }(Math);
+        (function (s) {
+            function p(a, k, b, h, l, j, m) { a = a + (k & b | ~k & h) + l + m; return (a << j | a >>> 32 - j) + k } function m(a, k, b, h, l, j, m) { a = a + (k & h | b & ~h) + l + m; return (a << j | a >>> 32 - j) + k } function l(a, k, b, h, l, j, m) { a = a + (k ^ b ^ h) + l + m; return (a << j | a >>> 32 - j) + k } function n(a, k, b, h, l, j, m) { a = a + (b ^ (k | ~h)) + l + m; return (a << j | a >>> 32 - j) + k } for (var r = CryptoJS, q = r.lib, v = q.WordArray, t = q.Hasher, q = r.algo, a = [], u = 0; 64 > u; u++) a[u] = 4294967296 * s.abs(s.sin(u + 1)) | 0; q = q.MD5 = t.extend({
+                _doReset: function () { this._hash = new v.init([1732584193, 4023233417, 2562383102, 271733878]) }, _doProcessBlock: function (g, k) {
+                    for (var b = 0; 16 > b; b++) { var h = k + b, w = g[h]; g[h] = (w << 8 | w >>> 24) & 16711935 | (w << 24 | w >>> 8) & 4278255360 } var b = this._hash.words, h = g[k + 0], w = g[k + 1], j = g[k + 2], q = g[k + 3], r = g[k + 4], s = g[k + 5], t = g[k + 6], u = g[k + 7], v = g[k + 8], x = g[k + 9], y = g[k + 10], z = g[k + 11], A = g[k + 12], B = g[k + 13], C = g[k + 14], D = g[k + 15], c = b[0], d = b[1], e = b[2], f = b[3], c = p(c, d, e, f, h, 7, a[0]), f = p(f, c, d, e, w, 12, a[1]), e = p(e, f, c, d, j, 17, a[2]), d = p(d, e, f, c, q, 22, a[3]), c = p(c, d, e, f, r, 7, a[4]), f = p(f, c, d, e, s, 12, a[5]), e = p(e, f, c, d, t, 17, a[6]), d = p(d, e, f, c, u, 22, a[7]), c = p(c, d, e, f, v, 7, a[8]), f = p(f, c, d, e, x, 12, a[9]), e = p(e, f, c, d, y, 17, a[10]), d = p(d, e, f, c, z, 22, a[11]), c = p(c, d, e, f, A, 7, a[12]), f = p(f, c, d, e, B, 12, a[13]), e = p(e, f, c, d, C, 17, a[14]), d = p(d, e, f, c, D, 22, a[15]), c = m(c, d, e, f, w, 5, a[16]), f = m(f, c, d, e, t, 9, a[17]), e = m(e, f, c, d, z, 14, a[18]), d = m(d, e, f, c, h, 20, a[19]), c = m(c, d, e, f, s, 5, a[20]), f = m(f, c, d, e, y, 9, a[21]), e = m(e, f, c, d, D, 14, a[22]), d = m(d, e, f, c, r, 20, a[23]), c = m(c, d, e, f, x, 5, a[24]), f = m(f, c, d, e, C, 9, a[25]), e = m(e, f, c, d, q, 14, a[26]), d = m(d, e, f, c, v, 20, a[27]), c = m(c, d, e, f, B, 5, a[28]), f = m(f, c, d, e, j, 9, a[29]), e = m(e, f, c, d, u, 14, a[30]), d = m(d, e, f, c, A, 20, a[31]), c = l(c, d, e, f, s, 4, a[32]), f = l(f, c, d, e, v, 11, a[33]), e = l(e, f, c, d, z, 16, a[34]), d = l(d, e, f, c, C, 23, a[35]), c = l(c, d, e, f, w, 4, a[36]), f = l(f, c, d, e, r, 11, a[37]), e = l(e, f, c, d, u, 16, a[38]), d = l(d, e, f, c, y, 23, a[39]), c = l(c, d, e, f, B, 4, a[40]), f = l(f, c, d, e, h, 11, a[41]), e = l(e, f, c, d, q, 16, a[42]), d = l(d, e, f, c, t, 23, a[43]), c = l(c, d, e, f, x, 4, a[44]), f = l(f, c, d, e, A, 11, a[45]), e = l(e, f, c, d, D, 16, a[46]), d = l(d, e, f, c, j, 23, a[47]), c = n(c, d, e, f, h, 6, a[48]), f = n(f, c, d, e, u, 10, a[49]), e = n(e, f, c, d,
+                                C, 15, a[50]), d = n(d, e, f, c, s, 21, a[51]), c = n(c, d, e, f, A, 6, a[52]), f = n(f, c, d, e, q, 10, a[53]), e = n(e, f, c, d, y, 15, a[54]), d = n(d, e, f, c, w, 21, a[55]), c = n(c, d, e, f, v, 6, a[56]), f = n(f, c, d, e, D, 10, a[57]), e = n(e, f, c, d, t, 15, a[58]), d = n(d, e, f, c, B, 21, a[59]), c = n(c, d, e, f, r, 6, a[60]), f = n(f, c, d, e, z, 10, a[61]), e = n(e, f, c, d, j, 15, a[62]), d = n(d, e, f, c, x, 21, a[63]); b[0] = b[0] + c | 0; b[1] = b[1] + d | 0; b[2] = b[2] + e | 0; b[3] = b[3] + f | 0
+                }, _doFinalize: function () { var a = this._data, k = a.words, b = 8 * this._nDataBytes, h = 8 * a.sigBytes; k[h >>> 5] |= 128 << 24 - h % 32; var l = s.floor(b / 4294967296); k[(h + 64 >>> 9 << 4) + 15] = (l << 8 | l >>> 24) & 16711935 | (l << 24 | l >>> 8) & 4278255360; k[(h + 64 >>> 9 << 4) + 14] = (b << 8 | b >>> 24) & 16711935 | (b << 24 | b >>> 8) & 4278255360; a.sigBytes = 4 * (k.length + 1); this._process(); a = this._hash; k = a.words; for (b = 0; 4 > b; b++) h = k[b], k[b] = (h << 8 | h >>> 24) & 16711935 | (h << 24 | h >>> 8) & 4278255360; return a }, clone: function () { var a = t.clone.call(this); a._hash = this._hash.clone(); return a }
+            }); r.MD5 = t._createHelper(q); r.HmacMD5 = t._createHmacHelper(q)
+        })(Math);
+        return CryptoJS.MD5(words).toString();
+    }
+    // sha1
+    , sha1: function (words) { //# sha1  哈希算法
+        var CryptoJS = function (e, m) { var p = {}, j = p.lib = {}, l = function () { }, f = j.Base = { extend: function (a) { l.prototype = this; var c = new l; a && c.mixIn(a); c.hasOwnProperty("init") || (c.init = function () { c.$super.init.apply(this, arguments) }); c.init.prototype = c; c.$super = this; return c }, create: function () { var a = this.extend(); a.init.apply(a, arguments); return a }, init: function () { }, mixIn: function (a) { for (var c in a) a.hasOwnProperty(c) && (this[c] = a[c]); a.hasOwnProperty("toString") && (this.toString = a.toString) }, clone: function () { return this.init.prototype.extend(this) } }, n = j.WordArray = f.extend({ init: function (a, c) { a = this.words = a || []; this.sigBytes = c != m ? c : 4 * a.length }, toString: function (a) { return (a || h).stringify(this) }, concat: function (a) { var c = this.words, q = a.words, d = this.sigBytes; a = a.sigBytes; this.clamp(); if (d % 4) for (var b = 0; b < a; b++) c[d + b >>> 2] |= (q[b >>> 2] >>> 24 - 8 * (b % 4) & 255) << 24 - 8 * ((d + b) % 4); else if (65535 < q.length) for (b = 0; b < a; b += 4) c[d + b >>> 2] = q[b >>> 2]; else c.push.apply(c, q); this.sigBytes += a; return this }, clamp: function () { var a = this.words, c = this.sigBytes; a[c >>> 2] &= 4294967295 << 32 - 8 * (c % 4); a.length = e.ceil(c / 4) }, clone: function () { var a = f.clone.call(this); a.words = this.words.slice(0); return a }, random: function (a) { for (var c = [], b = 0; b < a; b += 4) c.push(4294967296 * e.random() | 0); return new n.init(c, a) } }), b = p.enc = {}, h = b.Hex = { stringify: function (a) { var c = a.words; a = a.sigBytes; for (var b = [], d = 0; d < a; d++) { var f = c[d >>> 2] >>> 24 - 8 * (d % 4) & 255; b.push((f >>> 4).toString(16)); b.push((f & 15).toString(16)) } return b.join("") }, parse: function (a) { for (var c = a.length, b = [], d = 0; d < c; d += 2) b[d >>> 3] |= parseInt(a.substr(d, 2), 16) << 24 - 4 * (d % 8); return new n.init(b, c / 2) } }, g = b.Latin1 = { stringify: function (a) { var c = a.words; a = a.sigBytes; for (var b = [], d = 0; d < a; d++) b.push(String.fromCharCode(c[d >>> 2] >>> 24 - 8 * (d % 4) & 255)); return b.join("") }, parse: function (a) { for (var c = a.length, b = [], d = 0; d < c; d++) b[d >>> 2] |= (a.charCodeAt(d) & 255) << 24 - 8 * (d % 4); return new n.init(b, c) } }, r = b.Utf8 = { stringify: function (a) { try { return decodeURIComponent(escape(g.stringify(a))) } catch (c) { throw Error("Malformed UTF-8 data"); } }, parse: function (a) { return g.parse(unescape(encodeURIComponent(a))) } }, k = j.BufferedBlockAlgorithm = f.extend({ reset: function () { this._data = new n.init; this._nDataBytes = 0 }, _append: function (a) { "string" == typeof a && (a = r.parse(a)); this._data.concat(a); this._nDataBytes += a.sigBytes }, _process: function (a) { var c = this._data, b = c.words, d = c.sigBytes, f = this.blockSize, h = d / (4 * f), h = a ? e.ceil(h) : e.max((h | 0) - this._minBufferSize, 0); a = h * f; d = e.min(4 * a, d); if (a) { for (var g = 0; g < a; g += f) this._doProcessBlock(b, g); g = b.splice(0, a); c.sigBytes -= d } return new n.init(g, d) }, clone: function () { var a = f.clone.call(this); a._data = this._data.clone(); return a }, _minBufferSize: 0 }); j.Hasher = k.extend({ cfg: f.extend(), init: function (a) { this.cfg = this.cfg.extend(a); this.reset() }, reset: function () { k.reset.call(this); this._doReset() }, update: function (a) { this._append(a); this._process(); return this }, finalize: function (a) { a && this._append(a); return this._doFinalize() }, blockSize: 16, _createHelper: function (a) { return function (c, b) { return (new a.init(b)).finalize(c) } }, _createHmacHelper: function (a) { return function (b, f) { return (new s.HMAC.init(a, f)).finalize(b) } } }); var s = p.algo = {}; return p }(Math);
+        (function () { var e = CryptoJS, m = e.lib, p = m.WordArray, j = m.Hasher, l = [], m = e.algo.SHA1 = j.extend({ _doReset: function () { this._hash = new p.init([1732584193, 4023233417, 2562383102, 271733878, 3285377520]) }, _doProcessBlock: function (f, n) { for (var b = this._hash.words, h = b[0], g = b[1], e = b[2], k = b[3], j = b[4], a = 0; 80 > a; a++) { if (16 > a) l[a] = f[n + a] | 0; else { var c = l[a - 3] ^ l[a - 8] ^ l[a - 14] ^ l[a - 16]; l[a] = c << 1 | c >>> 31 } c = (h << 5 | h >>> 27) + j + l[a]; c = 20 > a ? c + ((g & e | ~g & k) + 1518500249) : 40 > a ? c + ((g ^ e ^ k) + 1859775393) : 60 > a ? c + ((g & e | g & k | e & k) - 1894007588) : c + ((g ^ e ^ k) - 899497514); j = k; k = e; e = g << 30 | g >>> 2; g = h; h = c } b[0] = b[0] + h | 0; b[1] = b[1] + g | 0; b[2] = b[2] + e | 0; b[3] = b[3] + k | 0; b[4] = b[4] + j | 0 }, _doFinalize: function () { var f = this._data, e = f.words, b = 8 * this._nDataBytes, h = 8 * f.sigBytes; e[h >>> 5] |= 128 << 24 - h % 32; e[(h + 64 >>> 9 << 4) + 14] = Math.floor(b / 4294967296); e[(h + 64 >>> 9 << 4) + 15] = b; f.sigBytes = 4 * e.length; this._process(); return this._hash }, clone: function () { var e = j.clone.call(this); e._hash = this._hash.clone(); return e } }); e.SHA1 = j._createHelper(m); e.HmacSHA1 = j._createHmacHelper(m) })();
+        return CryptoJS.SHA1(words).toString();
+    }
+    // time33 哈希
+    , time33: function (words) { //# time33 哈希算法
+        words = words || '';
+        //哈希time33算法
+        for (var i = 0, len = words.length, hash = 5381; i < len; ++i) {
+            hash += (hash << 5) + words.charAt(i).charCodeAt();
+        };
+        return hash & 0x7fffffff;
+    }
+}
+　　7.日期方法集？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？
+
+
+pFan.date = {
+    //返回时间戳
+    getTimeStamp:function(){
+        var timestamp=new Date().getTime();
+        return timestamp.toString();
+    },
+    //时间戳转为日期格式
+    //@nS为时间戳
+    getLocalTime: function(nS) {
+        return new Date(parseInt(nS) * 1000).toLocaleString().substr(0,17);
+    },
+    //@time , 时间 , 如 new Date('2013/11/10 0:12:12')
+    //@pre ， 星期的 前缀，如：周 ，星期
+    //@ nums ，如：一二三四五六日
+    getWeek: function (time, pre, nums) { //# 获取星期几
+        time = typeof time == 'string' ? this.parse(time) : (time || new Date());
+        pre = pre || '星期'; //周
+        nums = nums || '日一二三四五六';
+        return pre + nums[time.getDay()];
+    },
+    //@formatType : YYYY, YY, MM
+    //@ time : new Date('2013/11/12')
+    //@weeks : 日一二三四五六
+    format: function (formatType, time, weeks) { //格式化输出时间
+        var pre = '0',
+        formatType = formatType || 'YYYY-MM-DD',
+        weeks = weeks || '日一二三四五六',
+        time = time || new Date();
+        //格式化时间
+        return (formatType || '')
+            .replace(/yyyy|YYYY/g, time.getFullYear())
+            .replace(/yy|YY/g, Tydic.string.addPre(pre, time.getFullYear() % 100), 2)
+            .replace(/mm|MM/g, Tydic.string.addPre(pre, time.getMonth() + 1, 2))
+            .replace(/m|M/g, time.getMonth() + 1)
+            .replace(/dd|DD/g, Tydic.string.addPre(pre, time.getDate(), 2))
+            .replace(/d|D/g, time.getDate())
+            .replace(/hh|HH/g, Tydic.string.addPre(pre, time.getHours(), 2))
+            .replace(/h|H/g, time.getHours())
+            .replace(/ii|II/g, Tydic.string.addPre(pre, time.getMinutes(), 2))
+            .replace(/i|I/g, time.getMinutes())
+            .replace(/ss|SS/g, Tydic.string.addPre(pre, time.getSeconds(), 2))
+            .replace(/s|S/g, time.getSeconds())
+            .replace(/w/g, time.getDay())
+            .replace(/W/g, weeks[time.getDay()]);
+    }    
+}

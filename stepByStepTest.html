@@ -1,0 +1,31 @@
+<html>
+<head>
+    <title>step by step</title>
+    <style type="text/css">
+        #border {
+            width: 500px; height: 10px; border: 1px solid black; border-radius: 20px; position: relative
+        }
+
+        #bar {
+            position: absolute; background-color: red; height: 10px; border-radius: 20px; animation: mymove 6s infinite;
+            background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 0%, rgba(0, 0, 0, 0.2) 80%);
+        }
+
+        @keyframes mymove {
+            0% { width: 0; }
+            50% { width: 200px; }
+            100% { width: 0; }
+        }
+    </style>
+</head>
+<body>
+<div id="border">
+    <div id="bar"></div>
+</div>
+
+</body>
+<script type="text/javascript" src="../JS/jquery-1.10.2.min.js"></script>
+<script language="javascript" type="text/javascript">
+    //    $('#bar').animate({width: '+=200px'}, 6000);
+</script>
+</html>

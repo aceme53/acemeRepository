@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>webSqlTest</title>
+</head>
+<body onload="init()">
+<div>
+    <label for="select">下拉测试</label>
+    <select id="select"  style="width: 40px">
+        <option value="1">1  aaaaaaaaaaaaaaaaaaaaa</option>
+        <option value="2">2  aaaaaaaaaaaaaaaaaaaaa</option>
+        <option value="3">3  aaaaaaaaaaaaaaaaaaaaa</option>
+        <option value="4">4  aaaaaaaaaaaaaaaaaaaaa</option>
+    </select>
+</div>
+<table>
+    <tr>
+        <td><label for="name">姓名：</label></td>
+        <td><input type="text" id="name"></td>
+    </tr>
+    <tr>
+        <td><label for="memo">留言：</label></td>
+        <td><input type="text" id="memo"></td>
+    </tr>
+    <tr>
+        <td><label for="rowId">ID：</label></td>
+        <td><input type="text" id="rowId"></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>
+            <input type="button" value="保存" onclick="saveData()">
+            <input type="button" value="删除" onclick="delData()" style="float: right;">
+        </td>
+    </tr>
+</table>
+<hr>
+<table id="datatable" border="1">
+</table>
+
+<script>
+    /**
+     **  1、openDatabase：这个方法使用现有数据库或创建新数据库创建数据库对象。
+     ****  openDatabase方法打开一个已经存在的数据库，如果数据库不存在，它还可以创建数据库。几个参数意义分别是：
+     ****  1，数据库名称。
+     ****  2，版本号 目前为1.0,不管他，写死就OK。
+     ****  3，对数据库的描述。
+     ****  4，设置数据的大小。
+     ****  5，回调函数(可省略)。
+     ****  初次调用时创建数据库，以后就是建立连接了。
+     ****  创建的数据库就存在本地，路径如下：
+     ****  C:\Users\Administrator\AppData\Local\Google\Chrome\User Data\Default\databases\http_localhost_* 。
+     ****  创建的是一个sqllite数据库，可以用SQLiteSpy打开文件，可以看到里面的数据。SQLiteSpy是一个绿色软件，可以百度一下下载地址或SQLiteSpy官方下载：SQLiteSpy。
+     ** 2、transaction：这个方法允许我们根据情况控制事务提交或回滚。
+     ** 3、executeSql：这个方法用于执行真实的SQL查询。
+     ****  executeSql函数有四个参数，其意义分别是：
+     ****  1) 表示查询的字符串，使用的SQL语言是SQLite 3.6.19。（必选）
+     ****  2）插入到查询中问号所在处的字符串数据。（可选）
+     ****  3）成功时执行的回调函数。返回两个参数：tx和执行的结果。（可选）
+     ****  4）一个失败时执行的回调函数。返回两个参数：tx和失败的错误信息。（可选）
+     */
+    var datatable = null;
+    var db = openDatabase("MyData", "1.0", "My Database", 1024 * 100);
+    if (!db) {
+        console.error("数据库创建失败！");
+    } else {
+        console.info("数据库创建成功！");
+    }
+    function init() {
+        datatable = document.getElementById("datatable");
+        showAllData();
+    }
+    // click事件
+    function saveData() {
+        var name = document.getElementById("name").value;
+        var memo = document.getElementById("memo").value;
+        var time = new Date().getTime();
+        addData(name, memo, time);
+        showAllData();
+    }
+    function delData() {
+        var rowId = document.getElementById("rowId").value;
+        if (!rowId) alert("请输入ID");
+        db.transaction(
+            function (tx) {
+                tx.executeSql("delete from MyDataTable where id = ?", [rowId]
+                    , function (tx, rs) {
+                        alert("删除成功!");
+                    }, function (tx, er) {
+                        alert(er.source + "::" + er.message);
+                    })
+            });
+        showAllData();
+    }
+    // 插入本地数据
+    function addData(name, message, time) {
+        db.transaction(function (tx) {
+            tx.executeSql("INSERT INTO MyDataTable VALUES(?,?,?,?)",
+                [new Date().getTime(), name, message, time],
+                function (tx, rs) {
+                    alert("留言成功");
+                },
+                function (tx, er) {
+                    alert(er.source + "::" + er.message);
+                }
+            )
+        })
+    }
+    // 获取所有浏览数据
+    function showAllData() {
+        db.transaction(function (tx) {
+            tx.executeSql("CREATE TABLE IF NOT EXISTS MyDataTable(id INTEGER,name TEXT,message TEXT,time INTEGER)");
+            tx.executeSql("SELECT * FROM MyDataTable", [], function (tx, rs) {
+                removeAllData();
+                for (var i = 0; i < rs.rows.length; i++) {
+                    showData(rs.rows.item(i));
+                }
+            }, function (tx, er) {
+                console.error('创建表失败:' + er.message);
+            })
+        })
+    }
+    // 删除表格原有内容
+    function removeAllData() {
+        for (var i = datatable.childNodes.length - 1; i >= 0; i--) {
+            datatable.removeChild(datatable.childNodes[i]);
+        }
+        var tr = document.createElement("tr");
+        var th1 = document.createElement("th");
+        var th2 = document.createElement("th");
+        var th3 = document.createElement("th");
+        var th4 = document.createElement("th");
+        th1.innerHTML = "ID";
+        th2.innerHTML = "姓名";
+        th3.innerHTML = "留言";
+        th4.innerHTML = "时间";
+        tr.appendChild(th1);
+        tr.appendChild(th2);
+        tr.appendChild(th3);
+        tr.appendChild(th4);
+        datatable.appendChild(tr);
+    }
+    // 按照表格展现
+    function showData(row) {
+        var tr = document.createElement("tr");
+        var td1 = document.createElement("td");
+        td1.innerHTML = row.id;
+        var td2 = document.createElement("td");
+        td2.innerHTML = row.name;
+        var td3 = document.createElement("td");
+        td3.innerHTML = row.message;
+        var td4 = document.createElement("td");
+        var t = new Date();
+        t.setTime(row.time);
+        td4.innerHTML = t.toLocaleDateString() + " " + t.toLocaleTimeString();
+        tr.appendChild(td1);
+        tr.appendChild(td2);
+        tr.appendChild(td3);
+        tr.appendChild(td4);
+        datatable.appendChild(tr);
+    }
+
+</script>
+</body>
+</html>

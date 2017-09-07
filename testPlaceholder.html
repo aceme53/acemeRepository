@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>testPlaceholder</title>
+    <style type="text/css">
+        form { margin-top: 100px; position: relative; }
+        input {
+            border: 1px solid #5b5b5b;
+            border-radius: 10px;
+            height: 28px;
+            width: 300px;
+            outline: none;
+            text-indent: 1em;
+            position: absolute;
+            padding: 0;
+        }
+        input:focus { border: 1px solid deepskyblue; }
+        label {
+            position: absolute;
+            left: 1em;
+            color: #5b5b5b;
+            font-size: .9em;
+            height: 30px;
+            background-image: linear-gradient(to top, transparent 40%, white 40%, white 60%, transparent 60%, transparent 100%);
+            padding: 6px 5px 0 5px;
+            margin: 0;
+        }
+
+    </style>
+</head>
+<body>
+<div>
+    <form>
+        <input type="text" id="text"/>
+        <label for="text">请输入文字</label>
+    </form>
+</div>
+</body>
+<script type="application/javascript" src="jquery-1.10.2.min.js"></script>
+<script type="application/javascript">
+    $(document).ready(function () {
+        var $label = $('label');
+        var $input = $('input');
+        $input.focus(function () {
+            $label.css('color', 'deepskyblue');
+            $label.animate({marginTop: "-15px", fontSize: '0.8em'}, 500);
+        });
+        $input.blur(function () {
+            $label.css('color', '#5b5b5b');
+            if ($input.val()) return;
+            $label.animate({marginTop: "0", fontSize: '1em'}, 500);
+        });
+    });
+</script>
+</html>
