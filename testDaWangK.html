@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>大王卡</title>
+    <link rel="bookmark" type="image/x-icon" href="./myWebSite/image/logo.png"/>
+    <link rel="shortcut icon" href="./myWebSite/image/logo.png">
+    <link rel="icon" href="./myWebSite/image/logo.png">
+
+</head>
+<body>
+<iframe id="iframe" src="http://m.10010.com/mfront/views/my-order/main.html#/orderlist?oneKey=t"
+        width="100%" height="500px" style="overflow: hidden;"></iframe>
+</body>
+<script>
+    var reset = function () {
+        document.getElementById('iframe').setAttribute('src', 'http://m.10010.com/mfront/views/my-order/main.html#/orderlist?oneKey=t');
+//        setTimeout(remove, 3000);
+    };
+    var remove = function () {
+        document.getElementById('iframe').removeAttribute('src');
+        setTimeout(reset, 1000);
+    };
+    reset();
+</script>
+</html>

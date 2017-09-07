@@ -1,0 +1,42 @@
+.router {
+  color: #42b983;
+  font-size: x-large;
+  margin: 15px 0;
+  display: inline-block;
+}
+.router:after {
+  content: ' ';
+  clear: both;
+}
+label {
+  margin: 0;
+}
+input[type="checkbox"], input[type="checkbox"]:focus {
+  position: relative;
+  height: 20px;
+  width: 20px;
+  top: 5px;
+  box-shadow: none !important;
+  outline: 0;
+}
+
+input[type="checkbox"]:after {
+  content: ' ';
+  text-align: center;
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  background-color: rgb(70, 181, 255);
+  line-height: 20px;
+  font-weight: bold;
+  border-radius: 5px;
+  font-size: 20px;
+}
+input[type="checkbox"]:checked:after {
+  content: '\2714';
+  color: #fff;
+  transition: all 1s;
+  -moz-transition: all 1s; /* Firefox 4 */
+  -webkit-transition: all 1s; /* Safari and Chrome */
+  -o-transition: all 1s; /* Opera */
+}
