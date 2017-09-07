@@ -14,7 +14,7 @@ Vue.use(ElementUI);
 Vue.use(router);
 $.extend({
   testFunc: function () {
-    return '这是个全局方法'
+    return '这是个全局方法的'
   }
 });
 new Vue({
