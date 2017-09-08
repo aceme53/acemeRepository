@@ -3,13 +3,13 @@
     <el-row>
       <el-col>
         <el-menu :default-active="activeIndex2" mode="horizontal" @select="handleSelect">
-          <el-menu-item class="header-blank">米</el-menu-item>
-          <el-menu-item index="1">处理中心</el-menu-item>
-          <el-submenu index="2">
+          <el-menu-item index="0" class="header-blank">米</el-menu-item>
+          <el-menu-item index="Hello">Hello</el-menu-item>
+          <el-menu-item index="HelloWorld">HelloWorld</el-menu-item>
+          <el-submenu index="3">
             <template slot="title">我的工作台</template>
-            <el-menu-item index="2-1">选项1</el-menu-item>
-            <el-menu-item index="2-2">选项2</el-menu-item>
-            <el-menu-item index="2-3">选项3</el-menu-item>
+            <el-menu-item index="Hello">Hello</el-menu-item>
+            <el-menu-item index="HelloWorld">HelloWorld</el-menu-item>
           </el-submenu>
         </el-menu>
         <el-button type="danger" class="logout m-a-a" @click="logout('loginForm')">退出登录</el-button>
@@ -33,7 +33,8 @@
         this.$router.push({path: '/'});
       },
       handleSelect(key, keyPath) {
-        console.log(key, keyPath);
+        if (key === "0") return;
+        this.$router.push({path: '/index/' + key});
       }
     }
   }
@@ -45,9 +46,11 @@
     position: absolute;
   }
   .header-blank {
+    cursor: default !important;
+    border: none !important;
+    color: #ffffff !important;
     width: 15%;
     font-size: xx-large;
-    color: #ffffff;
     font-family: Arial, cursive;
     background: #56ccf2; /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #56ccf2, #2f80ed); /* Chrome 10-25, Safari 5.1-6 */

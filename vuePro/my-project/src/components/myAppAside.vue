@@ -2,14 +2,14 @@
   <div class="myAppAside">
     <el-row>
       <el-col :span="24">
-        <el-menu mode="vertical" default-active="1" theme="dark">
+        <el-menu mode="vertical" default-active="1" theme="dark" @select="handleSelect">
           <el-menu-item-group title="分组一">
-            <el-menu-item index="1"><i class="el-icon-message"></i>导航一</el-menu-item>
-            <el-menu-item index="2"><i class="el-icon-message"></i>导航二</el-menu-item>
+            <el-menu-item index="Hello"><i class="el-icon-message"></i>Hello</el-menu-item>
+            <el-menu-item index="HelloWorld"><i class="el-icon-message"></i>HelloWorld</el-menu-item>
           </el-menu-item-group>
           <el-menu-item-group title="分组二">
-            <el-menu-item index="3"><i class="el-icon-message"></i>导航三</el-menu-item>
-            <el-menu-item index="4"><i class="el-icon-message"></i>导航四</el-menu-item>
+            <el-menu-item index="Hello"><i class="el-icon-message"></i>Hello</el-menu-item>
+            <el-menu-item index="HelloWorld"><i class="el-icon-message"></i>HelloWorld</el-menu-item>
           </el-menu-item-group>
         </el-menu>
       </el-col>
@@ -20,14 +20,15 @@
 <script>
   export default{
     methods: {
-      handleOpen(key, keyPath) {
-        console.log(key, keyPath);
-      },
-      handleClose(key, keyPath) {
-        console.log(key, keyPath);
+      handleSelect(key, keyPath) {
+        if (key === "0") return;
+        this.$router.push({path: '/index/' + key});
       }
     }
   }
 </script>
 <style>
+  .myAppAside .el-menu-item {
+    text-align: left;
+  }
 </style>

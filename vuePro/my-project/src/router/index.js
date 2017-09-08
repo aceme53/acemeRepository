@@ -16,19 +16,18 @@ export default new Router({
       component: login,
     },
     {
-      path: '/Hello',
-      name: 'Hello',
-      component: Hello,
-    },
-    {
-      path: '/HelloWorld',
-      name: 'HelloWorld',
-      component: HelloWorld,
-    },
-    {
       path: '/index',
-      name: 'index',
       component: index,
+      children: [
+        {
+          path: '/index/HelloWorld',
+          component: HelloWorld,
+        },
+        {
+          path: '/index/Hello',
+          component: Hello,
+        }
+      ]
     }
   ]
 })
