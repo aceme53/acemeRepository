@@ -1,10 +1,20 @@
 <template>
   <div class="myAppCenter">
-    <el-radio class="radio" v-model="switchVal" label="HelloWorld">HelloWorld</el-radio>
-    <el-radio class="radio" v-model="switchVal" label="Hello">Hello</el-radio>
-    <Hello v-if="switchVal=='Hello'"></Hello>
-    <HelloWorld v-if="switchVal=='HelloWorld'"></HelloWorld>
-    <p class="clear"></p>
+    <div>
+      <el-radio class="radio" v-model="switchVal" label="HelloWorld">HelloWorld</el-radio>
+      <el-radio class="radio" v-model="switchVal" label="Hello">Hello</el-radio>
+      <transition name="el-fade-in-linear">
+        <div v-if="switchVal=='Hello'" class="transition-box">
+          <Hello></Hello>
+        </div>
+      </transition>
+      <transition name="el-fade-in">
+        <div v-if="switchVal=='HelloWorld'" class="transition-box">
+          <HelloWorld></HelloWorld>
+        </div>
+      </transition>
+      <div class="clear"></div>
+    </div>
   </div>
 </template>
 <script>
@@ -19,7 +29,7 @@
     },
     data () {
       return {
-        switchVal: 'Hello'
+        switchVal: 'HelloWorld'
       }
     }
   }

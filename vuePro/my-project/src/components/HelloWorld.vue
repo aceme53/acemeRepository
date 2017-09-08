@@ -17,11 +17,17 @@
     height: 100%;
     font-size: smaller;
   }
+  .tdText {
+    text-align: left;
+    padding: 5px;
+    font-size: larger;
+    color: red;
+  }
 </style>
 <template>
   <div class="HelloWorld">
     <h1>{{title + ' ' + reversedTitle}}</h1>
-    <el-button @click="title=='ziksang'?title='HelloWorld':title='ziksang'">改变title值</el-button>
+    <el-button @click="title=='ziksang'?title='HelloWorld':title='ziksang'" type="info">改变title值</el-button>
     <h1>{{ msg | capitalize}}</h1>
     <table class="testTable" border="1">
       <thead>
@@ -32,20 +38,37 @@
       </thead>
       <tbody>
       <tr>
+        <td><label>多选控件</label></td>
+        <td>
+          <el-row>
+            <el-select v-model="groceryList" multiple placeholder="请选择" filterable allow-create>
+              <el-option
+                v-for="item in options"
+                :key="item.text"
+                :label="item.text"
+                :value="item.text">
+              </el-option>
+            </el-select>
+          </el-row>
+          <el-row>
+            <div>
+              <ol style="max-width: 200px;text-align: center;margin: auto auto;">
+                <todo-item
+                  v-for="item in groceryList"
+                  v-bind:todo="item"
+                  v-bind:key="item">{{item}}
+                </todo-item>
+              </ol>
+            </div>
+          </el-row>
+        </td>
+      </tr>
+      <tr>
         <td><label>for循环</label></td>
         <td>
           <span>
             <a v-for='(url , index) in urlList' :href='url.url | getquery(url.name,url.age)'>{{url.url}}<br></a>
           </span>
-          <span>
-              <ol style="max-width: 200px;text-align: center;margin: auto auto;">
-                <todo-item
-                  v-for="item in groceryList"
-                  v-bind:todo="item"
-                  v-bind:key="item.id">
-                </todo-item>
-              </ol>
-            </span>
         </td>
       </tr>
       <tr>
@@ -53,7 +76,14 @@
           <label for="r1" v-bind:class="{'checkedClass': isChecked}">勾选变色</label>
         </td>
         <td>
-          <input type="checkbox" v-model="isChecked" id="r1"><span v-if="isChecked">现在你看到我了</span>
+          <el-row>
+            <el-col :span="6">
+              <el-checkbox v-model="isChecked" id="r1"></el-checkbox>
+            </el-col>
+            <el-col :span="18">
+              <div v-if="isChecked" class="tdText">现在你看到我了</div>
+            </el-col>
+          </el-row>
         </td>
       </tr>
       <tr>
@@ -95,20 +125,17 @@
       </tr>
       </tbody>
     </table>
+    <div class="clear"></div>
   </div>
 </template>
 <script>
   import Vue from 'vue';
-  import Hello from '@/components/Hello'
   Vue.component('todo-item', {
     props: ['todo'],
-    template: '<li>{{ todo.text }}</li>'
+    template: '<li>{{ todo }}</li>'
   });
   export default {
     name: 'myAppCenter',
-    components: {
-      "Hello": Hello
-    },
     data () {
       return {
         switchVal: true,
@@ -119,11 +146,23 @@
           g: 100,
           b: 100
         },
-        groceryList: [
-          {id: 0, text: '蔬菜'},
-          {id: 1, text: '奶酪'},
-          {id: 2, text: '随便其他什么人吃的东西'}
-        ],
+        options: [{
+          id: '选项1',
+          text: '黄金糕'
+        }, {
+          id: '选项2',
+          text: '双皮奶'
+        }, {
+          id: '选项3',
+          text: '蚵仔煎'
+        }, {
+          id: '选项4',
+          text: '龙须面'
+        }, {
+          id: '选项5',
+          text: '北京烤鸭'
+        }],
+        groceryList: [],
         msg: '回车反向排序',
         message: '<h3>这是个测试</h3>',
         checked: false,
