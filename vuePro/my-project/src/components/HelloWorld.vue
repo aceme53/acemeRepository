@@ -7,9 +7,11 @@
   }
   .testTable {
     margin: auto auto;
+    width: 90%;
   }
   .testTable td {
     min-width: 300px;
+    min-height: 50px;
     padding: 3px;
   }
   .testTable td input[type='text'] {
@@ -44,9 +46,10 @@
             <el-select v-model="groceryList" multiple placeholder="请选择" filterable allow-create>
               <el-option
                 v-for="item in options"
-                :key="item.text"
-                :label="item.text"
-                :value="item.text">
+                :key="item.label"
+                :label="item.label"
+                :value="item.label"
+                :disabled="item.disabled">
               </el-option>
             </el-select>
           </el-row>
@@ -109,6 +112,9 @@
         </td>
       </tr>
       <tr>
+        <td v-bind:style="{color: 'rgb('+(color.r||0)+','+(color.g||0)+','+(color.b||0)+')'}">
+          <b style="font-size: x-large">颜色编辑</b>
+        </td>
         <td>
           <label>
             R
@@ -119,8 +125,53 @@
             <el-input-number :min="0" :max="255" v-model="color.b"></el-input-number>
           </label>
         </td>
-        <td v-bind:style="{color: 'rgb('+(color.r||0)+','+(color.g||0)+','+(color.b||0)+')'}">
-          <b style="font-size: x-large">颜色编辑</b>
+      </tr>
+      <tr>
+        <td>
+          <label>有输入框的滑块</label>
+        </td>
+        <td>
+          <el-row>
+            <el-col :span="2">&nbsp;</el-col>
+            <el-col :span="20">
+              <el-slider v-model="sliderVal" :step="20" show-stops show-input></el-slider>
+            </el-col>
+            <el-col :span="2">&nbsp;</el-col>
+          </el-row>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label>带快捷选项的时间控件</label>
+        </td>
+        <td>
+          <el-row>
+            <el-col :span="2">&nbsp;</el-col>
+            <el-col :span="20">
+              <el-date-picker v-model="dateTimeRangeVal" type="datetimerange" :picker-options="pickerOptions"
+                              placeholder="选择时间范围"
+                              align="right">
+              </el-date-picker>
+            </el-col>
+            <el-col :span="2">&nbsp;</el-col>
+          </el-row>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label>文件上传</label>
+        </td>
+        <td>
+          <el-upload
+            action="https://jsonplaceholder.typicode.com/posts/"
+            list-type="picture-card"
+            :on-preview="handlePictureCardPreview"
+            :on-remove="handleRemove">
+            <i class="el-icon-plus"></i>
+          </el-upload>
+          <el-dialog v-model="dialogVisible" size="tiny">
+            <img :src="dialogImageUrl" alt="">
+          </el-dialog>
         </td>
       </tr>
       </tbody>
@@ -142,26 +193,31 @@
         isChecked: false,
         title: 'HelloWorld!',
         color: {
-          r: 100,
+          r: 255,
           g: 100,
           b: 100
         },
-        options: [{
-          id: '选项1',
-          text: '黄金糕'
-        }, {
-          id: '选项2',
-          text: '双皮奶'
-        }, {
-          id: '选项3',
-          text: '蚵仔煎'
-        }, {
-          id: '选项4',
-          text: '龙须面'
-        }, {
-          id: '选项5',
-          text: '北京烤鸭'
-        }],
+        options: [
+          {
+            value: '禁用选项',
+            label: '禁用选项',
+            disabled: true
+          }, {
+            value: '选项1',
+            label: '黄金糕'
+          }, {
+            value: '选项2',
+            label: '双皮奶'
+          }, {
+            value: '选项3',
+            label: '蚵仔煎'
+          }, {
+            value: '选项4',
+            label: '龙须面'
+          }, {
+            value: '选项5',
+            label: '北京烤鸭'
+          }],
         groceryList: [],
         msg: '回车反向排序',
         message: '<h3>这是个测试</h3>',
@@ -170,12 +226,50 @@
         urlList: [
           {url: 'http://www.baidu.com', name: 'ziksang', age: 20},
           {url: 'http://www.google.com', name: 'ziksang2', age: 30}
-        ]
+        ],
+        sliderVal: 0,
+        pickerOptions: {
+          shortcuts: [{
+            text: '最近一周',
+            onClick(picker) {
+              const end = new Date();
+              const start = new Date();
+              start.setTime(start.getTime() - 3600 * 1000 * 24 * 7);
+              picker.$emit('pick', [start, end]);
+            }
+          }, {
+            text: '最近一个月',
+            onClick(picker) {
+              const end = new Date();
+              const start = new Date();
+              start.setTime(start.getTime() - 3600 * 1000 * 24 * 30);
+              picker.$emit('pick', [start, end]);
+            }
+          }, {
+            text: '最近三个月',
+            onClick(picker) {
+              const end = new Date();
+              const start = new Date();
+              start.setTime(start.getTime() - 3600 * 1000 * 24 * 90);
+              picker.$emit('pick', [start, end]);
+            }
+          }]
+        },
+        dateTimeRangeVal: [new Date(), new Date(new Date().getTime() + 1000 * 60 * 60 * 24 * 5)],
+        dialogImageUrl: '',
+        dialogVisible: false
       }
     },
     methods: {
       keyDownFunc: function () {
         this.msg = this.msg.split('').reverse().join('')
+      },
+      handleRemove(file, fileList) {
+        console.log(file, fileList);
+      },
+      handlePictureCardPreview(file) {
+        this.dialogImageUrl = file.url;
+        this.dialogVisible = true;
       }
     },
     filters: {

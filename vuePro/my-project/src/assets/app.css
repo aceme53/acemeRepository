@@ -19,7 +19,6 @@ input[type="checkbox"], input[type="checkbox"]:focus {
   box-shadow: none !important;
   outline: 0;
 }
-
 input[type="checkbox"]:after {
   content: ' ';
   text-align: center;
@@ -39,4 +38,7 @@ input[type="checkbox"]:checked:after {
   -moz-transition: all 1s; /* Firefox 4 */
   -webkit-transition: all 1s; /* Safari and Chrome */
   -o-transition: all 1s; /* Opera */
+}
+td input[class="el-upload__input"] {
+  display: none;
 }
