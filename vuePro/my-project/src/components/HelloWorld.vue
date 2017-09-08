@@ -162,8 +162,9 @@
           <label>文件上传</label>
         </td>
         <td>
+          <!--https://jsonplaceholder.typicode.com/posts/-->
           <el-upload
-            action="https://jsonplaceholder.typicode.com/posts/"
+            action=""
             list-type="picture-card"
             :on-preview="handlePictureCardPreview"
             :on-remove="handleRemove">
