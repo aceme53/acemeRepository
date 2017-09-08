@@ -10,9 +10,9 @@
   </div>
 </template>
 <script>
-  import myAppHeader from '@/components/testPage/myAppHeader'
-  import myAppAside from '@/components/testPage/myAppAside'
-  import myAppCenter from '@/components/testPage/myAppCenter'
+  import myAppHeader from '@/components/myAppHeader'
+  import myAppAside from '@/components/myAppAside'
+  import myAppCenter from '@/components/myAppCenter'
   export default {
     name: 'myApp',
     components: {
@@ -39,21 +39,16 @@
   }
 </script>
 <style>
-  .myApp {
-    min-height: 100%;
-    background-color: lightcyan;
-  }
-  .myApp-container {
-    min-height: 90%;
-  }
+  .myApp { min-height: 100%; }
+  .myApp-container { min-height: 90%; }
   .myAppHeader {
-    background-color: lightblue; height: 10%; min-height: 60px; float: left; width: 100%;
+    background-color: rgba(173, 216, 230, 0.3); height: 10%; min-height: 60px; float: left; width: 100%;
   }
   .myAppAside {
-    background-color: lightcoral; float: left; width: 15%; min-height: 90%;
+    background-color: rgba(240, 128, 128, 0.3); float: left; width: 15%; min-height: 90%;
   }
   .myAppCenter {
-    background-color: lightskyblue; float: left; width: 85%; min-height: 90%;
+    background-color: rgba(206, 255, 206, 0.3); float: left; width: 85%; min-height: 90%;
   }
   .clear {
     clear: both;

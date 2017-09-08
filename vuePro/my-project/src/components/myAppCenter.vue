@@ -1,10 +1,9 @@
 <template>
   <div class="myAppCenter">
-    <el-switch v-model="switchVal" width="120"  on-text="HelloWorld" off-text="Hello" on-color="#13ce66"
-               off-color="#ff4949">
-    </el-switch>
-    <Hello v-if="!switchVal"></Hello>
-    <HelloWorld v-if="switchVal"></HelloWorld>
+    <el-radio class="radio" v-model="switchVal" label="HelloWorld">HelloWorld</el-radio>
+    <el-radio class="radio" v-model="switchVal" label="Hello">Hello</el-radio>
+    <Hello v-if="switchVal=='Hello'"></Hello>
+    <HelloWorld v-if="switchVal=='HelloWorld'"></HelloWorld>
     <p class="clear"></p>
   </div>
 </template>
@@ -20,7 +19,7 @@
     },
     data () {
       return {
-        switchVal: true
+        switchVal: 'Hello'
       }
     }
   }
