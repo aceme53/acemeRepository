@@ -18,7 +18,6 @@
   </div>
 </template>
 <script>
-  import Vue from 'vue';
   import Hello from '@/components/Hello'
   import HelloWorld from '@/components/HelloWorld'
   export default {

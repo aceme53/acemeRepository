@@ -2,7 +2,7 @@
   <div class="myAppAside">
     <el-row>
       <el-col :span="24">
-        <el-menu mode="vertical" default-active="1">
+        <el-menu mode="vertical" default-active="1" theme="dark">
           <el-menu-item-group title="分组一">
             <el-menu-item index="1"><i class="el-icon-message"></i>导航一</el-menu-item>
             <el-menu-item index="2"><i class="el-icon-message"></i>导航二</el-menu-item>
