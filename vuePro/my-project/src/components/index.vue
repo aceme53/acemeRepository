@@ -26,7 +26,7 @@
     mounted: function () {
       let $w = $(window);
       let reHeight = function () {
-        let $l = $('.myAppAside');
+        let $l = $('.myAppAside .el-menu');
         let $r = $('.myAppCenter');
         let $h = $('.myAppHeader');
         let Max = Math.max($l.height(), $r.height(), ($w.height() - $h.height()));
@@ -41,8 +41,11 @@
 <style>
   .myApp { min-height: 100%; }
   .myApp-container { min-height: 90%; }
+  .m-h-60 {
+    min-height: 60px;
+  }
   .myAppHeader {
-    background-color: rgba(173, 216, 230, 0.3); height: 10%; min-height: 60px; float: left; width: 100%;
+    background-color: rgba(173, 216, 230, 0.3); height: 10%;  float: left; width: 100%;
   }
   .myAppAside {
     background-color: rgba(240, 128, 128, 0.3); float: left; width: 15%; min-height: 90%;
