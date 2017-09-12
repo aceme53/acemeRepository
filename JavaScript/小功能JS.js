@@ -1,3 +1,4 @@
+//<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7"/>
 /**
  * 自动滚屏
  * @param direction 滚动方向
