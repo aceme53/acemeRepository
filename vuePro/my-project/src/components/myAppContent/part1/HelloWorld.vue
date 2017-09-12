@@ -187,7 +187,7 @@
     template: '<li>{{ todo }}</li>'
   });
   export default {
-    name: 'myAppCenter',
+    name: 'myAppContent',
     data () {
       return {
         switchVal: true,

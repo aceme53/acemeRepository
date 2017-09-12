@@ -2,14 +2,16 @@
   <div class="myAppHeader m-h-60">
     <el-row>
       <el-col>
-        <el-menu :default-active="activeIndex2" mode="horizontal" @select="handleSelect">
+        <el-menu :default-active="activeIndex" mode="horizontal" @select="handleSelect">
           <el-menu-item index="0" class="header-blank">米</el-menu-item>
-          <el-menu-item index="Hello">Hello</el-menu-item>
-          <el-menu-item index="HelloWorld">HelloWorld</el-menu-item>
+          <!--
+          <el-menu-item index="part1">模块一</el-menu-item>
+          <el-menu-item index="part2">模块二</el-menu-item>
+          -->
           <el-submenu index="3">
             <template slot="title">我的工作台</template>
-            <el-menu-item index="Hello">Hello</el-menu-item>
-            <el-menu-item index="HelloWorld">HelloWorld</el-menu-item>
+            <el-menu-item index="part1">模块一</el-menu-item>
+            <el-menu-item index="part2">模块二</el-menu-item>
           </el-submenu>
         </el-menu>
         <el-button type="danger" class="logout m-a-a" @click="logout('loginForm')">退出登录</el-button>
@@ -24,8 +26,7 @@
     name: 'myAppHeader',
     data () {
       return {
-        activeIndex: '1',
-        activeIndex2: '1'
+        activeIndex: '1'
       };
     },
     methods: {

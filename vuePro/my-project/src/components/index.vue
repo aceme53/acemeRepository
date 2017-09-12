@@ -2,8 +2,7 @@
   <div class="myApp">
     <myAppHeader></myAppHeader>
     <div class="myApp-container">
-      <myAppAside></myAppAside>
-      <myAppCenter></myAppCenter>
+      <myAppContent></myAppContent>
       <div class="clear"></div>
     </div>
     <div class="clear"></div>
@@ -11,30 +10,30 @@
 </template>
 <script>
   import myAppHeader from '@/components/myAppHeader'
-  import myAppAside from '@/components/myAppAside'
-  import myAppCenter from '@/components/myAppCenter'
+  import myAppContent from '@/components/myAppContent'
   export default {
     name: 'myApp',
     components: {
       "myAppHeader": myAppHeader,
-      "myAppAside": myAppAside,
-      "myAppCenter": myAppCenter
+      "myAppContent": myAppContent
     },
     data () {
       return {}
     },
     mounted: function () {
       let $w = $(window);
-      let reHeight = function () {
-        let $l = $('.myAppAside .el-menu');
+      global.refreshHeight = function () {
+        let $w = $(window);
+        let $l = $($('.myAppAside .el-menu').get(0));
         let $r = $('.myAppCenter');
         let $h = $('.myAppHeader');
         let Max = Math.max($l.height(), $r.height(), ($w.height() - $h.height()));
         $r.css("min-height", Max);
         $l.css("min-height", Max);
       };
-      $w.scroll(reHeight);
-      reHeight();
+      $w.scroll(global.refreshHeight);
+      $w.resize(global.refreshHeight);
+      global.refreshHeight();
     }
   }
 </script>
@@ -45,13 +44,20 @@
     min-height: 60px;
   }
   .myAppHeader {
-    background-color: rgba(173, 216, 230, 0.3); height: 10%;  float: left; width: 100%;
+    background-color: rgba(173, 216, 230, 0.3); height: 10%; float: left; width: 100%;
   }
   .myAppAside {
     background-color: rgba(240, 128, 128, 0.3); float: left; width: 15%; min-height: 90%;
   }
   .myAppCenter {
-    background-color: rgba(206, 255, 206, 0.3); float: left; width: 85%; min-height: 90%;
+    background-color: rgba(206, 255, 206, 0.3); float: right; width: 85%; min-height: 90%;
+  }
+  .myAppContent {
+    float: left; width: 100%; min-height: 90%;
+  }
+  .myAppAside .el-menu-item, .myAppAside .el-submenu__title,
+  .myAppAside .el-menu-item-group__title {
+    text-align: left;
   }
   .clear {
     clear: both;

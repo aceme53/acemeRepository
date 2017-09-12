@@ -40,7 +40,7 @@
           return callback(new Error('用户名不能为空'));
         }
         setTimeout(() => {
-          if (value && value.toString().trim().length < 6) {
+          if (value && value.toString().trim().length < 5) {
             callback(new Error('用户名最小长度为六位'));
           } else {
             callback();
@@ -52,9 +52,9 @@
           callback(new Error('请输入密码'));
         }
         setTimeout(() => {
-          if (!/^[a-zA-Z]\w{5}$/.test(value)) {
-            callback(new Error('密码应以英文开头，长度应为六位'));
-          } else {
+          if (value && value.toString().trim().length < 6) {
+            callback(new Error('密码最小长度为六位'));
+          }else {
             callback();
           }
         }, 0);
