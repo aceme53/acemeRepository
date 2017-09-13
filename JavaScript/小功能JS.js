@@ -428,6 +428,25 @@ console.log('函数外const定义bb：' + bb);//有输出值
  */
 /***************************************************************************************************************/
 /**
+ * apply 和 call
+ */
+function addFunc(a, b) {
+    if (typeof this === 'function') this(a, b); //2  将addFunc执行的上下文由window切换为subFunc，即this指向是从window变为subFunc
+    console.log(a + b); //4
+}
+function subFunc(a, b) {
+    console.log(a - b);
+}
+console.info('====  1  ====');
+addFunc.call(subFunc, 3, 1);
+console.info('====  2  ====');
+addFunc.apply(subFunc, [3, 1]);
+console.info('====  3  ====');
+addFunc.call({}, 3, 1);
+console.info('====  4  ====');
+addFunc.apply(window, [3, 1]);
+/***************************************************************************************************************/
+/**
  * 复制对象
  */
 var x = {

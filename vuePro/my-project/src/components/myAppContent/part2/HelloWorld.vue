@@ -249,6 +249,12 @@
           }, {
             text: '最近三个月',
             onClick(picker) {
+              loop2: for (var x = 0; x < 6; x++) {
+                loop1: for (var i = 1; i < 5; i++) {
+                  console.info('x', x, '--------  j', i);
+                  if (i == 3) return;
+                }
+              }
               const end = new Date();
               const start = new Date();
               start.setTime(start.getTime() - 3600 * 1000 * 24 * 90);
