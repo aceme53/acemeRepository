@@ -52,8 +52,8 @@
   .myAppHeader { background-color: rgb(1, 124, 206); color: #FFF; float: left; width: 100%; position: fixed; z-index: 5; }
   .myAppHeader .el-menu, .myAppHeader .el-submenu__title { background-color: transparent !important; color: white !important; }
   .myAppAside { float: left; width: 15%; min-height: 90%; position: fixed; top: 60px; z-index: 5; }
-  .myAppCenter { float: right; width: 85%; min-height: 90%; }
-  .myAppContent { float: left; width: 100%; min-height: 90%; }
+  .myAppCenter { background-color: rgb(237, 255, 239); float: right; width: 85%; min-height: 90%; }
+  .myAppContent { float: left; width: 100%; min-height: 90%; margin-top: 60px; }
   .myAppAside .el-menu-item, .myAppAside .el-submenu__title,
   .myAppAside .el-menu-item-group__title { text-align: left; }
   .clear { clear: both; }
