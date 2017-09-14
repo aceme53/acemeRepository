@@ -29,7 +29,10 @@
         let $h = $('.myAppHeader');
         let minHeight = $w.height() - $h.height();
         $r.css("min-height", minHeight);
-        $l.css("min-height", minHeight);
+        $l.css({
+          "height": minHeight,
+          "overflow-y": "auto"
+        });
       };
       $w.scroll(global.refreshHeight);
       $w.resize(global.refreshHeight);
@@ -46,7 +49,8 @@
   }
   .myApp-container { min-height: 90%; }
   .m-h-60 { min-height: 60px; }
-  .myAppHeader { background-color: rgb(173, 216, 230); float: left; width: 100%; position: fixed; z-index: 5; }
+  .myAppHeader { background-color: rgb(1, 124, 206); color: #FFF; float: left; width: 100%; position: fixed; z-index: 5; }
+  .myAppHeader .el-menu, .myAppHeader .el-submenu__title { background-color: transparent !important; color: white !important; }
   .myAppAside { float: left; width: 15%; min-height: 90%; position: fixed; top: 60px; z-index: 5; }
   .myAppCenter { float: right; width: 85%; min-height: 90%; }
   .myAppContent { float: left; width: 100%; min-height: 90%; }
