@@ -50,7 +50,9 @@
   .myApp-container { min-height: 90%; }
   .m-h-60 { min-height: 60px; }
   .myAppHeader { background-color: rgb(1, 124, 206); color: #FFF; float: left; width: 100%; position: fixed; z-index: 5; }
-  .myAppHeader .el-menu, .myAppHeader .el-submenu__title { background-color: transparent !important; color: white !important; }
+  .myAppHeader .el-menu, .myAppHeader .el-submenu__title { background-color: transparent; color: white; }
+  .myAppHeader .el-menu:hover, .myAppHeader .el-submenu__title:hover { background-color: transparent; color: white; }
+  .el-menu--horizontal .el-submenu > .el-menu { background-color: #FFF !important; }
   .myAppAside { float: left; width: 15%; min-height: 90%; position: fixed; top: 60px; z-index: 5; }
   .myAppCenter { background-color: rgb(237, 255, 239); float: right; width: 85%; min-height: 90%; }
   .myAppContent { float: left; width: 100%; min-height: 90%; margin-top: 60px; }
