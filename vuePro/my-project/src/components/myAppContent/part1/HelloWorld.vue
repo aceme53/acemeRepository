@@ -25,10 +25,34 @@
     font-size: larger;
     color: red;
   }
+  .el-carousel__item h3 {
+    color: #475669;
+    font-size: 20px;
+    opacity: 0.75;
+    line-height: 200px;
+    margin: 0;
+  }
+  .el-carousel__item:nth-child(2n) {
+    background-color: lightskyblue;
+  }
+  .el-carousel__item:nth-child(2n+1) {
+    background-color: lightblue;
+  }
 </style>
 <template>
   <div class="HelloWorld">
-    <h1>{{title}}</h1>
+    <el-row>&nbsp;</el-row>
+    <el-row>
+      <el-col :span="1">&nbsp;</el-col>
+      <el-col :span="22">
+        <el-carousel :interval="2000" type="card" height="200px">
+          <el-carousel-item v-for="item in 6" :key="item">
+            <h3>{{ item }}</h3>
+          </el-carousel-item>
+        </el-carousel>
+      </el-col>
+      <el-col :span="1">&nbsp;</el-col>
+    </el-row>
     <h1>{{title + ' ' + reversedTitle}}</h1>
     <el-button @click="title=='ziksang'?title='HelloWorld':title='ziksang'" type="info">改变title值</el-button>
     <h1>{{ msg | capitalize}}</h1>

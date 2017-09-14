@@ -28,7 +28,6 @@
 </style>
 <template>
   <div class="HelloWorld">
-    <h1>{{title}}</h1>
     <h1>{{title + ' ' + reversedTitle}}</h1>
     <el-button @click="title=='ziksang'?title='HelloWorld':title='ziksang'" type="info">改变title值</el-button>
     <h1>{{ msg | capitalize}}</h1>
