@@ -33,7 +33,7 @@
       }
     },
     mounted: function () {
-        global.refreshHeight();
+      (typeof (global.refreshHeight) === 'function') && global.refreshHeight();
     }
   }
 </script>

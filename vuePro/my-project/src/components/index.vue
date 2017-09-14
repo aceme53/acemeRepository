@@ -27,9 +27,9 @@
         let $l = $($('.myAppAside .el-menu').get(0));
         let $r = $('.myAppCenter');
         let $h = $('.myAppHeader');
-        let Max = Math.max($l.height(), $r.height(), ($w.height() - $h.height()));
-        $r.css("min-height", Max);
-        $l.css("min-height", Max);
+        let minHeight = $w.height() - $h.height();
+        $r.css("min-height", minHeight);
+        $l.css("min-height", minHeight);
       };
       $w.scroll(global.refreshHeight);
       $w.resize(global.refreshHeight);
@@ -49,9 +49,9 @@
     min-height: 60px;
   }
   .myAppHeader {
-    background-color: rgba(173, 216, 230, 0.3); height: 10%; float: left; width: 100%;
+    background-color: rgba(173, 216, 230, 0.3);   float: left; width: 100%; position: fixed;
   }
-  .myAppAside { float: left; width: 15%; min-height: 90%; }
+  .myAppAside { float: left; width: 15%; min-height: 90%; position: fixed; top: 60px; }
   .myAppCenter { float: right; width: 85%; min-height: 90%; }
   .myAppContent { float: left; width: 100%; min-height: 90%; }
   .myAppAside .el-menu-item, .myAppAside .el-submenu__title,
