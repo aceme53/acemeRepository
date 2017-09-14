@@ -40,7 +40,7 @@ var _F = {
      */
     getTextWidth: function (text) {
         var thisDiv = document.getElementById('computeTextWidth');
-        if (thisDiv == null) {
+        if (thisDiv === null) {
             thisDiv = document.createElement('div');
             thisDiv.setAttribute('style', 'position:absolute;visibility:hidden;');
             thisDiv.setAttribute('id', 'computeTextWidth');
@@ -73,7 +73,7 @@ var _F = {
                 ctx.closePath();
             } else {
                 //进度条
-                if (_F.canvasRateFinishedArr[i] == _F.canvasRateArr[i]) continue;
+                if (_F.canvasRateFinishedArr[i] === _F.canvasRateArr[i]) continue;
                 ++_F.canvasRateFinishedArr[i];
                 ctx.beginPath();
                 ctx.clearRect(30, 30, 50, 40);
@@ -92,7 +92,7 @@ var _F = {
                 ctx.restore();
                 ctx.save();
                 ctx.closePath();
-                if (_F.canvasRateArr.toString() == _F.canvasRateFinishedArr.toString()) {
+                if (_F.canvasRateArr.toString() === _F.canvasRateFinishedArr.toString()) {
                     clearInterval(_F.canvasInterval);
                 }
             }
@@ -116,12 +116,12 @@ var _F = {
         });
         var yAxisData = [], tempTime;
         for (var i = 0; i < xDataArr.length; i++) {
-            if (i == xDataArr.length - 1) {
+            if (i === xDataArr.length - 1) {
                 tempTime = (new Date().getTime() - xDataArr[i]) / 1000 / 60 / 60 / 24 / 365;
             } else {
                 tempTime = (xDataArr[i + 1] - xDataArr[i]) / 1000 / 60 / 60 / 24 / 365;
             }
-            tempTime = parseInt(tempTime) == tempTime ? tempTime : tempTime.toFixed(2);
+            tempTime = parseInt(tempTime) === tempTime ? tempTime : tempTime.toFixed(2);
             yAxisData.push(tempTime);
         }
         // var yAxisData = document.getElementById("yAxisData").value.split('@@');
@@ -272,7 +272,7 @@ var _F = {
     returnTop: function () {
         _F.RTtimer = setInterval(function () {
             _F.moveArr.push(document.body.scrollTop - _F.speed);
-            if (_F.moveArr[_F.moveArr.length - 1] == _F.moveArr[_F.moveArr.length - 2]) {
+            if (_F.moveArr[_F.moveArr.length - 1] === _F.moveArr[_F.moveArr.length - 2]) {
                 _F.moveArr = [];
                 clearInterval(_F.RTtimer);
             } else {
@@ -308,7 +308,7 @@ var _F = {
         setTimeout(function () {
             var move_starId = new Date().getTime();
             var div = document.createElement('div');
-            div.setAttribute('id', move_starId);
+            div.setAttribute('id', move_starId + '');
             div.setAttribute('class', 'move-star');
             $body.append(div);
             var $move_star = $('#' + move_starId);
@@ -330,12 +330,22 @@ var _F = {
             });
             _F.makeStar();
         }, _F.getRandom(2000));
+    },
+    /**
+     * console特效
+     */
+    consoleEffect: function () {
+        console.log("%cMade by Ace.Me", "text-shadow: 0 1px 0 #ccc,0 2px 0 #c9c9c9,0 3px 0 #bbb," +
+            "0 4px 0 #b9b9b9,0 5px 0 #aaa,0 6px 1px rgba(0,0,0,.1),0 0 5px rgba(0,0,0,.1)," +
+            "0 1px 3px rgba(0,0,0,.3),0 3px 5px rgba(0,0,0,.2),0 5px 10px rgba(0,0,0,.25)," +
+            "0 10px 10px rgba(0,0,0,.2),0 20px 20px rgba(0,0,0,.15);font-size:5em");
     }
 };
 /**
  * 部分样式特效
  */
 $(document).ready(function () {
+    _F.consoleEffect();
     _F.selfCardCss();
     _F.selfCardInterval = setInterval(function () {
         _F.selfCardCss();
