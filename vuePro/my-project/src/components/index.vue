@@ -43,15 +43,14 @@
 <style>
   .myApp {
     min-height: 100%;
-    background: rgba(69, 127, 202, 0.2); /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, rgba(86, 145, 200, 0.2), rgba(69, 127, 202, 0.2)); /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, rgba(86, 145, 200, 0.2), rgba(69, 127, 202, 0.2)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: url("../images/ace.jpg") center center no-repeat;
+    background-size: 100% 100%;
   }
   .myApp-container { min-height: 90%; }
   .m-h-60 { min-height: 60px; }
   .myAppHeader { background-color: rgb(1, 124, 206); color: #FFF; float: left; width: 100%; position: fixed; z-index: 5; }
-  .myAppHeader .el-menu, .myAppHeader .el-submenu__title { background-color: transparent; color: white; }
-  .myAppHeader .el-menu:hover, .myAppHeader .el-submenu__title:hover { background-color: transparent; color: white; }
+  .myAppHeader .el-menu, .myAppHeader .el-submenu__title,
+  .myAppHeader .header-menu-item, .myAppHeader .header-menu-item:hover { background-color: transparent !important; color: white !important; }
   .el-menu--horizontal .el-submenu > .el-menu { background-color: #FFF !important; }
   .myAppAside { float: left; width: 15%; min-height: 90%; position: fixed; top: 60px; z-index: 5; }
   .myAppCenter { background-color: rgb(237, 255, 239); float: right; width: 85%; min-height: 90%; }

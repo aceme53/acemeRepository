@@ -4,12 +4,9 @@
       <el-col>
         <el-menu :default-active="activeIndex" mode="horizontal" @select="handleSelect">
           <el-menu-item index="0" class="header-blank">米</el-menu-item>
-          <!--
-          <el-menu-item index="part1">模块一</el-menu-item>
-          <el-menu-item index="part2">模块二</el-menu-item>
-          -->
-          <el-submenu index="3">
-            <template slot="title">我的工作台</template>
+          <el-menu-item index="" class="header-menu-item"><i class="el-icon-d-arrow-left"></i></el-menu-item>
+          <el-submenu index="1" class="header-menu-item">
+            <template slot="title">我的模块</template>
             <el-menu-item index="part1">模块一</el-menu-item>
             <el-menu-item index="part2">模块二</el-menu-item>
           </el-submenu>

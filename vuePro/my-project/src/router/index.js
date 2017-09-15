@@ -6,8 +6,8 @@ import part1 from '@/components/myAppContent/part1'
 import part1Hello from '@/components/myAppContent/part1/Hello'
 import part1HelloWorld from '@/components/myAppContent/part1/HelloWorld'
 import part2 from '@/components/myAppContent/part2'
-import part2Hello from '@/components/myAppContent/part2/Hello'
-import part2HelloWorld from '@/components/myAppContent/part2/HelloWorld'
+import moveStar from '@/components/myAppContent/part2/moveStar'
+import canvasClock from '@/components/myAppContent/part2/canvasClock'
 Vue.use(Router);
 export default new Router({
   routes: [
@@ -42,12 +42,12 @@ export default new Router({
           component: part2,
           children: [
             {
-              path: '/index/part2/HelloWorld',
-              component: part2HelloWorld,
+              path: '/index/part2/canvasClock',
+              component: canvasClock,
             },
             {
-              path: '/index/part2/Hello',
-              component: part2Hello,
+              path: '/index/part2/moveStar',
+              component: moveStar,
             }
           ]
         }
