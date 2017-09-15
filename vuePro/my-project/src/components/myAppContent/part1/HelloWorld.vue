@@ -42,25 +42,6 @@
 <template>
   <div class="HelloWorld">
     <el-row>&nbsp;</el-row>
-    <input type="week" id="week"/>
-    <input type="month" id="month"/>
-    <el-row>&nbsp;</el-row>
-    <el-row>&nbsp;</el-row>
-    <el-row>&nbsp;</el-row>
-    <el-row>&nbsp;</el-row>
-    <el-row>&nbsp;</el-row>
-    <el-row>&nbsp;</el-row>
-    <el-row>&nbsp;</el-row>
-    <el-row>&nbsp;</el-row>
-    <el-row>&nbsp;</el-row>
-    <el-row>&nbsp;</el-row>
-    <el-row>&nbsp;</el-row>
-    <el-row>&nbsp;</el-row>
-    <el-row>&nbsp;</el-row>
-    <el-row>&nbsp;</el-row>
-    <el-row>&nbsp;</el-row>
-    <el-row>&nbsp;</el-row>
-    <el-row>&nbsp;</el-row>
     <el-row>
       <el-col :span="1">&nbsp;</el-col>
       <el-col :span="22">
