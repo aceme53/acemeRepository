@@ -43,7 +43,7 @@
 <style>
   .myApp {
     min-height: 100%;
-    background: url("../images/ace.jpg") center center no-repeat;
+    background: url("../images/aceme.jpg") center center no-repeat;
     background-size: 100% 100%;
   }
   .myApp-container { min-height: 90%; }
