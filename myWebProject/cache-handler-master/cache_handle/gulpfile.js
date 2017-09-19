@@ -71,7 +71,9 @@ gulp.task('revCollector',
                         //     'image': ''
                         // }, -- 没用
                         revSuffix: '\\?v=[0-9a-f]{8,10}$'
-                    }))
+                    })).pipe(minifyHTML({
+                empty: true, spare: true
+            }))//压缩html
                     //执行文件内引用名的替换
                     .pipe(gulp.dest(config.src + config.changedPath)); //替换后的文件输出的目录
     });
@@ -82,4 +84,4 @@ gulp.task('revCollector',
 //     })).pipe(gulp.dest(config.rev)); //将 压缩后的代码 保存到rev目录
 // }); -- 有注释导致压缩后的代码有问题
 //任务序列
-gulp.task('default', gulpSequence('clean', 'rev', 'revCollector', 'minify'));
+gulp.task('default', gulpSequence('clean', 'rev', 'revCollector'));
