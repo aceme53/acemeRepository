@@ -29,9 +29,10 @@
  */
 var config = {
     src: 'E:/workspace/acemeRepository/myWebProject/myWebSite/',
-    page: 'changedPage/',
+    oriPath: 'indexOri/',
+    changedPath: '',
     resource: '**/*.{js,css,png,jpg,jpeg,gif,bmp,ico,eot,svg,ttf,woff}',
-    html: '**/*.{html,ftl,jsp}',
+    html: '*.{html,ftl,jsp}',
     rev: './rev/',
     app: './app/'
 };
@@ -57,22 +58,28 @@ gulp.task('rev',
                     .pipe(rev.manifest()) //生成一个rev-manifest.json
                     .pipe(gulp.dest(config.rev)); //将 rev-manifest.json 保存到rev目录
     });
-//替换引用，压缩代码
+//替换引用
 gulp.task('revCollector',
     function () {
-        // config.src + config.page + config.html
-        return gulp.src([config.rev + '*.json', config.src + config.html]) //读取 rev-manifest.json 文件以及需要进行文件名替换的文件
+        return gulp.src([config.rev + '*.json', config.src + config.oriPath + config.html])
+                    //读取 rev-manifest.json 文件以及需要进行文件名替换的文件
                     .pipe(revCollector({
                         replaceReved: true,
-                        dirReplacements: {
-                            'css': '',
-                            'js': '',
-                            'image': ''
-                        },
+                        // dirReplacements: {
+                        //     'css': '',
+                        //     'js': '',
+                        //     'image': ''
+                        // }, -- 没用
                         revSuffix: '\\?v=[0-9a-f]{8,10}$'
-                    })).pipe(minifyHTML({empty: true, spare: true}))//压缩代码
+                    }))
                     //执行文件内引用名的替换
-                    .pipe(gulp.dest(config.src + config.page)); //替换后的文件输出的目录
+                    .pipe(gulp.dest(config.src + config.changedPath)); //替换后的文件输出的目录
     });
+// 压缩代码
+// gulp.task('minify', function () {
+//     return gulp.src([config.src + config.resource, config.src + config.html]).pipe(minifyHTML({
+//         empty: true, spare: true
+//     })).pipe(gulp.dest(config.rev)); //将 压缩后的代码 保存到rev目录
+// }); -- 有注释导致压缩后的代码有问题
 //任务序列
-gulp.task('default', gulpSequence('clean', 'rev', 'revCollector'));
+gulp.task('default', gulpSequence('clean', 'rev', 'revCollector', 'minify'));
