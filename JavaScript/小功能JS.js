@@ -114,13 +114,20 @@ function add3(a, b) {return add2(a, b);}
 function add2(a, b) {return add1(a, b);}
 function add1(a, b) {return add(a, b);}
 // = 测试代码的运行时间
+console.clear();
 console.time("控制台计时器一");
-for (var i = 0; i < 10; i++) {
-    for (var j = 0; j < 10; j++) {
-        console.log(i + j);
-    }
-}
+(function search() {
+    //当我要使用当前页面地址和主机域名
+    console.log(window.location.href + window.location.host);
+})();
 console.timeEnd("控制台计时器一");
+//===========================================
+console.time("控制台计时器二");
+(function search() {
+    var location = window.location;
+    console.log(location.href + location.host);
+})();
+console.timeEnd("控制台计时器二");
 // = 性能分析
 function funcA(count) {
     console.info('a', count);
