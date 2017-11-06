@@ -126,7 +126,7 @@ var centerGrid = {
     ],
     on: {
         onAfterEditStop: function (valObj, cellObj) {
-            if (cellObj.column == 'year') this.data.getItem(cellObj.row).year = new Date(valObj.value).getFullYear()
+            if (cellObj.column === 'year') this.data.getItem(cellObj.row).year = new Date(valObj.value).getFullYear()
         },
         onresize: function () {
             /*
@@ -145,12 +145,7 @@ var centerGrid = {
         }
     },
     data: big_wide_film_set,
-    pager: {
-        id: "pager",
-        template: "{common.first()} {common.prev()} {common.pages()} {common.next()} {common.last()}",
-        size: 20,
-        group: 5
-    }
+    pager: "pager"
 };
 webix.Date.isHoliday = function (day) {
     day = day.getDay();
@@ -169,6 +164,15 @@ webix.ready(function () {
         rows: [
             toolBar,
             centerGrid,
+            {
+                view: "pager", id: "pager",
+                animate: {
+                    subtype: "out"
+                },
+                template: "{common.first()} {common.prev()} {common.pages()} {common.next()} {common.last()}",
+                size: 10,
+                group: 5
+            },
             {view: 'resizer'},
             {
                 cols: [
