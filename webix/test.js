@@ -1,4 +1,5 @@
 /**
+ *
  * Created by sumi_EC on 2017/6/7.
  */
 Date.prototype.Format = function (fmt) { //author: meizz
@@ -19,9 +20,9 @@ Date.prototype.Format = function (fmt) { //author: meizz
     return fmt;
 };
 var toolBar = {
-    // container: "toolbar",
+    container: "toolbar",
     view: "form",
-    css: "toolbar",
+    id: "top_toolbar",
     paddingY: 5,
     paddingX: 10,
     cols: [
@@ -64,7 +65,7 @@ var toolBar = {
  prev: "上一页"  // the previous button
  };*/
 var centerGrid = {
-    container: "datatable",
+    container: "center",
     id: "centerGrid",
     view: "datatable",
     editable: true,
@@ -87,42 +88,41 @@ var centerGrid = {
             template: "{common.checkbox()}",
             width: 40
         },
-        {id: "rank", header: ["#", {content: "selectFilter"}], sort: 'int', width: 50},
+        {id: "rank", header: ["序号", {content: "selectFilter"}], sort: 'int', width: 60},
         {
             id: "title",
             editor: "text",
             sort: "string",
-            header: ["Film title", {content: "textFilter"}],
+            header: ["电影名", {content: "textFilter"}],
             width: 250,
             css: "left_area"
         },
-        {id: "2008_1", editor: "text", sort: "int", header: [{text: "2008", colspan: 12}, "January"]},
-        {id: "2008_2", editor: "text", sort: "int", header: [null, "February"]},
-        {id: "2008_3", editor: "text", sort: "int", header: [null, "March"]},
-        {id: "2008_4", editor: "text", sort: "int", header: [null, "April"]},
-        {id: "2008_5", editor: "text", sort: "int", header: [null, "May"]},
-        {id: "2008_6", editor: "text", sort: "int", header: [null, "June"]},
-        {id: "2008_7", editor: "text", sort: "int", header: [null, "July"]},
-        {id: "2008_8", editor: "text", sort: "int", header: [null, "August"]},
-        {id: "2008_9", editor: "text", sort: "int", header: [null, "September"]},
-        {id: "2008_10", editor: "text", sort: "int", header: [null, "October"]},
-        {id: "2008_11", editor: "text", sort: "int", header: [null, "November"]},
-        {id: "2008_12", editor: "text", sort: "int", header: [null, "December"]},
-        {id: "2009_1", editor: "text", sort: "int", header: [{text: "2009", colspan: 12}, "January"]},
-        {id: "2009_2", editor: "text", sort: "int", header: [null, "February"]},
-        {id: "2009_3", editor: "text", sort: "int", header: [null, "March"]},
-        {id: "2009_4", editor: "text", sort: "int", header: [null, "April"]},
-        {id: "2009_5", editor: "text", sort: "int", header: [null, "May"]},
-        {id: "2009_6", editor: "text", sort: "int", header: [null, "June"]},
-        {id: "2009_7", editor: "text", sort: "int", header: [null, "July"]},
-        {id: "2009_8", editor: "text", sort: "int", header: [null, "August"]},
-        {id: "2009_9", editor: "text", sort: "int", header: [null, "September"]},
-        {id: "2009_10", editor: "text", sort: "int", header: [null, "October"]},
-        {id: "2009_11", editor: "text", sort: "int", header: [null, "November"]},
-        {id: "2009_12", editor: "text", sort: "int", header: [null, "December"]},
-
-        {id: "year", editor: "date", sort: "int", header: "Released", width: 80},
-        {id: "votes", editor: "number", sort: "int", header: "Votes", width: 100}
+        {id: "2008_1", editor: "text", sort: "int", header: [{text: "2008", colspan: 12}, "一月"]},
+        {id: "2008_2", editor: "text", sort: "int", header: [null, "二月"]},
+        {id: "2008_3", editor: "text", sort: "int", header: [null, "三月"]},
+        {id: "2008_4", editor: "text", sort: "int", header: [null, "四月"]},
+        {id: "2008_5", editor: "text", sort: "int", header: [null, "五月"]},
+        {id: "2008_6", editor: "text", sort: "int", header: [null, "六月"]},
+        {id: "2008_7", editor: "text", sort: "int", header: [null, "七月"]},
+        {id: "2008_8", editor: "text", sort: "int", header: [null, "八月"]},
+        {id: "2008_9", editor: "text", sort: "int", header: [null, "九月"]},
+        {id: "2008_10", editor: "text", sort: "int", header: [null, "十月"]},
+        {id: "2008_11", editor: "text", sort: "int", header: [null, "十一月"]},
+        {id: "2008_12", editor: "text", sort: "int", header: [null, "十二月"]},
+        {id: "2009_1", editor: "text", sort: "int", header: [{text: "2009", colspan: 12}, "一月"]},
+        {id: "2009_2", editor: "text", sort: "int", header: [null, "二月"]},
+        {id: "2009_3", editor: "text", sort: "int", header: [null, "三月"]},
+        {id: "2009_4", editor: "text", sort: "int", header: [null, "四月"]},
+        {id: "2009_5", editor: "text", sort: "int", header: [null, "五月"]},
+        {id: "2009_6", editor: "text", sort: "int", header: [null, "六月"]},
+        {id: "2009_7", editor: "text", sort: "int", header: [null, "七月"]},
+        {id: "2009_8", editor: "text", sort: "int", header: [null, "八月"]},
+        {id: "2009_9", editor: "text", sort: "int", header: [null, "九月"]},
+        {id: "2009_10", editor: "text", sort: "int", header: [null, "十月"]},
+        {id: "2009_11", editor: "text", sort: "int", header: [null, "十一月"]},
+        {id: "2009_12", editor: "text", sort: "int", header: [null, "十二月"]},
+        {id: "year", editor: "date", sort: "int", header: "发行时间", width: 100},
+        {id: "votes", editor: "number", sort: "int", header: "票房", width: 100}
     ],
     on: {
         onAfterEditStop: function (valObj, cellObj) {
@@ -146,7 +146,7 @@ var centerGrid = {
     },
     data: big_wide_film_set,
     pager: {
-        // container: "pager",
+        id: "pager",
         template: "{common.first()} {common.prev()} {common.pages()} {common.next()} {common.last()}",
         size: 20,
         group: 5
@@ -154,29 +154,35 @@ var centerGrid = {
 };
 webix.Date.isHoliday = function (day) {
     day = day.getDay();
-    if (day === 0 || day == 2 || day == 6) return "webix_cal_event";
+    if (day === 0 || day === 6) return "webix_cal_event";
 };
-
-var layout = webix.ui({
-    type: "space",
-    rows: [
-        toolBar,
-        centerGrid,
-        {view: 'resizer'},
-        {
-            cols: [
-                {
-                    weekHeader: true,
-                    date: new Date(2012, 3, 16),
-                    view: "calendar",
-                    events: webix.Date.isHoliday,
-                    width: 320,
-                    height: 250
-
-                },
-                {view: 'resizer'},
-                {template: "col2"}
-            ]
-        }
-    ]
+webix.ready(function () {
+    // webix.ui(toolBar);
+    // webix.ui(centerGrid);
+    webix.i18n.calendar.dayShort = ["周日", "周一", "周二", "周三", "周四", "周五", "周六"];
+    webix.i18n.calendar.dayFull = ["周日", "周一", "周二", "周三", "周四", "周五", "周六"];
+    webix.i18n.calendar.monthShort = ["一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月"];
+    webix.i18n.calendar.monthFull = ["一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月"];
+    webix.ui({
+        type: "space",
+        id: "testLayout",
+        rows: [
+            toolBar,
+            centerGrid,
+            {view: 'resizer'},
+            {
+                cols: [
+                    {
+                        weekHeader: true,
+                        date: new Date(),
+                        view: "calendar",
+                        events: webix.Date.isHoliday
+                    },
+                    {view: 'resizer'},
+                    {template: "col2"}
+                ]
+            },
+            {height: 20}
+        ]
+    });
 });
