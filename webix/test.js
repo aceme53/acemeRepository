@@ -58,12 +58,6 @@ var toolBar = {
         }
     ]
 };
-/*webix.locale.pager = {
- first: "首页", // the first button
- last: "尾页", // the last button
- next: "下一页", // the next button
- prev: "上一页"  // the previous button
- };*/
 var centerGrid = {
     container: "center",
     id: "centerGrid",
@@ -151,9 +145,41 @@ webix.Date.isHoliday = function (day) {
     day = day.getDay();
     if (day === 0 || day === 6) return "webix_cal_event";
 };
+var pager = {
+    view: "pager", id: "pager",
+    animate: {
+        subtype: "out"
+    },
+    template: "{common.first()} {common.prev()} {common.pages()} {common.next()} {common.last()}",
+    size: 10,
+    group: 5
+};
+var calendar = {
+    cols: [
+        {
+            weekHeader: true,
+            date: new Date(),
+            view: "calendar",
+            width: 300,
+            events: webix.Date.isHoliday
+        },
+        {view: 'resizer'},
+        {template: "col2"}
+    ]
+};
+var bottom = {
+    container: "bottom",
+    multi: true,
+    view: "accordion",
+    rows: [
+        {
+            collapsed: true,
+            header: "日历控件",
+            body: calendar
+        }
+    ]
+};
 webix.ready(function () {
-    // webix.ui(toolBar);
-    // webix.ui(centerGrid);
     webix.i18n.calendar.dayShort = ["周日", "周一", "周二", "周三", "周四", "周五", "周六"];
     webix.i18n.calendar.dayFull = ["周日", "周一", "周二", "周三", "周四", "周五", "周六"];
     webix.i18n.calendar.monthShort = ["一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月"];
@@ -164,28 +190,8 @@ webix.ready(function () {
         rows: [
             toolBar,
             centerGrid,
-            {
-                view: "pager", id: "pager",
-                animate: {
-                    subtype: "out"
-                },
-                template: "{common.first()} {common.prev()} {common.pages()} {common.next()} {common.last()}",
-                size: 10,
-                group: 5
-            },
-            {view: 'resizer'},
-            {
-                cols: [
-                    {
-                        weekHeader: true,
-                        date: new Date(),
-                        view: "calendar",
-                        events: webix.Date.isHoliday
-                    },
-                    {view: 'resizer'},
-                    {template: "col2"}
-                ]
-            },
+            pager,
+            bottom,
             {height: 20}
         ]
     });
