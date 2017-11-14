@@ -141,10 +141,6 @@ var centerGrid = {
     data: big_wide_film_set,
     pager: "pager"
 };
-webix.Date.isHoliday = function (day) {
-    day = day.getDay();
-    if (day === 0 || day === 6) return "webix_cal_event";
-};
 var pager = {
     view: "pager", id: "pager",
     animate: {
@@ -161,7 +157,10 @@ var calendar = {
             date: new Date(),
             view: "calendar",
             width: 300,
-            events: webix.Date.isHoliday
+            events: function (day) {
+                day = day.getDay();
+                if (day === 0 || day === 6) return "webix_cal_event";
+            }
         },
         {view: 'resizer'},
         {template: "col2"}
