@@ -13,11 +13,11 @@ export default new Router({
   routes: [
     {
       path: '/',
-      component: login,
+      component: login
     },
     {
       path: '/login',
-      component: login,
+      component: login
     },
     {
       path: '/index',
@@ -29,11 +29,11 @@ export default new Router({
           children: [
             {
               path: '/index/part1/HelloWorld',
-              component: part1HelloWorld,
+              component: part1HelloWorld
             },
             {
               path: '/index/part1/Hello',
-              component: part1Hello,
+              component: part1Hello
             }
           ]
         },
@@ -43,11 +43,11 @@ export default new Router({
           children: [
             {
               path: '/index/part2/canvasClock',
-              component: canvasClock,
+              component: canvasClock
             },
             {
               path: '/index/part2/moveStar',
-              component: moveStar,
+              component: moveStar
             }
           ]
         }
