@@ -1,11 +1,11 @@
-def quicksort(arr):
-    if len(arr) <= 1:
-        return arr
-    pivot = arr[len(arr) / 2]
-    left = [x for x in arr if x < pivot]
-    middle = [x for x in arr if x == pivot]
-    right = [x for x in arr if x > pivot]
-    return quicksort(left) + middle + quicksort(right)
+import numpy as np
 
-
-print quicksort([3, 6, 8, 10, 1, 2, 1])
+old = np.array([[0.36762706, -1.55668952, 0.84316735, -0.116842],
+                [1.34023966, 1.12766186, 1.12507441, -0.68689309],
+                [1.27392366, -0.43399617, -0.80444728, 1.60731881],
+                [0.23361565, 1.38772715, 0.69129479, -1.19228023],
+                [0.51353082, 0.17696698, -0.06753478, 0.80448168],
+                [0.21773096, 0.60582802, -0.46446071, 0.83131122],
+                [0.50569072, 0.04431685, -0.69358155, -0.9629124]])
+new = np.array([1, 2])
+print new

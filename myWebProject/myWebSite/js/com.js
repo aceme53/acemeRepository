@@ -25,7 +25,7 @@ var _F = {
     /**
      * 折叠左侧标签
      */
-    foldLeftCard: function () {
+    foldCard: function () {
         var $et = $(event.target);
         if ($et.hasClass('open')) {
             //收起方法
@@ -291,6 +291,8 @@ var _F = {
     },
     makeStar: function () {
         var $body = $('body'), div, static_starId, size;
+        var $winH = $(window).height();
+        var $winW = $(window).width();
         if (!document.getElementsByClassName('static-star').length) {
             for (var i = 0; i < _F.getRandom(2000); i++) {
                 div = document.createElement('div');
@@ -312,19 +314,20 @@ var _F = {
             div.setAttribute('class', 'move-star');
             $body.append(div);
             var $move_star = $('#' + move_starId);
-            var $move_starTop = _F.getRandom(300);
-            var $move_starLeft = _F.getRandom(1000);
-            var moveLength = document.body.scrollHeight;
+            var $move_starTop = _F.getRandom($winH / 2);
+            var $move_starLeft = _F.getRandom($winW);
+            var moveLength = Math.abs(_F.getRandom($winH - $move_star.height()));
+            var flashTime = _F.getRandom(2000);
             $move_star.length && ($move_star[0].style.cssText =
-                'width: ' + _F.getRandom(5) + 'px;' +
-                'height: ' + _F.getRandom(5) + 'px;' +
+                'width: 2px; height: 2px;' +
                 'top: ' + $move_starTop + 'px;' +
                 'left: ' + $move_starLeft + 'px;' +
                 'transform: rotate(-45deg);');
             $move_star.animate({
+                opacity: '+=' + _F.getRandom(1),
                 left: '-=' + (moveLength / Math.sqrt(2)),
                 top: '+=' + (moveLength / Math.sqrt(2))
-            }, 1000, function () {
+            }, flashTime, function () {
                 $move_star.fadeOut();
                 $move_star.remove();
             });

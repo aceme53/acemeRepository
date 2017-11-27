@@ -8,16 +8,20 @@
   export default {
     name: 'hello',
     mounted: function () {
-      var $moveStar = $('.moveStar');
-      var $hearH = $('.myAppHeader').height();
-      var getRandom = function (x) {
+      let getRandom = function (x) {
         return x > 1 ? (Math.ceil(x * Math.random())) : (x * Math.random())
       };
-      var makeStar = function () {
-        $moveStar.height($(window).height() - $hearH);
-        var div, static_starId, size;
+      let makeStar = function () {
+        let $moveStar = $('.moveStar');
+        let $hearH = $('.myAppHeader').height();
+        let $leftW = $('.myAppAside').width();
+        let $winH = $(window).height();
+        let $winW = $(window).width();
+        $moveStar.height($winH - $hearH);
+        let div, static_starId, size;
         if (!document.getElementsByClassName('static-star').length) {
-          for (var i = 0; i < getRandom(2000); i++) {
+          for (let i = 0; i < getRandom(2000); i++) {
+            //添加静态星星
             div = document.createElement('div');
             static_starId = new Date().getTime();
             size = getRandom(2);
@@ -31,27 +35,29 @@
           }
         }
         setTimeout(function () {
-          var move_starId = new Date().getTime();
-          var div = document.createElement('div');
+          //添加流星
+          let move_starId = new Date().getTime();
+          let div = document.createElement('div');
           div.setAttribute('id', move_starId + '');
           div.setAttribute('class', 'move-star');
           $moveStar.append(div);
-          var $move_star = $('#' + move_starId);
-          var $move_starTop = getRandom(300);
-          var $move_starLeft = getRandom(1000);
-          var moveLength = $moveStar.height();
+          let $move_star = $('#' + move_starId);
+          let $move_starTop = getRandom(($winH - $hearH) / 2);
+          let $move_starLeft = getRandom($winW - $leftW);
+          let moveLength = Math.abs(getRandom($winH - $hearH - $move_star.height()));
+          let flashTime = getRandom(2000);
           $move_star.length && ($move_star[0].style.cssText =
-            'width: ' + getRandom(5) + 'px;' +
-            'height: ' + getRandom(5) + 'px;' +
+            'width: 2px; height: 2px;' +
             'top: ' + $move_starTop + 'px;' +
             'left: ' + $move_starLeft + 'px;' +
             'transform: rotate(-45deg);');
           $move_star.animate({
+            opacity: '+=' + getRandom(1),
             left: '-=' + (moveLength / 3),
             top: '+=' + (moveLength / 3)
-          }, 500, function () {
+          }, flashTime, function () {
             $move_star.fadeOut();
-            $move_star.remove();
+            //$move_star.remove();
           });
           makeStar();
         }, getRandom(2000));
@@ -64,45 +70,53 @@
 <style>
   .moveStar {
     background-color: #000;
+    background-image: linear-gradient(to right bottom, rgba(26, 15, 72, 0.2) 40%, rgba(62, 43, 120, 0.1) 50%, rgba(26, 12, 84, 0.2) 60%),
+    radial-gradient(rgba(150, 0, 0, 0.1) 20%, rgba(100, 0, 0, 0.1) 30%, rgba(33, 100, 19, 0.1) 50%, #000 100%);
     height: 100%;
+    overflow: hidden;
   }
+
   .static-star {
     border-radius: 40%;
-    opacity: .4;
+    opacity: .3;
     width: 1px;
     height: 1px;
     background-color: #fff;
     position: fixed;
-    box-shadow: 0 0 20px 5px rgba(255, 255, 255, .3);
+    box-shadow: none;
     border: 1px solid transparent;
     animation: flash 2s infinite;
     animation-direction: alternate;
   }
+
   @keyframes flash {
     from {
       opacity: .1;
-      box-shadow: 0 0 5px 5px rgba(255, 255, 255, .3);
+      box-shadow: none;
     }
     to {
-      opacity: .4;
-      box-shadow: 0 0 20px 5px rgba(255, 255, 255, .3);
+      opacity: .6;
+      box-shadow: 0 0 5px 1px rgba(255, 255, 255, .3);
     }
 
   }
+
   .move-star {
     border-radius: 50%;
     background-color: #fff;
     position: relative;
-    box-shadow: 0 0 3px 3px rgba(255, 255, 255, .3);
+    opacity: 0;
+    box-shadow: 0 0 1px 1px rgba(255, 255, 255, .3);
   }
+
   .move-star:after {
     content: '    ';
     display: block;
     top: 0;
     left: 4px;
-    border-width: 2px 0 2px 200px;
+    border-width: 1px 0 2px 200px;
     border-style: solid;
-    border-color: transparent transparent transparent rgba(255, 255, 255, .2);
+    border-color: transparent transparent transparent rgba(111, 111, 111, .2);
   }
 
 </style>
