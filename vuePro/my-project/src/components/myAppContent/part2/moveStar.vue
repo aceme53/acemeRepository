@@ -70,8 +70,8 @@
 <style>
   .moveStar {
     background-color: #000;
-    background-image: linear-gradient(to right bottom, rgba(26, 15, 72, 0.2) 40%, rgba(62, 43, 120, 0.1) 50%, rgba(26, 12, 84, 0.2) 60%),
-    radial-gradient(rgba(150, 0, 0, 0.1) 20%, rgba(100, 0, 0, 0.1) 30%, rgba(33, 100, 19, 0.1) 50%, #000 100%);
+    background-image: linear-gradient(to right bottom, rgba(26, 15, 72, 0.3) 40%, rgba(62, 43, 120, 0.2) 50%, rgba(26, 12, 84, 0.3) 60%),
+    radial-gradient(rgba(150, 0, 0, 0.2) 20%, rgba(100, 0, 0, 0.2) 30%, rgba(33, 100, 19, 0.2) 50%, #000 100%);
     height: 100%;
     overflow: hidden;
   }

@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="486f2b12-6d95-4a06-858f-cf77ae38c3dc" name="Default" comment="python代码">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pythonPro/testImg.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pythonPro/testImg1.py" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pythonPro/testNumpy.py" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vuePro/my-project/src/components/myAppContent/part2/moveStar.vue" afterPath="$PROJECT_DIR$/vuePro/my-project/src/components/myAppContent/part2/moveStar.vue" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -27,26 +25,52 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="testImg.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pythonPro/testImg.py">
+      <file leaf-file-name="part2.vue" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vuePro/my-project/src/components/myAppContent/part2.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-244">
-              <caret line="10" column="47" lean-forward="true" selection-start-line="10" selection-start-column="47" selection-end-line="10" selection-end-column="47" />
-              <folding>
-                <element signature="e#15#25#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="231">
+              <caret line="32" column="11" lean-forward="false" selection-start-line="32" selection-start-column="4" selection-end-line="32" selection-end-column="11" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="testImg1.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/pythonPro/testImg1.py">
+      <file leaf-file-name="canvasClock.vue" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vuePro/my-project/src/components/myAppContent/part2/canvasClock.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="17" column="25" lean-forward="true" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
-              <folding>
-                <element signature="e#77#96#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="moveStar.vue" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/vuePro/my-project/src/components/myAppContent/part2/moveStar.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="247">
+              <caret line="70" column="13" lean-forward="true" selection-start-line="70" selection-start-column="13" selection-end-line="70" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HelloWorld.vue" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vuePro/my-project/src/components/myAppContent/part1/HelloWorld.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="291">
+              <caret line="143" column="17" lean-forward="true" selection-start-line="143" selection-start-column="17" selection-end-line="143" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="part1.vue" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vuePro/my-project/src/components/myAppContent/part1.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="231">
+              <caret line="34" column="11" lean-forward="false" selection-start-line="34" selection-start-column="4" selection-end-line="34" selection-end-column="11" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -66,9 +90,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>router-lin</find>
-      <find>router-link</find>
-      <find>console.time</find>
       <find>cpmsp;</find>
       <find>console</find>
       <find>console.log</find>
@@ -96,6 +117,9 @@
       <find>cv</find>
       <find>ShowImage</find>
       <find>emptyImage</find>
+      <find>reversedTitle</find>
+      <find>sortCheckedNames</find>
+      <find>sortCheckedNames</find>
     </findStrings>
     <replaceStrings>
       <replace>el-input</replace>
@@ -147,7 +171,6 @@
         <option value="$PROJECT_DIR$/vuePro/my-project/src/components/myAppContent/part2/HelloWorld.vue" />
         <option value="$PROJECT_DIR$/vuePro/my-project/src/components/myAppContent/part2/Hello.vue" />
         <option value="$PROJECT_DIR$/vuePro/my-project/src/components/myAppContent/part2.vue" />
-        <option value="$PROJECT_DIR$/vuePro/my-project/src/components/myAppContent/part2/moveStar.vue" />
         <option value="$PROJECT_DIR$/vuePro/my-project/src/components/myAppContent/part2/canvasClock.vue" />
         <option value="$PROJECT_DIR$/vuePro/my-project/src/components/myAppContent/part1/HelloWorld.vue" />
         <option value="$PROJECT_DIR$/vuePro/my-project/src/assets/app.css" />
@@ -174,7 +197,6 @@
         <option value="$PROJECT_DIR$/myWebProject/myWebSite/index.html" />
         <option value="$PROJECT_DIR$/myWebProject/cache-handler-master/cache_handle/gulpfile.js" />
         <option value="$PROJECT_DIR$/myWebProject/cache-handler-master/cache_handle/node_modules/gulp-rev/index.js" />
-        <option value="$PROJECT_DIR$/vuePro/my-project/src/components/myAppContent/part1.vue" />
         <option value="$PROJECT_DIR$/JavaScript/小功能JS.js" />
         <option value="$PROJECT_DIR$/myWebProject/myWebSite/js/com.js" />
         <option value="$PROJECT_DIR$/webix/test_data.js" />
@@ -188,6 +210,8 @@
         <option value="$PROJECT_DIR$/pythonPro/test.py" />
         <option value="$PROJECT_DIR$/pythonPro/testNumpy.py" />
         <option value="$PROJECT_DIR$/pythonPro/testImg1.py" />
+        <option value="$PROJECT_DIR$/vuePro/my-project/src/components/myAppContent/part1.vue" />
+        <option value="$PROJECT_DIR$/vuePro/my-project/src/components/myAppContent/part2/moveStar.vue" />
       </list>
     </option>
   </component>
@@ -288,6 +312,43 @@
               <item name="vuePro" type="462c0819:PsiDirectoryNode" />
               <item name="my-project" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="acemeRepository" type="b2602c69:ProjectViewProjectNode" />
+              <item name="acemeRepository" type="462c0819:PsiDirectoryNode" />
+              <item name="vuePro" type="462c0819:PsiDirectoryNode" />
+              <item name="my-project" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="acemeRepository" type="b2602c69:ProjectViewProjectNode" />
+              <item name="acemeRepository" type="462c0819:PsiDirectoryNode" />
+              <item name="vuePro" type="462c0819:PsiDirectoryNode" />
+              <item name="my-project" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="myAppContent" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="acemeRepository" type="b2602c69:ProjectViewProjectNode" />
+              <item name="acemeRepository" type="462c0819:PsiDirectoryNode" />
+              <item name="vuePro" type="462c0819:PsiDirectoryNode" />
+              <item name="my-project" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="myAppContent" type="462c0819:PsiDirectoryNode" />
+              <item name="part1" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="acemeRepository" type="b2602c69:ProjectViewProjectNode" />
+              <item name="acemeRepository" type="462c0819:PsiDirectoryNode" />
+              <item name="vuePro" type="462c0819:PsiDirectoryNode" />
+              <item name="my-project" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="myAppContent" type="462c0819:PsiDirectoryNode" />
+              <item name="part2" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="acemeRepository" type="b2602c69:ProjectViewProjectNode" />
@@ -752,7 +813,14 @@
       <option name="project" value="LOCAL" />
       <updated>1511344297569</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="python代码">
+      <created>1511776419332</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1511776419332</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -762,15 +830,16 @@
     <frame x="64" y="-8" width="1544" height="916" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35444745" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32916147" sideWeight="0.5026178" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32849604" sideWeight="0.49732262" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32394367" sideWeight="0.49191374" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32394367" sideWeight="0.50808626" order="7" side_tool="true" content_ui="tabs" x="72" y="318" width="1528" height="264" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35444745" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3985056" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -790,7 +859,6 @@
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32893" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -917,23 +985,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/vuePro/my-project/src/images/aceme.psd">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vuePro/my-project/src/images/earth.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/stepByStepTest.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/readme.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -997,24 +1048,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vuePro/my-project/src/components/myAppContent/part1/HelloWorld.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="56" column="71" lean-forward="false" selection-start-line="56" selection-start-column="71" selection-end-line="56" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vuePro/my-project/src/components/myAppContent/part1/Hello.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="4" column="20" lean-forward="false" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vuePro/my-project/src/components/myAppContent/part1.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="20" column="33" lean-forward="false" selection-start-line="20" selection-start-column="33" selection-end-line="20" selection-end-column="33" />
         </state>
       </provider>
     </entry>
@@ -1244,6 +1281,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/pythonPro/testImg1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="17" column="25" lean-forward="true" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
+          <folding>
+            <element signature="e#77#96#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/pythonPro/testImg.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-244">
@@ -1254,13 +1301,43 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pythonPro/testImg1.py">
+    <entry file="file://$PROJECT_DIR$/vuePro/my-project/src/components/myAppContent/part1.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="17" column="25" lean-forward="true" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
-          <folding>
-            <element signature="e#77#96#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="231">
+          <caret line="34" column="11" lean-forward="false" selection-start-line="34" selection-start-column="4" selection-end-line="34" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vuePro/my-project/src/components/myAppContent/part2.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="32" column="11" lean-forward="false" selection-start-line="32" selection-start-column="4" selection-end-line="32" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vuePro/my-project/src/components/myAppContent/part2/canvasClock.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vuePro/my-project/src/components/myAppContent/part1/HelloWorld.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="291">
+          <caret line="143" column="17" lean-forward="true" selection-start-line="143" selection-start-column="17" selection-end-line="143" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vuePro/my-project/src/components/myAppContent/part2/moveStar.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="70" column="13" lean-forward="true" selection-start-line="70" selection-start-column="13" selection-end-line="70" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
