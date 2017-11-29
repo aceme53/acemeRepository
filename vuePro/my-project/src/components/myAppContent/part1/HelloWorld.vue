@@ -1,6 +1,6 @@
 <style scoped>
   a {
-    color: #42b983;
+    color: #42B983;
   }
   .checkedClass {
     color: red;
@@ -207,13 +207,14 @@
 </template>
 <script>
   import Vue from 'vue';
+
   Vue.component('todo-item', {
     props: ['todo'],
     template: '<li>{{ todo }}</li>'
   });
   export default {
     name: 'myAppContent',
-    data () {
+    data() {
       return {
         switchVal: true,
         isChecked: false,
@@ -304,10 +305,13 @@
         value = value.toString();
         return value.charAt(0).toUpperCase() + value.slice(1);
       },
-      getquery (value, name, age) {
+      getquery(value, name, age) {
         if (!value) return "";
         return `${value}?name=${name}&age=${age}`
       }
+    },
+    updated: function (x) {
+      console.log('updated :==> ' + x);
     },
     computed: {
       // 计算属性的 getter
