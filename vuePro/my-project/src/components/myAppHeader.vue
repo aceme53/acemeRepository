@@ -3,13 +3,16 @@
     <el-row>
       <el-col>
         <el-menu :default-active="activeIndex" mode="horizontal" @select="handleSelect">
-          <el-menu-item index="0" class="header-blank">米</el-menu-item>
-          <el-menu-item index="" class="header-menu-item"><i class="el-icon-d-arrow-left"></i></el-menu-item>
+          <el-menu-item index="0" class="header-blank">Ace.me</el-menu-item>
+          <el-menu-item index="" class="header-menu-item"><i class="el-icon-d-arrow-left"></i>回首页</el-menu-item>
+          <el-menu-item index="part1" class="header-menu-item">模块一</el-menu-item>
+          <el-menu-item index="part2" class="header-menu-item">模块二</el-menu-item>
           <el-submenu index="1" class="header-menu-item">
             <template slot="title">我的模块</template>
             <el-menu-item index="part1">模块一</el-menu-item>
             <el-menu-item index="part2">模块二</el-menu-item>
           </el-submenu>
+
         </el-menu>
         <el-button type="danger" class="logout m-a-a" @click="logout('loginForm')">退出登录</el-button>
       </el-col>
@@ -18,10 +21,11 @@
 </template>
 <script>
   import ElButton from "../../node_modules/element-ui/packages/button/src/button";
+
   export default {
     components: {ElButton},
     name: 'myAppHeader',
-    data () {
+    data() {
       return {
         activeIndex: '1'
       };
@@ -43,6 +47,7 @@
     right: 10px;
     position: absolute;
   }
+
   .header-blank {
     cursor: default !important;
     border: none !important;

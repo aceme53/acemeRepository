@@ -8,6 +8,9 @@ import part1HelloWorld from '@/components/myAppContent/part1/HelloWorld'
 import part2 from '@/components/myAppContent/part2'
 import moveStar from '@/components/myAppContent/part2/moveStar'
 import canvasClock from '@/components/myAppContent/part2/canvasClock'
+import htmlPhone from '@/components/myAppContent/part2/htmlPhone'
+
+
 Vue.use(Router);
 export default new Router({
   routes: [
@@ -48,6 +51,10 @@ export default new Router({
             {
               path: '/index/part2/moveStar',
               component: moveStar
+            },
+            {
+              path: '/index/part2/htmlPhone',
+              component: htmlPhone
             }
           ]
         }

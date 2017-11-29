@@ -7,6 +7,7 @@
             <el-menu-item-group title="分组一">
               <el-menu-item index="moveStar"><i class="el-icon-message"></i>moveStar</el-menu-item>
               <el-menu-item index="canvasClock"><i class="el-icon-message"></i>canvasClock</el-menu-item>
+              <el-menu-item index="htmlPhone"><i class="el-icon-message"></i>htmlPhone</el-menu-item>
             </el-menu-item-group>
             <el-menu-item-group title="分组二">
             </el-menu-item-group>
@@ -22,8 +23,8 @@
   </div>
 </template>
 <script>
-  export default{
-    name: 'part1',
+  export default {
+    name: 'part2',
     methods: {
       handleSelect(key, keyPath) {
         if (key === "0") return;

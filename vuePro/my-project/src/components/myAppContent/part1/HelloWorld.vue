@@ -119,7 +119,7 @@
           <label for="r2">数据双向绑定</label>
         </td>
         <td>
-          <el-input type="text" v-model="msg" id="r2" v-on:keyup.13="keyDownFunc($event)">
+          <el-input type="text" v-model="msg" id="r2" v-on:keyup.13.native="keyDownFunc($event)">
           </el-input>
         </td>
       </tr>
