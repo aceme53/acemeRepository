@@ -113,27 +113,67 @@
         this.front_lamp[lamp] = 1;
       },
       getStartupAnimation: function () {
+        screenCanvas.style.display = '';
+        screenCanvas.width = parseFloat(window.getComputedStyle(screenCanvas.parentElement).width);
+        screenCanvas.height = parseFloat(window.getComputedStyle(screenCanvas.parentElement).height);
+        /*
+          $('.phone_screen').css('background','#CCCCCC');
+          screenCanvas.width = parseFloat(window.getComputedStyle(screenCanvas.parentElement).width);
+          screenCanvas.height = parseFloat(window.getComputedStyle(screenCanvas.parentElement).height);
+          ct = screenCanvas.getContext('2d');
+          ct.clearRect(0, 0, screenCanvas.width, screenCanvas.height);
+          ct.beginPath();
+          ct.fillStyle = "#FFF";
+          ct.font = "20px Georgia";
+          ct.shadowBlur = '5';
+          ct.shadowColor = 'red';
+          ct.fillText('HUAWEI', screenCanvas.width / 2 - 42, screenCanvas.height / 2 + 8);
+          ct.closePath();
+          ct.beginPath();
+          ct.arc(screenCanvas.width / 2, screenCanvas.height / 2, screenCanvas.width / 4, 0, 2 * Math.PI );
+          ct.strokeStyle = 'cornflowerblue';
+          ct.shadowBlur = '40';
+          ct.shadowColor = 'cornflowerblue';
+          ct.stroke();
+          ct.closePath();
+          */
         let self = this;
         screenCanvas.style.display = '';
         screenCanvas.width = parseFloat(window.getComputedStyle(screenCanvas.parentElement).width);
         screenCanvas.height = parseFloat(window.getComputedStyle(screenCanvas.parentElement).height);
-        let cnt = -Math.PI / 2;
         let ct = screenCanvas.getContext('2d');
+        let drawCenterText = function () {
+          ct.beginPath();
+          ct.fillStyle = "#FFF";
+          ct.font = "20px Georgia";
+          ct.shadowBlur = '5';
+          ct.shadowColor = 'red';
+          ct.fillText('HUAWEI', screenCanvas.width / 2 - 42, screenCanvas.height / 2 + 8);
+          ct.closePath();
+        };
         let drawCircle = function () {
+          let cnt = -Math.PI / 2;
           let inter = setInterval(function () {
             ct.beginPath();
-            ct.arc(screenCanvas.width / 2, screenCanvas.height / 2, screenCanvas.width / 4, -Math.PI / 2, cnt);
+            ct.arc(screenCanvas.width / 2, screenCanvas.height / 2, screenCanvas.width / 4, cnt, cnt + Math.PI / 180);
+            ct.strokeStyle = 'cornflowerblue';
+            ct.shadowBlur = '5';
+            ct.lineWidth = '10';
+            ct.shadowColor = 'cornflowerblue';
             ct.stroke();
             ct.closePath();
             if (cnt.toFixed(2) > (3 * Math.PI / 2).toFixed(2)) {
               clearInterval(inter);
               ct.clearRect(0, 0, screenCanvas.width, screenCanvas.height);
-              screenCanvas.style.display = 'none';
+              drawCenterText();
+              //screenCanvas.style.display = 'none';
+              drawCircle();
             }
             cnt += Math.PI / 180;
           }, 10)
         };
         drawCircle();
+        drawCenterText();
       }
     },
     watch: {
@@ -151,10 +191,6 @@
       }
     },
     mounted: function () {
-      setTimeout(function () {
-        screenCanvas.width = parseFloat(window.getComputedStyle(screenCanvas.parentElement).width);
-        screenCanvas.height = parseFloat(window.getComputedStyle(screenCanvas.parentElement).height);
-      }, 0)
     }
   }
 </script>
