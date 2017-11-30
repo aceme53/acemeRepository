@@ -10,7 +10,7 @@ newImg = cv2.copyMakeBorder(newImg, 20, 20, 20, 20, cv2.BORDER_CONSTANT, value=(
 emptyImage = np.ones(img.shape, np.uint8)
 emptyImage = cv2.resize(emptyImage, (200, 200))
 
-cv2.imshow("newImg", newImg)
+cv2.imshow("tempImgs", newImg)
 cv2.imshow("emptyImage", emptyImage)
 
 '''
@@ -26,7 +26,7 @@ if key == 27:
     cv2.destroyAllWindows()
 elif key == ord('s'):
     print('save')
-    cv2.imwrite('./newImg/saveNew.jpg', img, [int(cv2.IMWRITE_JPEG_QUALITY), 100])
+    cv2.imwrite('./tempImgs/saveNew.jpg', img, [int(cv2.IMWRITE_JPEG_QUALITY), 100])
     cv2.destroyAllWindows()
 else:
     print('else: ' + str(key))
