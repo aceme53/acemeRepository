@@ -1,4 +1,4 @@
-* { margin: 0; padding: 0; font-family: "Microsoft YaHei", "serif", "sans-serif", "cursive", "fantasy", "monospace" !important; font-size: 1em; }
+* { margin: 0; padding: 0; font-family: "Microsoft YaHei", "serif", "sans-serif", "cursive", "fantasy", "monospace"; font-size: 1em; }
 @font-face {
     font-family: 'PingFang-Medium';
     src: url('../fonts/PingFang Medium.ttf');
@@ -15,6 +15,7 @@ html, body { width: 100%; height: 100%; background-color: #000000 !important; }
 .app { width: 75%; height: 100%; margin: 0 auto; }
 .p-l-0 { padding-left: 0 !important; }
 .p-r-0 { padding-right: 0 !important; }
+.m-t-50 { margin-top: 50px; }
 .m-t-40 { margin-top: 40px; }
 .m-t-30 { margin-top: 30px; }
 .m-t-20 { margin-top: 20px; }
@@ -139,5 +140,34 @@ ul.sub-nav-bar li a:hover { color: #000; }
     color: #666666;
     text-decoration: none;
     font-size: 1.1em;
+    font-weight: bold;
 }
 .aboutus-html .border-bottom { border-bottom: 1px #cacaca solid; }
+.aboutus-container .main-title {
+    font-family: PingFangSC-Regular, Arial, fantasy;
+    font-size: 4em;
+    color: #bbbbbb;
+    letter-spacing: 0;
+}
+.aboutus-container .sub-title {
+    font-size: 2em;
+    color: #333333;
+    letter-spacing: 0;
+    line-height: 0;
+}
+.aboutus-container p {
+    text-indent: 2em;
+    margin-top: 25px;
+    display: -webkit-box; /* Chrome 4+, Safari 3.1, iOS Safari 3.2+ */
+    display: -moz-box; /* Firefox 17- */
+    display: -webkit-flex; /* Chrome 21+, Safari 6.1+, iOS Safari 7+, Opera 15/16 */
+    display: -moz-flex; /* Firefox 18+ */
+    display: -ms-flexbox; /* IE 10 */
+    display: flex; /* Chrome 29+, Firefox 22+, IE 11+, Opera 12.1/17/18, Android 4.4+ */
+}
+.aboutus-container .main-text {
+    font-family: PingFangSC-Regular, Arial, fantasy;
+    font-size: 1.1em;
+    color: #666666;
+}
+.aboutus-container .well-text { line-height: 30px; }
