@@ -1,10 +1,29 @@
 $(function () {
     window.__ytF = {
-        backTohome: function () {
+        backToHome: function () {
             $(".index-container").load("../HTML/home.html");
+        },
+        returnToTop: function () {
+            window.returnF = {
+                moveArr: [],
+                speed: 10,
+                returnTop: function () {
+                    returnF.RTtimer = setInterval(function () {
+                        returnF.moveArr.push(document.body.scrollTop - returnF.speed);
+                        if (returnF.moveArr[returnF.moveArr.length - 1] === returnF.moveArr[returnF.moveArr.length - 2]) {
+                            returnF.moveArr = [];
+                            clearInterval(returnF.RTtimer);
+                            delete  window.returnF;
+                        } else {
+                            window.scrollTo(0, document.body.scrollTop - returnF.speed);
+                        }
+                    }, 1);
+                }
+            };
+            window.returnF.returnTop();
         }
     };
-    window.__ytF.backTohome();
+    window.__ytF.backToHome();
     /**
      *  hover 子菜单显示/隐藏
      */

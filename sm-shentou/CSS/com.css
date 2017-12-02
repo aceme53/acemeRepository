@@ -10,6 +10,7 @@ html, body { width: 100%; height: 100%; background-color: #000000 !important; }
 .t-a-r { text-align: right; }
 .whole-h { height: 100%; }
 .c-b { color: #000000; }
+.bg-c-w { background-color: #ffffff; }
 .p-t-35 { padding-top: 35px; }
 .p-t-45 { padding-top: 45px; }
 .app { width: 75%; height: 100%; margin: 0 auto; }
@@ -20,6 +21,18 @@ html, body { width: 100%; height: 100%; background-color: #000000 !important; }
 .m-t-30 { margin-top: 30px; }
 .m-t-20 { margin-top: 20px; }
 .m-t-10 { margin-top: 10px; }
+.m-b-50 { margin-bottom: 50px; }
+.m-b-40 { margin-bottom: 40px; }
+.m-b-30 { margin-bottom: 30px; }
+.m-b-20 { margin-bottom: 20px; }
+.m-b-10 { margin-bottom: 10px; }
+.h-50 { height: 50px; }
+.h-40 { height: 40px; }
+.h-30 { height: 30px; }
+.h-20 { height: 20px; }
+.h-10 { height: 10px; }
+.p-r { position: relative; }
+.p-a { position: absolute; }
 /**************************************************
  ****************    index样式    *****************
  **************************************************/
@@ -74,6 +87,7 @@ ul.sub-nav-bar li a {
     border: none !important;
 }
 ul.sub-nav-bar li a:hover { color: #000; }
+.return-top-btn { z-index: 2; right: 30px; top: -35px; }
 /**************************************************
  *****************    home样式    *****************
  **************************************************/
