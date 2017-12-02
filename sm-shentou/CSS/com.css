@@ -1,0 +1,143 @@
+* { margin: 0; padding: 0; font-family: "Microsoft YaHei", "serif", "sans-serif", "cursive", "fantasy", "monospace" !important; font-size: 1em; }
+@font-face {
+    font-family: 'PingFang-Medium';
+    src: url('../fonts/PingFang Medium.ttf');
+}
+html, body { width: 100%; height: 100%; background-color: #000000 !important; }
+.d-ib { display: inline-block; }
+.f-l { float: left; }
+.f-r { float: right; }
+.t-a-r { text-align: right; }
+.whole-h { height: 100%; }
+.c-b { color: #000000; }
+.p-t-35 { padding-top: 35px; }
+.p-t-45 { padding-top: 45px; }
+.app { width: 75%; height: 100%; margin: 0 auto; }
+.p-l-0 { padding-left: 0 !important; }
+.p-r-0 { padding-right: 0 !important; }
+.m-t-40 { margin-top: 40px; }
+.m-t-30 { margin-top: 30px; }
+.m-t-20 { margin-top: 20px; }
+.m-t-10 { margin-top: 10px; }
+/**************************************************
+ ****************    index样式    *****************
+ **************************************************/
+.index-header { height: 150px; width: 100%; background-color: #FFFFFF; }
+.index-header .main-title { font-weight: bold; font-size: 1.5em; letter-spacing: 5px; }
+.index-header .sub-title { color: #999999; font-size: .9em; margin-top: 5px; letter-spacing: 1px; }
+ul.top-bar, ul.nav-bar, ul.sub-nav-bar { list-style-type: none; margin-right: 10px; }
+ul.top-bar li > a, ul.top-bar li button {
+    color: #3E5AA8 !important;
+    font-size: .9em;
+    padding: 0 !important;
+    outline: 0 !important;
+    text-decoration: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    cursor: pointer;
+}
+ul.nav-bar li { padding-right: 25px; }
+ul.nav-bar li a, ul.nav-bar li button {
+    color: #000000;
+    font-weight: bold;
+    font-size: 1em;
+    outline: 0 !important;
+    text-decoration: none !important;
+    box-shadow: none !important;
+    cursor: pointer;
+}
+ul.nav-bar li > a:hover {
+    color: cornflowerblue;
+    border-bottom: 2px cornflowerblue solid;
+}
+ul li img { margin-bottom: 2px; }
+.header-bottom-bar { position: absolute; bottom: 0; width: 100%; }
+.index-header .sub-header-bottom-bar {
+    display: none;
+    position: fixed;
+    top: 150px;
+    right: 250px;
+    background-color: rgba(67, 98, 182, 0.7);
+    padding: 20px;
+    z-index: 99;
+}
+ul.sub-nav-bar { margin-bottom: 0; }
+ul.top-bar li, ul.sub-nav-bar li { color: #999999; font-size: .9em; padding: 0 15px; }
+ul.sub-nav-bar li a {
+    color: #ffffff;
+    font-size: 1em;
+    outline: 0 !important;
+    text-decoration: none !important;
+    box-shadow: none !important;
+    cursor: pointer;
+    border: none !important;
+}
+ul.sub-nav-bar li a:hover { color: #000; }
+/**************************************************
+ *****************    home样式    *****************
+ **************************************************/
+.index-container { width: 100%; margin: 0 auto; }
+.index-container .well { border-radius: 0; margin-bottom: 0; }
+.index-container .aboutus, .index-container .information {
+    background-color: #4362B6;
+    border: 1px #4362B6 solid;
+    color: #fff;
+    margin-bottom: 0;
+    height: 100%;
+    width: 100%;
+}
+.index-container .main-title, .information-content-text .main-title { font-weight: bold; font-size: 1.5em; letter-spacing: 2px; }
+.index-container .sub-title, .information-content-text .sub-title { font-size: .9em; letter-spacing: 1px; }
+.aboutus .border-bottom, .information .border-bottom { border-bottom: 3px white solid; }
+.aboutus-text { letter-spacing: 2px; line-height: 20px; }
+.aboutus-btn-div { letter-spacing: 2px; line-height: 20px; }
+.aboutus-btn {
+    color: #fff;
+    font-size: 1.2em;
+    background-color: transparent;
+    outline: 0;
+    border: 1px #fff solid;
+    border-radius: 20px;
+    padding: 5px 40px;
+}
+.aboutus-video { width: 100%; height: 100%; }
+.index-container .business, .index-container .news {
+    background-color: #fff;
+    border: 1px #fff solid;
+    color: #4362B6;
+    margin-bottom: 0;
+    height: 100%;
+    width: 100%;
+}
+.business .border-bottom, .news .border-bottom, .index-bottom .border-bottom { border-bottom: 3px #4362B6 solid; }
+.business img, .information img { max-width: 100%; }
+.information-content-text { color: #000; }
+.information .information-btn { color: #8398CF; background-color: #DCE1F1; border-color: #8398CF; }
+.information .well { height: 237px; }
+.information img { height: 237px; }
+.news .media-object { max-width: 150px; }
+.news .media-heading { color: #000000; }
+.news .media-body { color: #999999; }
+.news .time-font { font-size: .8em; }
+.news-bottom-btn { font-size: 1.3em; }
+.index-bottom.well { border-radius: 0; }
+.colorful-bar { height: 4px; background-image: linear-gradient(to right, #EB602E 0, #FCBC37 33%, #457CBE 66%, #2D3A86 100%) }
+.index-bottom .main-title { font-size: 1.1em; }
+.index-bottom .sub-title { color: #999999; }
+.contactus .sub-title img { margin-bottom: 2px; max-width: 15px; }
+.index-bottom-bar { border-top: 1px #cacaca solid; margin-top: 15px; }
+.index-bottom-bar ul li, .index-bottom .sub-title { color: #999999; font-size: .9em; }
+.index-bottom-bar img { max-width: 20px; }
+/**************************************************
+ ************    aboutus-html样式    **************
+ **************************************************/
+.aboutus-html img { max-width: 100%; height: 100%; }
+.aboutus-html .breadcrumb { margin-bottom: 0; }
+.aboutus-html ul li { padding-right: 20px; }
+.aboutus-html ul li a:hover { border-bottom: 2px #8398CF solid; }
+.aboutus-html ul li a {
+    color: #666666;
+    text-decoration: none;
+    font-size: 1.1em;
+}
+.aboutus-html .border-bottom { border-bottom: 1px #cacaca solid; }
