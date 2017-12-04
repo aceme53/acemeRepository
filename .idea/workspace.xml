@@ -3,7 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="486f2b12-6d95-4a06-858f-cf77ae38c3dc" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vuePro/my-project/src/components/myAppContent/part2/htmlPhone.vue" afterPath="$PROJECT_DIR$/vuePro/my-project/src/components/myAppContent/part2/htmlPhone.vue" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sm-shentou/CSS/com.css" afterPath="$PROJECT_DIR$/sm-shentou/CSS/com.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sm-shentou/HTML/home.html" afterPath="$PROJECT_DIR$/sm-shentou/HTML/home.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vuePro/my-project/src/components/myAppContent/part1/HelloWorld.vue" afterPath="$PROJECT_DIR$/vuePro/my-project/src/components/myAppContent/part1/HelloWorld.vue" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -26,11 +28,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="htmlPhone.vue" pinned="false" current-in-tab="true">
+      <file leaf-file-name="htmlPhone.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vuePro/my-project/src/components/myAppContent/part2/htmlPhone.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="302">
-              <caret line="138" column="12" lean-forward="true" selection-start-line="118" selection-start-column="10" selection-end-line="138" selection-end-column="12" />
+            <state relative-caret-position="283">
+              <caret line="137" column="25" lean-forward="false" selection-start-line="137" selection-start-column="25" selection-end-line="137" selection-end-column="25" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sm-shentou/HTML/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="138" column="42" lean-forward="true" selection-start-line="138" selection-start-column="42" selection-end-line="138" selection-end-column="42" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="home.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sm-shentou/HTML/home.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1550">
+              <caret line="271" column="60" lean-forward="false" selection-start-line="271" selection-start-column="60" selection-end-line="271" selection-end-column="60" />
               <folding />
             </state>
           </provider>
@@ -40,7 +62,17 @@
         <entry file="file://$PROJECT_DIR$/vuePro/my-project/src/components/myAppContent/part2/canvasClock.vue">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="363">
-              <caret line="109" column="22" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="197" selection-end-column="0" />
+              <caret line="109" column="22" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="197" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="com.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/sm-shentou/CSS/com.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="26">
+              <caret line="127" column="52" lean-forward="true" selection-start-line="127" selection-start-column="52" selection-end-line="127" selection-end-column="52" />
               <folding />
             </state>
           </provider>
@@ -62,8 +94,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>sortCheckedNames</find>
-      <find>transparent !important</find>
       <find>5px solid transparent</find>
       <find>pos</find>
       <find>#484848</find>
@@ -92,6 +122,8 @@
       <find>downloading</find>
       <find>shad</find>
       <find>font</find>
+      <find>变色</find>
+      <find>time-font</find>
     </findStrings>
     <replaceStrings>
       <replace>el-input</replace>
@@ -137,8 +169,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/myWebSite/JS/com.js" />
-        <option value="$PROJECT_DIR$/vuePro/my-project/src/App.vue" />
         <option value="$PROJECT_DIR$/vuePro/my-project/src/components/myAppContent/part2/HelloWorld.vue" />
         <option value="$PROJECT_DIR$/vuePro/my-project/src/components/myAppContent/part2/Hello.vue" />
         <option value="$PROJECT_DIR$/vuePro/my-project/src/components/myAppContent/part2/canvasClock.vue" />
@@ -185,9 +215,11 @@
         <option value="$PROJECT_DIR$/vuePro/my-project/src/components/myAppHeader.vue" />
         <option value="$PROJECT_DIR$/vuePro/my-project/src/components/index.vue" />
         <option value="$PROJECT_DIR$/vuePro/my-project/src/main.js" />
-        <option value="$PROJECT_DIR$/vuePro/my-project/src/components/myAppContent/part1/HelloWorld.vue" />
         <option value="$PROJECT_DIR$/pythonPro/urllibTest.py" />
         <option value="$PROJECT_DIR$/vuePro/my-project/src/components/myAppContent/part2/htmlPhone.vue" />
+        <option value="$PROJECT_DIR$/vuePro/my-project/src/components/myAppContent/part1/HelloWorld.vue" />
+        <option value="$PROJECT_DIR$/sm-shentou/HTML/home.html" />
+        <option value="$PROJECT_DIR$/sm-shentou/CSS/com.css" />
       </list>
     </option>
   </component>
@@ -205,7 +237,6 @@
   </component>
   <component name="NodeModulesDirectoryManager">
     <handled-path value="$PROJECT_DIR$/myWebProject/cache-handler-master/cache_handle/node_modules" />
-    <handled-path value="$PROJECT_DIR$/node_modules" />
     <handled-path value="$PROJECT_DIR$/vuePro/my-project/node_modules" />
     <handled-path value="$PROJECT_DIR$/vuePro/vue-devtools-master/node_modules" />
   </component>
@@ -268,6 +299,17 @@
             <path>
               <item name="acemeRepository" type="b2602c69:ProjectViewProjectNode" />
               <item name="acemeRepository" type="462c0819:PsiDirectoryNode" />
+              <item name="sm-shentou" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="acemeRepository" type="b2602c69:ProjectViewProjectNode" />
+              <item name="acemeRepository" type="462c0819:PsiDirectoryNode" />
+              <item name="sm-shentou" type="462c0819:PsiDirectoryNode" />
+              <item name="HTML" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="acemeRepository" type="b2602c69:ProjectViewProjectNode" />
+              <item name="acemeRepository" type="462c0819:PsiDirectoryNode" />
               <item name="vuePro" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -299,6 +341,16 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
               <item name="myAppContent" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="acemeRepository" type="b2602c69:ProjectViewProjectNode" />
+              <item name="acemeRepository" type="462c0819:PsiDirectoryNode" />
+              <item name="vuePro" type="462c0819:PsiDirectoryNode" />
+              <item name="my-project" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="myAppContent" type="462c0819:PsiDirectoryNode" />
+              <item name="part1" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="acemeRepository" type="b2602c69:ProjectViewProjectNode" />
@@ -834,25 +886,32 @@
       <option name="project" value="LOCAL" />
       <updated>1512011767992</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="python爬虫抓图程序">
+      <created>1512032580471</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1512032580472</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
     <option name="totallyTimeSpent" value="147529000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="64" y="-8" width="1544" height="916" extended-state="6" />
+    <frame x="-8" y="-8" width="1616" height="886" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21091644" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20115681" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3277849" sideWeight="0.5053908" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3277849" sideWeight="0.49460918" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.334214" sideWeight="0.4703504" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3480055" sideWeight="0.47043702" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.334214" sideWeight="0.5296496" order="7" side_tool="true" content_ui="tabs" x="72" y="318" width="1528" height="264" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3480055" sideWeight="0.529563" order="7" side_tool="true" content_ui="tabs" x="72" y="318" width="1528" height="264" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3976222" sideWeight="0.49191374" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1006,27 +1065,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/webix/test.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="196" column="3" lean-forward="false" selection-start-line="196" selection-start-column="3" selection-end-line="196" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vuePro/my-project/src/components/myAppContent.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vuePro/my-project/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="19" column="29" lean-forward="false" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vuePro/my-project/node_modules/element-ui/lib/element-ui.common.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1156,13 +1194,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vuePro/my-project/src/components/myAppContent/part1/HelloWorld.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5054">
-          <caret line="306" column="8" lean-forward="false" selection-start-line="306" selection-start-column="8" selection-end-line="306" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://D:/Python27/Lib/ssl.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="257">
@@ -1235,15 +1266,47 @@
     <entry file="file://$PROJECT_DIR$/vuePro/my-project/src/components/myAppContent/part2/canvasClock.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="363">
-          <caret line="109" column="22" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="197" selection-end-column="0" />
+          <caret line="109" column="22" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="197" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vuePro/my-project/src/components/myAppContent/part2/htmlPhone.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="302">
-          <caret line="138" column="12" lean-forward="true" selection-start-line="118" selection-start-column="10" selection-end-line="138" selection-end-column="12" />
+        <state relative-caret-position="283">
+          <caret line="137" column="25" lean-forward="false" selection-start-line="137" selection-start-column="25" selection-end-line="137" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vuePro/my-project/src/components/myAppContent/part1/HelloWorld.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="173">
+          <caret line="102" column="12" lean-forward="false" selection-start-line="102" selection-start-column="12" selection-end-line="102" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sm-shentou/HTML/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="138" column="42" lean-forward="true" selection-start-line="138" selection-start-column="42" selection-end-line="138" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sm-shentou/HTML/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1550">
+          <caret line="271" column="60" lean-forward="false" selection-start-line="271" selection-start-column="60" selection-end-line="271" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sm-shentou/CSS/com.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="26">
+          <caret line="127" column="52" lean-forward="true" selection-start-line="127" selection-start-column="52" selection-end-line="127" selection-end-column="52" />
           <folding />
         </state>
       </provider>
