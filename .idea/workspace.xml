@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="486f2b12-6d95-4a06-858f-cf77ae38c3dc" name="Default" comment="">
+    <list default="true" readonly="true" id="486f2b12-6d95-4a06-858f-cf77ae38c3dc" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/codeStyleSettings.xml" afterPath="$PROJECT_DIR$/.idea/codeStyleSettings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sm-shentou/CSS/com.css" afterPath="$PROJECT_DIR$/sm-shentou/CSS/com.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sm-shentou/HTML/home.html" afterPath="$PROJECT_DIR$/sm-shentou/HTML/home.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vuePro/my-project/src/components/myAppContent/part1/HelloWorld.vue" afterPath="$PROJECT_DIR$/vuePro/my-project/src/components/myAppContent/part1/HelloWorld.vue" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sm-shentou/jquery/jquery-3.2.1.min.js" afterPath="$PROJECT_DIR$/sm-shentou/jquery/jquery-3.2.1.min.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -14,15 +13,11 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/acemeRepository$testImg.coverage" NAME="testImg Coverage Results" MODIFIED="1512007543202" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pythonPro" />
-    <SUITE FILE_PATH="coverage/acemeRepository$test.coverage" NAME="test Coverage Results" MODIFIED="1511421130889" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pythonPro" />
-    <SUITE FILE_PATH="coverage/acemeRepository$testNumpy.coverage" NAME="testNumpy Coverage Results" MODIFIED="1511774526479" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pythonPro" />
-    <SUITE FILE_PATH="coverage/acemeRepository$urllibTest.coverage" NAME="urllibTest Coverage Results" MODIFIED="1512011636216" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pythonPro" />
-  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
     <favorites_list name="acemeRepository" />
   </component>
@@ -31,8 +26,8 @@
       <file leaf-file-name="htmlPhone.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vuePro/my-project/src/components/myAppContent/part2/htmlPhone.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="283">
-              <caret line="137" column="25" lean-forward="false" selection-start-line="137" selection-start-column="25" selection-end-line="137" selection-end-column="25" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="137" column="25" selection-start-line="137" selection-start-column="25" selection-end-line="137" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -41,9 +36,21 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sm-shentou/HTML/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="138" column="42" lean-forward="true" selection-start-line="138" selection-start-column="42" selection-end-line="138" selection-end-column="42" />
+            <state vertical-scroll-proportion="-7.0">
+              <caret line="20" column="25" selection-start-line="20" selection-start-column="25" selection-end-line="20" selection-end-column="25" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="jquery-3.2.1.min.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/sm-shentou/jquery/jquery-3.2.1.min.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.16816144">
+              <caret line="5" column="22334" selection-start-line="5" selection-start-column="22334" selection-end-line="5" selection-end-column="22334" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -51,8 +58,8 @@
       <file leaf-file-name="home.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sm-shentou/HTML/home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1550">
-              <caret line="271" column="60" lean-forward="false" selection-start-line="271" selection-start-column="60" selection-end-line="271" selection-end-column="60" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="271" column="60" selection-start-line="271" selection-start-column="60" selection-end-line="271" selection-end-column="60" />
               <folding />
             </state>
           </provider>
@@ -61,18 +68,28 @@
       <file leaf-file-name="canvasClock.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vuePro/my-project/src/components/myAppContent/part2/canvasClock.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="363">
-              <caret line="109" column="22" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="197" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="109" column="22" selection-start-line="0" selection-start-column="0" selection-end-line="197" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="com.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="com.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sm-shentou/CSS/com.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="26">
-              <caret line="127" column="52" lean-forward="true" selection-start-line="127" selection-start-column="52" selection-end-line="127" selection-end-column="52" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="127" column="52" selection-start-line="127" selection-start-column="52" selection-end-line="127" selection-end-column="52" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="home.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sm-shentou/JavaScript/home.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -85,16 +102,15 @@
       <list>
         <option value="HTML File" />
         <option value="vue File" />
-        <option value="JavaScript File" />
         <option value="CSS File" />
         <option value="vue" />
         <option value="Python Script" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>5px solid transparent</find>
       <find>pos</find>
       <find>#484848</find>
       <find>数据双向绑定</find>
@@ -124,6 +140,7 @@
       <find>font</find>
       <find>变色</find>
       <find>time-font</find>
+      <find>.news .media-object</find>
     </findStrings>
     <replaceStrings>
       <replace>el-input</replace>
@@ -169,7 +186,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/vuePro/my-project/src/components/myAppContent/part2/HelloWorld.vue" />
         <option value="$PROJECT_DIR$/vuePro/my-project/src/components/myAppContent/part2/Hello.vue" />
         <option value="$PROJECT_DIR$/vuePro/my-project/src/components/myAppContent/part2/canvasClock.vue" />
         <option value="$PROJECT_DIR$/vuePro/my-project/src/assets/app.css" />
@@ -220,11 +236,12 @@
         <option value="$PROJECT_DIR$/vuePro/my-project/src/components/myAppContent/part1/HelloWorld.vue" />
         <option value="$PROJECT_DIR$/sm-shentou/HTML/home.html" />
         <option value="$PROJECT_DIR$/sm-shentou/CSS/com.css" />
+        <option value="$PROJECT_DIR$/sm-shentou/jquery/jquery-3.2.1.min.js" />
       </list>
     </option>
   </component>
-  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolGruntFileManager" detection-done="true" />
+  <component name="JsBuildToolPackageJson" detection-done="true" />
   <component name="JsFlowSettings">
     <service-enabled>true</service-enabled>
     <exe-path />
@@ -233,17 +250,17 @@
   </component>
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
-    <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="NodeModulesDirectoryManager">
     <handled-path value="$PROJECT_DIR$/myWebProject/cache-handler-master/cache_handle/node_modules" />
     <handled-path value="$PROJECT_DIR$/vuePro/my-project/node_modules" />
     <handled-path value="$PROJECT_DIR$/vuePro/vue-devtools-master/node_modules" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="72" />
-    <option name="width" value="1528" />
-    <option name="height" value="900" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1616" />
+    <option name="height" value="886" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -264,8 +281,15 @@
       </profile-state>
     </entry>
   </component>
-  <component name="ProjectLevelVcsManager">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
     <ConfirmationsSetting value="2" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -282,90 +306,96 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
-          <expand>
-            <path>
-              <item name="acemeRepository" type="b2602c69:ProjectViewProjectNode" />
-              <item name="acemeRepository" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="acemeRepository" type="b2602c69:ProjectViewProjectNode" />
-              <item name="acemeRepository" type="462c0819:PsiDirectoryNode" />
-              <item name="pythonPro" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="acemeRepository" type="b2602c69:ProjectViewProjectNode" />
-              <item name="acemeRepository" type="462c0819:PsiDirectoryNode" />
-              <item name="sm-shentou" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="acemeRepository" type="b2602c69:ProjectViewProjectNode" />
-              <item name="acemeRepository" type="462c0819:PsiDirectoryNode" />
-              <item name="sm-shentou" type="462c0819:PsiDirectoryNode" />
-              <item name="HTML" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="acemeRepository" type="b2602c69:ProjectViewProjectNode" />
-              <item name="acemeRepository" type="462c0819:PsiDirectoryNode" />
-              <item name="vuePro" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="acemeRepository" type="b2602c69:ProjectViewProjectNode" />
-              <item name="acemeRepository" type="462c0819:PsiDirectoryNode" />
-              <item name="vuePro" type="462c0819:PsiDirectoryNode" />
-              <item name="my-project" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="acemeRepository" type="b2602c69:ProjectViewProjectNode" />
-              <item name="acemeRepository" type="462c0819:PsiDirectoryNode" />
-              <item name="vuePro" type="462c0819:PsiDirectoryNode" />
-              <item name="my-project" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="acemeRepository" type="b2602c69:ProjectViewProjectNode" />
-              <item name="acemeRepository" type="462c0819:PsiDirectoryNode" />
-              <item name="vuePro" type="462c0819:PsiDirectoryNode" />
-              <item name="my-project" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="acemeRepository" type="b2602c69:ProjectViewProjectNode" />
-              <item name="acemeRepository" type="462c0819:PsiDirectoryNode" />
-              <item name="vuePro" type="462c0819:PsiDirectoryNode" />
-              <item name="my-project" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="myAppContent" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="acemeRepository" type="b2602c69:ProjectViewProjectNode" />
-              <item name="acemeRepository" type="462c0819:PsiDirectoryNode" />
-              <item name="vuePro" type="462c0819:PsiDirectoryNode" />
-              <item name="my-project" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="myAppContent" type="462c0819:PsiDirectoryNode" />
-              <item name="part1" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="acemeRepository" type="b2602c69:ProjectViewProjectNode" />
-              <item name="acemeRepository" type="462c0819:PsiDirectoryNode" />
-              <item name="vuePro" type="462c0819:PsiDirectoryNode" />
-              <item name="my-project" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="myAppContent" type="462c0819:PsiDirectoryNode" />
-              <item name="part2" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="acemeRepository" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="acemeRepository" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="acemeRepository" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="acemeRepository" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="acemeRepository" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sm-shentou" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tether-1.3.6" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="acemeRepository" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="acemeRepository" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sm-shentou" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jquery" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="acemeRepository" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="acemeRepository" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sm-shentou" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="acemeRepository" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="acemeRepository" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sm-shentou" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HTML" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -377,7 +407,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
-    <property name="last_opened_file_path" value="$USER_HOME$/AppData/Roaming/npm/node_modules/babel/package.json" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="editor.config.accepted" value="true" />
@@ -412,24 +442,6 @@
     </option>
   </component>
   <component name="RunManager" selected="npm.vuePro">
-    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
-      <node-interpreter>project</node-interpreter>
-      <node-options />
-      <gulpfile />
-      <tasks />
-      <arguments />
-      <envs />
-    </configuration>
-    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
-      <method />
-    </configuration>
-    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
-      <command value="run" />
-      <scripts />
-      <node-interpreter value="project" />
-      <envs />
-      <method />
-    </configuration>
     <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -484,7 +496,6 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
-    <configuration name="testStar.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63343/acemeRepository/testStar.html" />
     <configuration name="urllibTest" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -503,36 +514,77 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
-    <configuration name="vuePro" type="js.build_tools.npm" factoryName="npm">
+    <configuration default="false" name="testStar.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63343/acemeRepository/testStar.html">
+      <method />
+    </configuration>
+    <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
+      <method />
+    </configuration>
+    <configuration default="true" type="DartTestRunConfigurationType" factoryName="Dart Test">
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" config-file="">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" working-dir="">
+      <method />
+    </configuration>
+    <configuration default="true" type="cucumber.js" factoryName="Cucumber.js">
+      <option name="cucumberJsArguments" value="" />
+      <option name="executablePath" />
+      <option name="filePath" />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run-script" />
+      <scripts />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="mocha-javascript-test-runner" factoryName="Mocha">
+      <node-options />
+      <working-directory>$PROJECT_DIR$</working-directory>
+      <pass-parent-env>true</pass-parent-env>
+      <envs />
+      <ui>bdd</ui>
+      <extra-mocha-options />
+      <test-kind>DIRECTORY</test-kind>
+      <test-directory />
+      <recursive>false</recursive>
+      <method />
+    </configuration>
+    <configuration default="false" name="vuePro" type="js.build_tools.npm" factoryName="npm">
       <package-json value="$PROJECT_DIR$/vuePro/my-project/package.json" />
-      <command value="run" />
+      <command value="run-script" />
       <scripts>
         <script value="dev" />
       </scripts>
-      <node-interpreter value="project" />
       <envs />
+      <method />
     </configuration>
-    <list size="6">
+    <list size="2">
       <item index="0" class="java.lang.String" itemvalue="npm.vuePro" />
       <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.testStar.html" />
-      <item index="2" class="java.lang.String" itemvalue="Python.test" />
-      <item index="3" class="java.lang.String" itemvalue="Python.testNumpy" />
-      <item index="4" class="java.lang.String" itemvalue="Python.testImg" />
-      <item index="5" class="java.lang.String" itemvalue="Python.urllibTest" />
     </list>
     <recent_temporary>
-      <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.urllibTest" />
-        <item index="1" class="java.lang.String" itemvalue="Python.testImg" />
-        <item index="2" class="java.lang.String" itemvalue="Python.testNumpy" />
-        <item index="3" class="java.lang.String" itemvalue="Python.test" />
-        <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.testStar.html" />
+      <list size="1">
+        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.testStar.html" />
       </list>
     </recent_temporary>
   </component>
-  <component name="ShelveChangesManager" show_recycled="false">
-    <option name="remove_strategy" value="false" />
-  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
   <component name="SvnConfiguration">
     <configuration>C:\Users\sumi_EC\AppData\Roaming\Subversion</configuration>
     <supportedVersion>125</supportedVersion>
@@ -542,7 +594,6 @@
       <changelist id="486f2b12-6d95-4a06-858f-cf77ae38c3dc" name="Default" comment="" />
       <created>1504765302947</created>
       <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
       <updated>1504765302947</updated>
       <workItem from="1504765304277" duration="36260000" />
       <workItem from="1505195666625" duration="34000" />
@@ -574,326 +625,286 @@
     <task id="LOCAL-00001" summary="引入elementUI">
       <created>1504768011969</created>
       <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
       <updated>1504768011969</updated>
     </task>
     <task id="LOCAL-00002" summary="引入elementUI">
       <created>1504768306235</created>
       <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
       <updated>1504768306235</updated>
     </task>
     <task id="LOCAL-00003" summary="分页签">
       <created>1504774924872</created>
       <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
       <option name="project" value="LOCAL" />
       <updated>1504774924872</updated>
     </task>
     <task id="LOCAL-00004" summary="调整文件目录">
       <created>1504834232906</created>
       <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
       <option name="project" value="LOCAL" />
       <updated>1504834232906</updated>
     </task>
     <task id="LOCAL-00005" summary="多选组件">
       <created>1504836667207</created>
       <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
       <option name="project" value="LOCAL" />
       <updated>1504836667207</updated>
     </task>
     <task id="LOCAL-00006" summary="文件上传">
       <created>1504839988281</created>
       <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
       <option name="project" value="LOCAL" />
       <updated>1504839988281</updated>
     </task>
     <task id="LOCAL-00007" summary="加入登录界面">
       <created>1504854813932</created>
       <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
       <option name="project" value="LOCAL" />
       <updated>1504854813932</updated>
     </task>
     <task id="LOCAL-00008" summary="加入导航">
       <created>1504857299878</created>
       <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
       <option name="project" value="LOCAL" />
       <updated>1504857299878</updated>
     </task>
     <task id="LOCAL-00009" summary="加入导航">
       <created>1504858553888</created>
       <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
       <option name="project" value="LOCAL" />
       <updated>1504858553888</updated>
     </task>
     <task id="LOCAL-00010" summary="更改路由方式">
       <created>1504861860607</created>
       <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
       <option name="project" value="LOCAL" />
       <updated>1504861860607</updated>
     </task>
     <task id="LOCAL-00011" summary="更改路由方式">
       <created>1505196452346</created>
       <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
       <option name="project" value="LOCAL" />
       <updated>1505196452346</updated>
     </task>
     <task id="LOCAL-00012" summary="更改目录结构以及路由引用">
       <created>1505208464691</created>
       <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
       <option name="project" value="LOCAL" />
       <updated>1505208464691</updated>
     </task>
     <task id="LOCAL-00013" summary="修改背景色">
       <created>1505209149563</created>
       <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
       <option name="project" value="LOCAL" />
       <updated>1505209149563</updated>
     </task>
     <task id="LOCAL-00014" summary="apply 和 call 的调用方式">
       <created>1505296423904</created>
       <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
       <option name="project" value="LOCAL" />
       <updated>1505296423904</updated>
     </task>
     <task id="LOCAL-00015" summary="加入console log">
       <created>1505356075880</created>
       <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
       <option name="project" value="LOCAL" />
       <updated>1505356075880</updated>
     </task>
     <task id="LOCAL-00016" summary="改变vue布局方式为fixed">
       <created>1505372868823</created>
       <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
       <option name="project" value="LOCAL" />
       <updated>1505372868823</updated>
     </task>
     <task id="LOCAL-00017" summary="修改字体 和部分样式">
       <created>1505373266873</created>
       <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
       <option name="project" value="LOCAL" />
       <updated>1505373266873</updated>
     </task>
     <task id="LOCAL-00018" summary="修改字体 和部分样式">
       <created>1505378300381</created>
       <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
       <option name="project" value="LOCAL" />
       <updated>1505378300381</updated>
     </task>
     <task id="LOCAL-00019" summary="修改样式">
       <created>1505378699629</created>
       <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
       <option name="project" value="LOCAL" />
       <updated>1505378699629</updated>
     </task>
     <task id="LOCAL-00020" summary="修改样式">
       <created>1505380473331</created>
       <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
       <option name="project" value="LOCAL" />
       <updated>1505380473331</updated>
     </task>
     <task id="LOCAL-00021" summary="加入轮播图">
       <created>1505381052213</created>
       <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
       <option name="project" value="LOCAL" />
       <updated>1505381052213</updated>
     </task>
     <task id="LOCAL-00022" summary="vue 加入背景图 加入返回主页按钮 引入 流星界面  引入时钟界面">
       <created>1505441189489</created>
       <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
       <option name="project" value="LOCAL" />
       <updated>1505441189489</updated>
     </task>
     <task id="LOCAL-00023" summary="vue 更换背景图">
       <created>1505459367993</created>
       <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
       <option name="project" value="LOCAL" />
       <updated>1505459367993</updated>
     </task>
     <task id="LOCAL-00024" summary="vue 更换背景图">
       <created>1505461520215</created>
       <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
       <option name="project" value="LOCAL" />
       <updated>1505461520215</updated>
     </task>
     <task id="LOCAL-00025" summary="vue 更换背景图">
       <created>1505464478468</created>
       <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
       <option name="project" value="LOCAL" />
       <updated>1505464478468</updated>
     </task>
     <task id="LOCAL-00026" summary="vue 修改样式">
       <created>1505701373082</created>
       <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
       <option name="project" value="LOCAL" />
       <updated>1505701373082</updated>
     </task>
     <task id="LOCAL-00027" summary="vue debug 插件">
       <created>1505721970670</created>
       <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
       <option name="project" value="LOCAL" />
       <updated>1505721970670</updated>
     </task>
     <task id="LOCAL-00028" summary="readme 加入插件提示">
       <created>1505724405448</created>
       <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
       <option name="project" value="LOCAL" />
       <updated>1505724405448</updated>
     </task>
     <task id="LOCAL-00029" summary="readme 加入插件提示">
       <created>1505787690388</created>
       <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
       <option name="project" value="LOCAL" />
       <updated>1505787690388</updated>
     </task>
     <task id="LOCAL-00030" summary="website 加入前台项目处理工具">
       <created>1505807065618</created>
       <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
       <option name="project" value="LOCAL" />
       <updated>1505807065618</updated>
     </task>
     <task id="LOCAL-00031" summary="修正处理工具">
       <created>1505808750277</created>
       <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
       <option name="project" value="LOCAL" />
       <updated>1505808750277</updated>
     </task>
     <task id="LOCAL-00032" summary="修正处理工具">
       <created>1505808950842</created>
       <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
       <option name="project" value="LOCAL" />
       <updated>1505808950842</updated>
     </task>
     <task id="LOCAL-00033" summary="修正处理工具">
       <created>1505809053961</created>
       <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
       <option name="project" value="LOCAL" />
       <updated>1505809053961</updated>
     </task>
     <task id="LOCAL-00034" summary="修正处理工具">
       <created>1505888910452</created>
       <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
       <option name="project" value="LOCAL" />
       <updated>1505888910452</updated>
     </task>
     <task id="LOCAL-00035" summary="加入折叠">
       <created>1510643716641</created>
       <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
       <option name="project" value="LOCAL" />
       <updated>1510643716641</updated>
     </task>
     <task id="LOCAL-00036" summary="修正处理工具">
       <created>1510645743301</created>
       <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL-00036" />
       <option name="project" value="LOCAL" />
       <updated>1510645743301</updated>
     </task>
     <task id="LOCAL-00037" summary="python代码">
       <created>1511342095793</created>
       <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
       <option name="project" value="LOCAL" />
       <updated>1511342095793</updated>
     </task>
     <task id="LOCAL-00038" summary="python代码">
       <created>1511344297569</created>
       <option name="number" value="00038" />
-      <option name="presentableId" value="LOCAL-00038" />
       <option name="project" value="LOCAL" />
       <updated>1511344297569</updated>
     </task>
     <task id="LOCAL-00039" summary="python代码">
       <created>1511776419332</created>
       <option name="number" value="00039" />
-      <option name="presentableId" value="LOCAL-00039" />
       <option name="project" value="LOCAL" />
       <updated>1511776419332</updated>
     </task>
     <task id="LOCAL-00040" summary="python代码">
       <created>1511853302895</created>
       <option name="number" value="00040" />
-      <option name="presentableId" value="LOCAL-00040" />
       <option name="project" value="LOCAL" />
       <updated>1511853302895</updated>
     </task>
     <task id="LOCAL-00041" summary="htmlphone">
       <created>1511921943877</created>
       <option name="number" value="00041" />
-      <option name="presentableId" value="LOCAL-00041" />
       <option name="project" value="LOCAL" />
       <updated>1511921943877</updated>
     </task>
     <task id="LOCAL-00042" summary="htmlphone">
       <created>1511937739401</created>
       <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
       <option name="project" value="LOCAL" />
       <updated>1511937739401</updated>
     </task>
     <task id="LOCAL-00043" summary="htmlphone">
       <created>1511943023089</created>
       <option name="number" value="00043" />
-      <option name="presentableId" value="LOCAL-00043" />
       <option name="project" value="LOCAL" />
       <updated>1511943023089</updated>
     </task>
     <task id="LOCAL-00044" summary="htmlphone">
       <created>1512006974828</created>
       <option name="number" value="00044" />
-      <option name="presentableId" value="LOCAL-00044" />
       <option name="project" value="LOCAL" />
       <updated>1512006974828</updated>
     </task>
     <task id="LOCAL-00045" summary="python爬虫抓图程序">
       <created>1512011767992</created>
       <option name="number" value="00045" />
-      <option name="presentableId" value="LOCAL-00045" />
       <option name="project" value="LOCAL" />
       <updated>1512011767992</updated>
     </task>
     <task id="LOCAL-00046" summary="python爬虫抓图程序">
       <created>1512032580471</created>
       <option name="number" value="00046" />
-      <option name="presentableId" value="LOCAL-00046" />
       <option name="project" value="LOCAL" />
       <updated>1512032580472</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="st">
+      <created>1512351412988</created>
+      <option name="number" value="00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1512351412988</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -903,18 +914,15 @@
     <frame x="-8" y="-8" width="1616" height="886" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20115681" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2008872" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3277849" sideWeight="0.5053908" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3277849" sideWeight="0.49460918" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3480055" sideWeight="0.47043702" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34752747" sideWeight="0.46577945" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3480055" sideWeight="0.529563" order="7" side_tool="true" content_ui="tabs" x="72" y="318" width="1528" height="264" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34752747" sideWeight="0.5342205" order="7" side_tool="true" content_ui="tabs" x="72" y="318" width="1528" height="264" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3976222" sideWeight="0.49191374" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -929,8 +937,10 @@
       <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -938,6 +948,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="REST Client" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31926122" sideWeight="0.5" order="16" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32849604" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32893" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299866" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -1020,7 +1031,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="文件上传" />
     <MESSAGE value="加入登录界面" />
     <MESSAGE value="加入导航" />
     <MESSAGE value="更改路由方式" />
@@ -1045,17 +1055,11 @@
     <MESSAGE value="python代码" />
     <MESSAGE value="htmlphone" />
     <MESSAGE value="python爬虫抓图程序" />
-    <option name="LAST_COMMIT_MESSAGE" value="python爬虫抓图程序" />
+    <MESSAGE value="st" />
+    <option name="LAST_COMMIT_MESSAGE" value="st" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <default-breakpoints>
-        <breakpoint type="python-exception">
-          <properties notifyOnTerminate="true" exception="BaseException">
-            <option name="notifyOnTerminate" value="true" />
-          </properties>
-        </breakpoint>
-      </default-breakpoints>
       <option name="time" value="18" />
     </breakpoint-manager>
     <watches-manager />
@@ -1065,38 +1069,127 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/vuePro/my-project/node_modules/element-ui/lib/element-ui.common.js">
+    <entry file="file://$PROJECT_DIR$/vuePro/my-project/src/components/myAppContent/part2/htmlPhone.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="137" column="25" selection-start-line="137" selection-start-column="25" selection-end-line="137" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sm-shentou/HTML/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sm-shentou/HTML/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="271" column="60" selection-start-line="271" selection-start-column="60" selection-end-line="271" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vuePro/my-project/src/components/myAppContent/part2/canvasClock.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="109" column="22" selection-start-line="0" selection-start-column="0" selection-end-line="197" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sm-shentou/CSS/com.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="127" column="52" selection-start-line="127" selection-start-column="52" selection-end-line="127" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sm-shentou/JavaScript/home.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vuePro/my-project/src/components/myAppContent/part2/htmlPhone.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="137" column="25" selection-start-line="137" selection-start-column="25" selection-end-line="137" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sm-shentou/HTML/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="138" column="42" selection-start-line="138" selection-start-column="42" selection-end-line="138" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sm-shentou/HTML/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="271" column="60" selection-start-line="271" selection-start-column="60" selection-end-line="271" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vuePro/my-project/src/components/myAppContent/part2/canvasClock.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="109" column="22" selection-start-line="0" selection-start-column="0" selection-end-line="197" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sm-shentou/CSS/com.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="127" column="52" selection-start-line="127" selection-start-column="52" selection-end-line="127" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sm-shentou/JavaScript/home.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vuePro/my-project/build/build.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vuePro/my-project/config/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vuePro/my-project/config/dev.env.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vuePro/my-project/config/prod.env.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1115,199 +1208,194 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pythonPro/saveNew.jpg" />
-    <entry file="file://$PROJECT_DIR$/pythonPro/newImg/saveNew.jpg" />
     <entry file="file://D:/Python27/Lib/site-packages/numpy/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3289">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pythonPro/testImg1.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="17" column="25" lean-forward="true" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="17" column="25" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vuePro/my-project/src/components/myAppContent/part1.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="11" column="105" lean-forward="true" selection-start-line="11" selection-start-column="105" selection-end-line="11" selection-end-column="105" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="11" column="105" selection-start-line="11" selection-start-column="105" selection-end-line="11" selection-end-column="105" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vuePro/my-project/src/components/myAppContent/part2.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="9" column="86" lean-forward="false" selection-start-line="9" selection-start-column="86" selection-end-line="9" selection-end-column="86" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="9" column="86" selection-start-line="9" selection-start-column="86" selection-end-line="9" selection-end-column="86" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vuePro/my-project/src/assets/jq-dist/jquery.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="9210" column="0" lean-forward="true" selection-start-line="9210" selection-start-column="0" selection-end-line="9210" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="9210" column="0" selection-start-line="9210" selection-start-column="0" selection-end-line="9210" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/webix/samples/08_chart/08_dynamic/01_add.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="4" column="77" lean-forward="true" selection-start-line="4" selection-start-column="77" selection-end-line="4" selection-end-column="77" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="4" column="77" selection-start-line="4" selection-start-column="77" selection-end-line="4" selection-end-column="77" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vuePro/my-project/src/components/myAppHeader.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-437">
-          <caret line="7" column="66" lean-forward="false" selection-start-line="7" selection-start-column="63" selection-end-line="7" selection-end-column="66" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="7" column="66" selection-start-line="7" selection-start-column="63" selection-end-line="7" selection-end-column="66" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vuePro/my-project/src/components/index.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="23" column="11" lean-forward="false" selection-start-line="23" selection-start-column="4" selection-end-line="23" selection-end-column="11" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="23" column="11" selection-start-line="23" selection-start-column="4" selection-end-line="23" selection-end-column="11" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vuePro/my-project/src/router/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="13" column="16" lean-forward="false" selection-start-line="13" selection-start-column="16" selection-end-line="13" selection-end-column="16" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="13" column="16" selection-start-line="13" selection-start-column="16" selection-end-line="13" selection-end-column="16" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vuePro/my-project/src/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="23" column="18" lean-forward="false" selection-start-line="23" selection-start-column="15" selection-end-line="23" selection-end-column="18" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="23" column="18" selection-start-line="23" selection-start-column="15" selection-end-line="23" selection-end-column="18" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vuePro/my-project/src/App.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="20" column="3" lean-forward="false" selection-start-line="20" selection-start-column="3" selection-end-line="20" selection-end-column="3" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="20" column="3" selection-start-line="20" selection-start-column="3" selection-end-line="20" selection-end-column="3" />
         </state>
       </provider>
     </entry>
     <entry file="file://D:/Python27/Lib/ssl.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
-          <caret line="661" column="0" lean-forward="false" selection-start-line="661" selection-start-column="0" selection-end-line="661" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="661" column="0" selection-start-line="661" selection-start-column="0" selection-end-line="661" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pythonPro/0.jpg" />
-    <entry file="file://$PROJECT_DIR$/pythonPro/newImg/977.jpg" />
-    <entry file="file://$PROJECT_DIR$/pythonPro/newImg/6.jpg" />
-    <entry file="file://$PROJECT_DIR$/pythonPro/newImg/7.jpg" />
-    <entry file="file://$PROJECT_DIR$/pythonPro/newImg/9.jpg" />
-    <entry file="file://$PROJECT_DIR$/pythonPro/newImg/5.jpg" />
-    <entry file="file://$PROJECT_DIR$/pythonPro/newImg/3.jpg" />
     <entry file="file://D:/Python27/Lib/urllib.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="98" column="17" lean-forward="true" selection-start-line="98" selection-start-column="17" selection-end-line="98" selection-end-column="17" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="98" column="17" selection-start-line="98" selection-start-column="17" selection-end-line="98" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pythonPro/newImg/1.jpg" />
-    <entry file="file://$PROJECT_DIR$/pythonPro/newImg/8.jpg" />
-    <entry file="file://$PROJECT_DIR$/pythonPro/newImg/10.jpg" />
-    <entry file="file://$PROJECT_DIR$/pythonPro/newImg/13.jpg" />
-    <entry file="file://$PROJECT_DIR$/pythonPro/newImg/0.jpg" />
-    <entry file="file://$PROJECT_DIR$/pythonPro/newImg/2.jpg" />
-    <entry file="file://$PROJECT_DIR$/pythonPro/newImg/4.jpg" />
-    <entry file="file://$PROJECT_DIR$/pythonPro/newImg/34.jpg" />
-    <entry file="file://$PROJECT_DIR$/pythonPro/newImg/37.jpg" />
-    <entry file="file://$PROJECT_DIR$/pythonPro/newImg/40.jpg" />
     <entry file="file://$PROJECT_DIR$/pythonPro/testImg.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pythonPro/urllibTest.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="7" column="22" lean-forward="true" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="7" column="22" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vuePro/my-project/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vuePro/my-project/src/components/myAppContent/part2/moveStar.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" column="18" lean-forward="false" selection-start-line="7" selection-start-column="2" selection-end-line="8" selection-end-column="18" />
-          <folding />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="8" column="18" selection-start-line="7" selection-start-column="2" selection-end-line="8" selection-end-column="18" />
         </state>
       </provider>
     </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/HTML5.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2349">
-          <caret line="1088" column="0" lean-forward="false" selection-start-line="1088" selection-start-column="0" selection-end-line="1088" selection-end-column="0" />
-          <folding />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="1088" column="0" selection-start-line="1088" selection-start-column="0" selection-end-line="1088" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vuePro/my-project/src/components/myAppContent/part2/canvasClock.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="363">
-          <caret line="109" column="22" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="197" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="109" column="22" selection-start-line="0" selection-start-column="0" selection-end-line="197" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vuePro/my-project/src/components/myAppContent/part2/htmlPhone.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="283">
-          <caret line="137" column="25" lean-forward="false" selection-start-line="137" selection-start-column="25" selection-end-line="137" selection-end-column="25" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="137" column="25" selection-start-line="137" selection-start-column="25" selection-end-line="137" selection-end-column="25" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vuePro/my-project/src/components/myAppContent/part1/HelloWorld.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="102" column="12" lean-forward="false" selection-start-line="102" selection-start-column="12" selection-end-line="102" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sm-shentou/HTML/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="138" column="42" lean-forward="true" selection-start-line="138" selection-start-column="42" selection-end-line="138" selection-end-column="42" />
-          <folding />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="102" column="12" selection-start-line="102" selection-start-column="12" selection-end-line="102" selection-end-column="12" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sm-shentou/HTML/home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1550">
-          <caret line="271" column="60" lean-forward="false" selection-start-line="271" selection-start-column="60" selection-end-line="271" selection-end-column="60" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="271" column="60" selection-start-line="271" selection-start-column="60" selection-end-line="271" selection-end-column="60" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sm-shentou/CSS/com.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="26">
-          <caret line="127" column="52" lean-forward="true" selection-start-line="127" selection-start-column="52" selection-end-line="127" selection-end-column="52" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="127" column="52" selection-start-line="127" selection-start-column="52" selection-end-line="127" selection-end-column="52" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sm-shentou/JavaScript/home.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sm-shentou/HTML/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.0">
+          <caret line="20" column="25" selection-start-line="20" selection-start-column="25" selection-end-line="20" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sm-shentou/jquery/jquery-3.2.1.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.16816144">
+          <caret line="5" column="22334" selection-start-line="5" selection-start-column="22334" selection-end-line="5" selection-end-column="22334" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
